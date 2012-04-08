@@ -176,8 +176,8 @@ body{
 	background-color:#FFF;
 	margin:auto;
 	padding:6%;
-	font-size:36px;
-	line-height:100px;
+	font-size:24px;
+	line-height:50px;
 	
 }
 #footbar{
@@ -223,6 +223,11 @@ body{
 font-size:36px;
 line-height:50px;
 }
+.formed{
+	overflow:hidden;
+	font-size:75%;
+	line-height:1em;
+}
 </style>
 </head>
 
@@ -238,14 +243,14 @@ line-height:50px;
 </div>
 </div>
 <div id="main1" class="row-fluid">
-<div id="main" class="span10">
+<div id="main" class="formed">
 
-	<form method="POST" action="register.php" >
+	<form method="POST" action="register.php" name="fform">
 		
 Username : <input type="text" name="username" value='<?php echo $username;?>' disabled='true'/><br />
 Name: <input type="text" name="fullname" value='<?php echo $fullname;?>' /><br />
-EMail : <input type="text" name="email" value ='<?php echo $email;?>' /><br />
-Alt EMail : <input type="text" name="altemail" value ='<?php echo $alternate_email;?>' /><br />
+Email : <input type="text" name="email" value ='<?php echo $email;?>' /><br />
+Alternate Email : <input type="text" name="altemail" value ='<?php echo $alternate_email;?>' /><br />
 Year : <input type="text" name="year" value ='<?php echo $year_of_study;?>' /><br />
 Hostel : <select name='hostel'>
 <option value='H'>H1</option>
@@ -266,7 +271,7 @@ Hostel : <select name='hostel'>
 
 </select><br/>
 Room <input type='text' name='room'/><br/>
-Mobile <input type='text' name ="mobile">
+Mobile <input type='text' name ="mobile"><br/>
 
 Department : <select name="department">
 <?php 
@@ -285,8 +290,8 @@ foreach ($alldepartments as $key=>$value){
 ?>
 
 </select>
-
-<input type="submit" class="button" name='register' value="Register" />
+<br/><br/>
+<input type="submit" class="button" name='register' value="Register" onClick="return validate(fform)"/>
 </form>
 </div>
 
@@ -347,6 +352,77 @@ bookBay © 2012. All rights reserved
                     }
                 );
             });
+            
+            
+            //form validation
+            function validateusername(field){
+				if (field =="") return "No User Name entered. \n"
+				return ""
+			}
+			function validatefullname(field){
+				if (field =="") return "No Name entered. \n"
+				return ""
+			}
+			function validateemail(field){
+				if (field =="") return "No Email Address entered. \n"
+				else{
+					var atpos=field.indexOf("@");
+					var dotpos=field.lastIndexOf(".");
+					if (atpos<1 || dotpos<atpos+2 || dotpos+2>=field.length)
+					{
+					return "Not a valid e-mail address \n";
+					}
+				return ""
+					}
+			}
+			function validatealtemail(field){
+				
+					var atpos=field.indexOf("@");
+					var dotpos=field.lastIndexOf(".");
+					if (atpos<1 || dotpos<atpos+2 || dotpos+2>=field.length)
+					{
+					return "Not a valid alternate e-mail address \n";
+					}
+					return ""
+			}
+			
+			function validateyear(field){
+				if (field =="") return "No Year entered. \n"
+				return ""
+			}
+			function validatehostel(field){
+				if (field =="") return "No Hostel Name entered. \n"
+				return ""
+			}
+			function validateroom(field){
+				if (field =="") return "No Room Number entered. \n"
+				return ""
+			}
+			function validatemobile(field){
+				if (field =="") return "No Mobile Number entered. \n"
+				return ""
+			}
+			function validatedepartment(field){
+				if (field =="") return "No Department entered. \n"
+				return ""
+			}
+			
+			//form validation main program
+            function validate(form)
+            {
+				fail==validateusername(form.username.value)
+				fail+=validatefullname(form.fullname.value)
+				fail+=validateemail(form.email.value)
+				fail+=validatealtemail(form.altemail.value)
+				fail+=validateyear(form.year.value)
+				fail+=validatehostel(form.hostel.value)
+				fail+=validateroom(form.room.value)
+				fail+=validatemobile(form.mobile.value)
+				fail+=validatedepartment(form.department.value)
+				if (fail == "") return true
+				else { alert(fail); return false }
+			}
+				
         </script>
 </body>
 
