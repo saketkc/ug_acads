@@ -208,14 +208,14 @@ line-height:50px;
 </div>
 <div id="main1" class="row-fluid">
 <div id="main" class="span10">
-<form method="POST" action="add.php">
+<form method="POST" action="add.php" name="form2">
 Book name: <input type="text" name="name" /><br />
 Semester: <input type="text" name="semester" /><br />
 Course: <input type="text" name="course" /><br />
 Cost: <input type="text" name="cost" /><br />
 
 Tags: <input type="text" name="tags" /><br />
-<input type="submit" class="button" name='add' value="Add" />
+<input type="submit" class="button" name='add' value="Add" onClick="return validate(form2)"/>
 </form>
 </div>
 
@@ -264,6 +264,39 @@ bookBay © 2012. All rights reserved
 
 
   <script type="text/javascript">
+	  //form validation
+            function validatename(field){
+				if (field =="") return "No Name entered. \n"
+				return ""
+			}
+			function validatesemester(field){
+				if (field =="") return "No Semester entered. \n"
+				return ""
+			}
+			function validatecourse(field){
+				if (field =="") return "No Course entered. \n"
+				return ""
+					
+			}
+			function validatecost(field){
+				if (field =="") return "No Cost entered. \n"
+					return ""
+			}
+			
+			
+			//form validation main program
+            function validate(form)
+            {
+				fail==validatename(form.name.value)
+				fail+=validatesemester(form.semester.value)
+				fail+=validatecourse(form.course.value)
+				fail+=validatecost(form.cost.value)
+				if (fail == "") return true
+				else { alert(fail); return false }
+			}
+	  
+	  
+	  
             $(function() {
                 $('#navigation a').stop().animate({'marginLeft':'-85px'},1000);
 
@@ -276,6 +309,8 @@ bookBay © 2012. All rights reserved
                     }
                 );
             });
+            
+            
         </script>
 </body>
 
