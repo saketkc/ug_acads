@@ -26,6 +26,12 @@ $time = date("Y-m-d H:i:s");
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="css/bootstrap.css">
 <script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+<script>
+$(document).ready(function(){
+	alert("DASD");
+	};);
+
+</script>
 <title>bookBay</title>
 <style>
 
