@@ -1,0 +1,108 @@
+
+
+
+
+body{
+	background-image:url(img/a.jpg);
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+#outer{
+	
+	
+	
+
+	overflow:hidden;
+	
+	padding-left:5%;
+}
+#toppest{
+	height:9px;
+	background-image:url(img/1.jpg);
+	margin:-10px;
+	width:100%
+}
+#topbar{
+	padding:2%;
+	background-image:url(img/2.png);
+	margin-top:9px;
+	margin-left:-10px;
+	margin-right:-10px;
+	width:100%;
+}
+#main1{
+	padding:6%;
+	align:center;
+	
+}
+#main{
+	height:200px;
+	width:60%;
+	background-color:#FFF;
+	margin:auto;
+	align:centre;
+	background-image:url(img/back.png);
+	overflow:hidden;
+	
+	
+}
+#footbar{
+	height:180px;
+	background-color:#FFF;
+	padding-left:5%;
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-right:20px;
+	margin:-10px;
+	width:100%;
+}
+#footer{
+	height:30px;
+	background-image:url(img/4.png);
+	margin:-10px;
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-right:20px;
+	padding-left:5%;
+	width:100%;
+	color:#fff;
+}
+#about{
+	font:Georgia, "Times New Roman", Times, serif;
+	font-size:16px;
+	
+	width:40%;
+	float:left;
+}
+#list{
+	list-style-type:none;
+	font-size:24px;
+
+}
+#links{
+	width:40%;
+	float:right;
+}
+.listing ul li{
+	line-height:2;
+}
+#login{
+	color:#FFF;
+	padding:5%;
+	width:25%;
+	float:left;
+	overflow:hidden;
+}
+#login_about{
+	color:#FFF;
+	width:50%;
+	float:right;
+	padding:5%;
+	font-size:18px;
+	line-height:25px;
+	overflow:hidden;
+}
