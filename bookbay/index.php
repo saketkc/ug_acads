@@ -25,6 +25,7 @@ $time = date("Y-m-d H:i:s");
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="css/bootstrap.css">
+
 <script type="text/javascript" src="js/jquery-1.3.2.js"></script>
 <script>
 $(document).ready(function(){
@@ -34,7 +35,6 @@ $(document).ready(function(){
 </script>
 <title>bookBay</title>
 <style>
-
 
 
 
@@ -106,6 +106,7 @@ body{
 	padding-right:20px;
 	padding-left:5%;
 	width:100%;
+	color:#fff;
 }
 #about{
 	font:Georgia, "Times New Roman", Times, serif;
@@ -139,9 +140,9 @@ body{
 	float:right;
 	padding:5%;
 	font-size:18px;
-	line-height:25px;
 	overflow:hidden;
 }
+
 </style>
 </head>
 
@@ -168,10 +169,9 @@ body{
 </form>
 </div>
 <div id="login_about">
-Login with your LDAP ID and Password and,
-<ul style="list-style-type:none;"><li>Sell your old books from previous semester within the campus.</li>
-<li>Buy used books from students who studied them in previous semester.</li>
-</ul>
+Login with your LDAP ID and,
+Sell/Donate your old books from previous semester within the campus.</br>
+Buy used books from students who studied them in previous semester.
 </div>
 
 </div>
@@ -188,19 +188,9 @@ Login with your LDAP ID and Password and,
 <div class="row-fluid" id="footbar">
 <div class="span5" id="about">
 <h3>About bookBay</h3>
-Buy and sell your old books online with bookBay. You can search the books according to semester and acording to the Book Titles as well.
+Buy and sell your old books online with bookBay. You can search the books according to semester and according to the book titles as well.
 </div>
 <div class="listing" id="links">
-<ul id="list">
-<li>
-<a href="" title="">Home</a>
-</li>
-
-<li>
-<a href="" title="" >Contact Us</a>
-</li>
-
-<li>
 
 </div>
 </div>

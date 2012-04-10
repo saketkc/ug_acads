@@ -171,7 +171,7 @@ body{
 	align:center;
 }
 #main{
-	height:550px;
+	height:600px;
 	width:75%;
 	background-color:#FFF;
 	margin:auto;
@@ -181,7 +181,7 @@ body{
 	
 }
 #footbar{
-	height:230px;
+	height:180px;
 	background-color:#FFF;
 	padding-left:5%;
 	padding-top:20px;
@@ -199,6 +199,7 @@ body{
 	padding-right:20px;
 	padding-left:5%;
 	width:100%;
+	color:#fff;
 }
 #about{
 	font:Georgia, "Times New Roman", Times, serif;
@@ -228,6 +229,11 @@ line-height:50px;
 	font-size:75%;
 	line-height:1em;
 }
+#right{
+	float:right;
+}
+
+
 </style>
 </head>
 
@@ -241,18 +247,19 @@ line-height:50px;
 <div class="span11" id="outer">
 <h1 id="logo"><a href="#"><img src="img/title1.png" /></a></h1>
 </div>
+<div id ="right"><a href="#"><img src="img/iitb_logo.gif"></a></div>
 </div>
 <div id="main1" class="row-fluid">
 <div id="main" class="formed">
 
 	<form method="POST" action="register.php" name="fform">
-		
-Username : <input type="text" name="username" value='<?php echo $username;?>' disabled='true'/><br />
-Name: <input type="text" name="fullname" value='<?php echo $fullname;?>' /><br />
-Email : <input type="text" name="email" value ='<?php echo $email;?>' /><br />
-Alternate Email : <input type="text" name="altemail" value ='<?php echo $alternate_email;?>' /><br />
-Year : <input type="text" name="year" value ='<?php echo $year_of_study;?>' /><br />
-Hostel : <select name='hostel'>
+<table id="table1">
+<tr><td>Username </td><td><input type="text" name="username" value='<?php echo $username;?>' disabled='true'/></td></tr>
+<tr><td>Name </td><td><input type="text" name="fullname" value='<?php echo $fullname;?>' /></td></tr>
+<tr><td>Email</td><td><input type="text" name="email" value ='<?php echo $email;?>' /></td></tr>
+<tr><td>Alternate Email </td><td><input type="text" name="altemail" value ='<?php echo $alternate_email;?>' /></td></tr>
+<tr><td>Year</td><td><input type="text" name="year" value ='<?php echo $year_of_study;?>' /></td></tr>
+<tr><td>Hostel</td><td><select name='hostel'>
 <option value='H'>H1</option>
 <option value='H'>H2</option>
 <option value='H'>H3</option>
@@ -269,11 +276,11 @@ Hostel : <select name='hostel'>
 <option value='H'>H14</option>
 <option value='H'>Tansa</option>
 
-</select><br/>
-Room <input type='text' name='room'/><br/>
-Mobile <input type='text' name ="mobile"><br/>
+</select></td></tr>
+<tr><td>Room </td><td><input type='text' name='room'/></td></tr>
+<tr><td>Mobile </td><td><input type='text' name ="mobile"></td><tr>
 
-Department : <select name="department">
+<tr><td>Department </td><td><select name="department">
 <?php 
 
 foreach ($alldepartments as $key=>$value){
@@ -290,18 +297,18 @@ foreach ($alldepartments as $key=>$value){
 ?>
 
 </select>
-<br/><br/>
-<input type="submit" class="button" name='register' value="Register" onClick="return validate(fform)"/>
-</form>
+</td></tr></br><tr><td></td></tr>
+<tr><td><input type="submit" class="button" name='register' value="Register" onClick="return validate(fform)"/></td></tr>
+</table></form>
 </div>
 
 </div>
 
  <ul id="navigation">
-            <li class="home"><a href="#" title="Home"></a></li>
+          
             <li class="add"><a href="" title="Add"></a></li>
             <li class="search"><a href="" title="Search"></a></li>
-            <li class="contactus"><a href="" title="Contact Us"></a></li>
+            
             <li class="logout"><a href="" title="Log Out"></a></li>
         
         </ul>
@@ -315,20 +322,9 @@ foreach ($alldepartments as $key=>$value){
 <div class="row-fluid" id="footbar">
 <div class="span5" id="about">
 <h3>About bookBay</h3>
-Buy and sell your old books online with bookBay. You can search the books according to semester as well acording to the Book Titles as well.
+Buy and sell your old books online with bookBay. You can search the books according to semester as well acording to the book titles as well.
 </div>
 <div class="listing" id="links">
-<ul id="list">
-<li>
-<a href="" title="">Home</a>
-</li>
-
-<li>
-<a href="" title="" >Contact Us</a>
-</li>
-
-<li>
-<a href="" title="" >Log Out</a>
 </div>
 </div>
 <div class="row-fluid" id="footer">
@@ -340,7 +336,7 @@ bookBay © 2012. All rights reserved
 
 
   <script type="text/javascript">
-            $(function() {
+           /* $(function() {
                 $('#navigation a').stop().animate({'marginLeft':'-85px'},1000);
 
                 $('#navigation > li').hover(
@@ -351,7 +347,7 @@ bookBay © 2012. All rights reserved
                         $('a',$(this)).stop().animate({'marginLeft':'-85px'},200);
                     }
                 );
-            });
+            }); */
             
             
             //form validation

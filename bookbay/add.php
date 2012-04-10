@@ -20,6 +20,7 @@ if (isset($_POST['add'])){
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="css/bootstrap.css">
+
 <script type="text/javascript" src="js/jquery-1.3.2.js"></script>
 <title>bookBay</title>
 <style>
@@ -150,7 +151,7 @@ body{
 	
 }
 #footbar{
-	height:230px;
+	height:180px;
 	background-color:#FFF;
 	padding-left:5%;
 	padding-top:20px;
@@ -168,6 +169,7 @@ body{
 	padding-right:20px;
 	padding-left:5%;
 	width:100%;
+	color:#FFF;
 }
 #about{
 	font:Georgia, "Times New Roman", Times, serif;
@@ -192,6 +194,8 @@ body{
 font-size:36px;
 line-height:50px;
 }
+
+
 </style>
 </head>
 
@@ -242,17 +246,6 @@ Tags: <input type="text" name="tags" /><br />
 Buy and sell your old books online with bookBay. You can search the books according to semester as well acording to the Book Titles as well.
 </div>
 <div class="listing" id="links">
-<ul id="list">
-<li>
-<a href="" title="">Home</a>
-</li>
-
-<li>
-<a href="" title="" >Contact Us</a>
-</li>
-
-<li>
-<a href="" title="" >Log Out</a>
 </div>
 </div>
 <div class="row-fluid" id="footer">
@@ -297,7 +290,7 @@ bookBay © 2012. All rights reserved
 	  
 	  
 	  
-            $(function() {
+       /*     $(function() {
                 $('#navigation a').stop().animate({'marginLeft':'-85px'},1000);
 
                 $('#navigation > li').hover(
@@ -309,7 +302,7 @@ bookBay © 2012. All rights reserved
                     }
                 );
             });
-            
+         */   
             
         </script>
 </body>
