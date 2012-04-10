@@ -290,6 +290,29 @@ bookBay © 2012. All rights reserved
 	  
 	  
 	  
+<<<<<<< HEAD
+       /*     $(function() {
+                $('#navigation a').stop().animate({'marginLeft':'-85px'},1000);
+=======
+            /*$(function() {
+                $('#navigation a').stop().animate({'marginLeft':'-65px'},1000);
+>>>>>>> 57335df5ebeb8bf500d965feb24f8b94862a8b7c
+
+                $('#navigation > li').hover(
+                    function () {
+                        $('a',$(this)).stop().animate({'marginLeft':'-2px'},200);
+                    },
+                    function () {
+                        $('a',$(this)).stop().animate({'marginLeft':'-65px'},200);
+                    }
+                );
+<<<<<<< HEAD
+            });
+         */   
+=======
+            });*/
+            
+>>>>>>> 57335df5ebeb8bf500d965feb24f8b94862a8b7c
             
         </script>
 </body>
