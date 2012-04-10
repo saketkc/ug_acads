@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['ldap_id'])){
-	$username = $_SESSION['dap_id'];
+	$username = $_SESSION['ldap_id'];
 }
 else {
 	$username='';
@@ -12,6 +12,10 @@ if(isset($_GET['er']))
 	if($_GET['er'] == "voted" ) { $error= "Sorry, you cannot vote multiple times." ;}
 	if($_GET['er'] == "wrong" ) { $error= "Invalid Roll no. or password" ;}
 	if($_GET['er'] == "complete" ) { $error= "Voted! " ;}
+}
+if(isset($_GET['logout'])){
+	
+	session_destroy();
 }
 $link = mysql_connect($dbhost, $dbuser, $dbpasswd) or die ("Not able to connect" . mysql_error());
 mysql_select_db($dbname, $link) or die ("Query for database failed : " . mysql_error());
@@ -26,12 +30,7 @@ $time = date("Y-m-d H:i:s");
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="css/bootstrap.css">
 <script type="text/javascript" src="js/jquery-1.3.2.js"></script>
-<script>
-$(document).ready(function(){
-	alert("DASD");
-	};);
 
-</script>
 <title>bookBay</title>
 <style>
 

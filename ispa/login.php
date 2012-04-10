@@ -9,6 +9,9 @@ if (isset($_POST['login'])){
 	$_SESSION['ldap_id']=$username;
 	header("location: apply.php");
 }
+	else {
+		header("location: login.php?failed=true");
+	}
 }
 
 	
@@ -42,10 +45,16 @@ if (isset($_POST['login'])){
          <div class="contenthome1 span8">
 		 
 			 <fieldset>
+				 
 			 <form method="POST" action="login.php">
-LDAP ID: <input type='text' name='username'><br/>
-Password: <input type='password' name='password'><br/>
-<input type='submit' name='login' value='Login'>
+				 <table>
+		<tr>	<td>LDAP ID:</td> <td><input type='text' name='username'></td></tr>
+<tr><td>Password</td> <td><input type='password' name='password'></td></tr>
+<?php if (isset($_GET['failed'])) {
+	echo "<tr><td>LDAP ID and Password Don't Match</td></tr>";
+}?>
+<tr><td><td><input type='submit' name='login' value='Login'></td></td></tr>
+</table>
 </form>
 </fieldset>
 

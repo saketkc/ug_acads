@@ -4,11 +4,16 @@ session_start();
 	if (!(isset($_SESSION['ldap_id']))){
 		header("location: index.php");
 	}
+	$is_registered=0;
+	if(is_registered($_SESSIOn['ldap_id'])){
+		$is_registered=1;
+	}
     $info = ldap_find_all('uid',$_SESSION['ldap_id']);
 	$fullname = $info[0]["cn"][0];
 	$username=$info[0]['uid'][0];
 	$dep = explode(",",$info[0]["dn"]);
 	$alldepartment = explode("=",$dep[2]);
+	$alldepartments =  DepartmentFindAll();
 	$mydepartment=$alldepartment[1];
 	$email=$info[0]["mail"][0];
 	$alternate_email=$info[0]['mailforwardingaddress'][0];
@@ -39,8 +44,10 @@ session_start();
 
     <script>
     $(document).ready(function(){
+		$("#info-new").hide();
 		var department = '<?php echo $mydepartment; ?>';
 		var username = '<?php echo $_SESSION['ldap_id'];?>';
+		
 		$("#check").click(function(){
 	
 		var count_1=0;
@@ -120,15 +127,16 @@ session_start();
 	});
 		
 		
-		$("a#single_image").fancybox();
+		
 		jQuery("#toolbar").jqGrid({
 			url:'projects.php?department='+department,
 			datatype: "json",
 			height: 455,
 			width: 700,
-			colNames:['id','Prof. Name','Title ', 'Description','Eligibility','Apply'],
+			autowidth: true,
+			colNames:['Prof. Name','Title ', 'Description','Eligibility','Apply'],
 			colModel:[
-					{name:'id',index:'id', width:10, sorttype:'int'},
+					
 					{name:'prof_name',index:'prof_name', width:65, sorttype:'text'},
 					{name:'title',index:'title', width:50, sorttype: 'text'},
 					{name:'description',index:'description', width:100},
@@ -155,11 +163,70 @@ session_start();
 jQuery("#toolbar").jqGrid('navGrid','#ptoolbar',{del:false,add:false,edit:false,search:false});
 jQuery("#toolbar").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
 
-
+$("#choose-dep").change(function(){
+			department=$(this).val();
+			//jQuery("#toolbar").jqGrid().setGridParam({url : 'projects.php?department='+department}).trigger("reloadGrid");
+			gridSearch(department);
+			
+		
+			});
 
 	});
+	function gridSearch(department)
+    {
+		$("#info-new").show();
+        $("#info").hide("");
+        jQuery("#toolbar2").jqGrid({
+			url:'projects.php?department='+department,
+			datatype: "json",
+			height: 455,
+			width: 700,
+			autowidth:true,
+			colNames:['Prof. Name','Title ', 'Description','Eligibility','Apply'],
+			colModel:[
+					
+					{name:'prof_name',index:'prof_name', width:65, sorttype:'text'},
+					{name:'title',index:'title', width:50, sorttype: 'text'},
+					{name:'description',index:'description', width:100},
+					{name:'eligibility',index:'eligibility', width:100},
+					{name:'apply',index:'apply', width:10,formatter:format}
+				],
+			rowNum:50,
+			rowTotal: 2000,
+			rowList : [20,30,50],
+			loadonce:true,
+			mtype: "GET",
+			rownumbers: true,
+			rownumWidth: 40,
+			gridview: true,
+			pager: '#ptoolbar',
+			sortname: 'prof_name',
+			viewrecords: true,
+			sortorder: "asc",
+			
+	
+	caption: "ISPA Projects"	
+});
+
+jQuery("#toolbar2").jqGrid('navGrid','#ptoolbar2',{del:false,add:false,edit:false,search:false});
+jQuery("#toolbar2").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
+    }
 	function format(cellvalue, options, rowObject){
-		return "<select name='projectid-"+rowObject[0]+"' class='preference'><option value='0' selected='selected'></option><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option></select>";
+		rowid=options['rowId'];
+		if(cellvalue=='1'){
+		return "<select name='projectid-"+rowid+"' class='preference'><option value='0' ></option><option value='1' selected='selected'>1</option><option value='2'>2</option><option value='3'>3</option></select>";
+	}
+	if(cellvalue=='2'){
+		return "<select name='projectid-"+rowid+"' class='preference'><option value='0' ></option><option value='1' >1</option><option value='2' selected='selected'>2</option><option value='3'>3</option></select>";
+	}
+	if(cellvalue=='3'){
+		return "<select name='projectid-"+rowid+"' class='preference'><option value='0' ></option><option value='1'>1</option><option value='2'>2</option><option value='3'  selected='selected'>3</option></select>";
+	}
+		
+		else
+		{
+			return "<select name='projectid-"+rowid+"' class='preference'><option value='0' selected='selected' ></option><option value='1'>1</option><option value='2'>2</option><option value='3'  >3</option></select>";
+		}
 		
 		//alert(rowObject[0]);
 	}
@@ -201,11 +268,32 @@ if (isset($_POST['login'])){
 		  <li><a href="">FAQs</a></li>
 		  <li><a href="contact.html">Contact</a></li>
 		  </ul>
+         <?php 
+        // $alldepartments = DepartmentFindAll();
          
-         
-			 
+         echo "<select name='department' id='choose-dep'>";
+         foreach ($alldepartments as $key=>$value){
+	if ($value['value']!=$mydepartment){
+		
+	echo "<option value='" . $value['value']. "'>".$value['department']."</option>";
+	}
+	else {
+		echo "<option value='" . $value['value']. "' selected='selected'>".$value['department']."</option>";}
+	
+		
+}
+echo "</select>";
+
+         ?>
+       
+			 <div id="info">
 <table id="toolbar"></table>
 <div id="ptoolbar" ></div>
+</div>
+<div id="info-new">
+<table id="toolbar2"></table>
+<div id="ptoolbar2" ></div>
+</div>
 
 
 		 <input type='button' id='check' value='submit'>
