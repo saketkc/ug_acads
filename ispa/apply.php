@@ -44,7 +44,7 @@ session_start();
 
     <script>
     $(document).ready(function(){
-		$("#info-new").hide();
+	//	$("#info-new").hide();
 		var department = '<?php echo $mydepartment; ?>';
 		var username = '<?php echo $_SESSION['ldap_id'];?>';
 		
@@ -174,9 +174,10 @@ $("#choose-dep").change(function(){
 	});
 	function gridSearch(department)
     {
-		$("#info-new").show();
-        $("#info").hide("");
-        jQuery("#toolbar2").jqGrid({
+	    $('#toolbar').jqGrid('GridUnload');	
+        
+        $('#toolbar').trigger("reloadGrid");
+        jQuery("#toolbar").jqGrid({
 			url:'projects.php?department='+department,
 			datatype: "json",
 			height: 455,
@@ -207,9 +208,11 @@ $("#choose-dep").change(function(){
 	
 	caption: "ISPA Projects"	
 });
-
-jQuery("#toolbar2").jqGrid('navGrid','#ptoolbar2',{del:false,add:false,edit:false,search:false});
-jQuery("#toolbar2").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
+$("#toolbar").trigger("reloadGrid");
+jQuery("#toolbar").jqGrid('navGrid','#ptoolbar2',{del:false,add:false,edit:false,search:false});
+jQuery("#toolbar").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
+ $("#toolbar2").trigger("reloadGrid");
+ 
     }
 	function format(cellvalue, options, rowObject){
 		rowid=options['rowId'];
