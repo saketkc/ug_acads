@@ -34,12 +34,15 @@ function ldap_auth($ldap_id,$ldap_password){
 }
 
 function is_registered($ldap_id){
-	$db = new PDO("mysql:dbname=bookbay;host=localhost", "root", "fedora13" );
 	
-	$query = $db->prepare("SELECT username FROM users WHERE username=?");
-	$query->execute(array($ldap_id));
-	$is_registered = $query->rowCount();
-	$db=null;
+	$db = mysql_connect("localhost", "root", "fedora13") or die("Connection Error: " . mysql_error());
+
+	mysql_select_db("ispa") or die("Error conecting to db.");
+
+	$query = "SELECT ldap_id FROM user_data WHERE ldap_id='$ldap_id'";
+	$result= mysql_query($query);
+	$is_registered = mysql_num_rows($result);
+	
 	return $is_registered;
 }
 
@@ -60,7 +63,7 @@ function ldap_find_all($attribute = 'uid', $value = '*', $baseDn = 'dc=iitb,dc=a
 
 function DepartmentFindAll(){
 	
-	$db = new PDO("mysql:dbname=bookbay;host=localhost", "root", "fedora13" );
+	$db = new PDO("mysql:dbname=$dbname;host=localhost", "$dbuser", "$dbpasswd" );
 	
 	$query = $db->prepare("SELECT value,department from departments ");
 	$query->execute();
@@ -73,7 +76,7 @@ function DepartmentFindAll(){
 
 function register_user($username,$fullname,$department,$email,$alt_email,$year_of_study,$mobile,$hostel,$room)
 {
-	$db = new PDO("mysql:dbname=bookbay;host=localhost", "root", "fedora13" );
+	$db = new PDO("mysql:dbname=$dbname;host=localhost", "$dbuser", "$dbpasswd" );
 	$created_at =date("Y-m-d H:i:s");
 	$query = $db->prepare("INSERT INTO users (username,fullname,department,email,alt_email,year_of_study,mobile,hostel,room,created_at) VALUES (?,?,?,?,?,?,?,?,?,?)");
 	
@@ -95,9 +98,17 @@ function register_user($username,$fullname,$department,$email,$alt_email,$year_o
 }    
 
 function add_new_book($created_by,$name,$semester,$course,$cost,$tags){
-$db = new PDO("mysql:dbname=bookbay;host=localhost", "root", "fedora13" );
+$db = new PDO("mysql:dbname=$dbname;host=localhost", "$dbuser", "$dbpasswd" );
 $query=$db->prepare("INSERT INTO books(created_by,name,semester_used,course,cost,tags) VALUES (?,?,?,?,?,?)");
 $query->execute(array($created_by,$name,$semester,$course,$cost,$tags));
 return true;
 }
+
+function add_new_student_application($username,$department,$preference_1,$preference_2,$preference_3){
+$db = new PDO("mysql:dbname=$dbname;host=localhost", "$dbuser", "$dbpasswd" );
+$query=$db->prepare("INSERT INTO user_data(ldap_id,department) VALUES (?,?)");
+$query->execute(array("username","department"));
+return true;
+}
+
 ?>
