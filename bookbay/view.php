@@ -3,19 +3,7 @@ session_start();
 if (!(isset($_SESSION['ldap_id']))){
 	header("location: index.php");
 }
-require_once("functions.php");
-if (isset($_POST['add'])){
-	$created_by = $_SESSION['ldap_id'];
-	$name = $_POST['name'];
-	$semester = $_POST['semester'];
-	$course_no= $_POST['course'];
-	$cost = $_POST['cost'];
-	$tags = $_POST['tags'];
-	add_new_book($created_by,$name,$semester,$course_no,$cost,$tags);
-	//echo $created_by. $name.$semester.$course_no.$cost.$tags;
-	$message = "Successfully Added Book";
-}
-?>
+?>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -231,59 +219,83 @@ height:50px;
 font-size:20px;
 }
 </style>
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="themes/redmond/jquery-ui-1.8.18.custom.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="themes/ui.jqgrid.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="themes/ui.multiselect.css" />
+    <link rel="stylesheet" href="themes/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/i18n/grid.locale-en.js" type="text/javascript"></script>
+    <script src="js/jquery.jqGrid.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui-custom.min.js" type="text/javascript"></script>
+    
+    <script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
+    <script>
+    $(document).ready(function(){
+		$("a#single_image").fancybox();
+		jQuery("#toolbar").jqGrid({
+   	url:'deleteset.php',
+	datatype: "json",
+	height: 255,
+	width: 600,
+	autowidth: true,
+   	colNames:['Book Name','Semester Used', 'Course', 'Cost','Tags'],
+   	colModel:[
+   		{name:'book_name',index:'book_name', width:100, sorttype:'text'},
+   		
+   		{name:'sem_used',index:'semester_used', width:50, sorttype: 'int'},
+   		{name:'course',index:'course', width:50, sorttype:'text'},
+   		{name:'cost',index:'cost', width:50,sorttyoe:'int'},
+   		{name:'tags',index:'tags', width:100,sorttype:'text'},
+   		
+   		
+   	],
+   	rowNum:50,
+	rowTotal: 2000,
+	rowList : [20,30,50],
+	loadonce:true,
+   	mtype: "GET",
+	rownumbers: true,
+	rownumWidth: 40,
+	gridview: true,
+   	pager: '#ptoolbar',
+   	sortname: 'item_id',
+    viewrecords: true,
+    sortorder: "asc",
+    onSelectRow: function(id){
+		$.ajax({
+  url: 'related_stuff.php?id='+id,
+  success: function(data) {
+    //$('.result').html(data);
+    //alert(
+    //$("#data").show();
+    
+    $("#data").html(data);
+    $("#hidden-href").hide();
+    //alert(data);
+    $("a#single_image").trigger('click');
+    
+  }
+});
+	},
+	
+	caption: "ALL Books(Click on a row to view the contact details)"	
+});
 
-  <script type="text/javascript">
-	  //form validation
-            function validatename(field){
-				if (field =="") 
-				{return "No Name entered. \n";}
-				else{return "";}
-			}
-			function validatesemester(field){
-				if (field =="") {return "No Semester entered. \n";}
-				else if(isNaN(field) {
-				return "Semester should be a number";
-			}
-			else {
-				return "";
-			}
-			}
-			function validatecourse(field){
-				if (field =="") {return "No Course entered. \n";
-			}
-			else{
-				return "";
-			}
-					
-			}
-			function validatecost(field){
-				if (field ==""){ return "No Cost entered. \n";}
-				else if(isNaN(field) {
-				return "Semester should be a number";
-			}
-				else{
-					return "";}
-					
-			}
-			
-			
-			//form validation main program
-            function validate(form)
-            {
-				
-				fail=validatename(form.name.value);
-				fail+=validatesemester(form.semester.value);
-				fail+=validatecourse(form.course.value);
-				fail+=validatecost(form.cost.value);
-				
-				if (fail == "") return true
-				else { alert(fail); return false }
-			}
-	  
-	  
-	  
-            
-        </script>
+jQuery("#toolbar").jqGrid('navGrid','#ptoolbar',{del:false,add:false,edit:false,search:false});
+jQuery("#toolbar").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
+jQuery("#toolbar").showCol('subgrid');
+
+
+	});
+	
+	
+    </script>
+    </head>
+<body>
+	
+	
 </head>
 
 <body>
@@ -298,23 +310,18 @@ font-size:20px;
 </div>
 </div>
 <div id="main1" class="row-fluid">
-<div id="main" class="span10">
-<span id="descrip">To donate workshop tools please send a mail to <a href="mailto:gsecaaug@iitb.ac.in">gsecaaug@iitb.ac.in</a><br/><?php echo $message?><br/></span>
 
+<table id="toolbar"></table>
+<div id="ptoolbar" ></div>
+<a id="single_image" href="#data"></a>
 
+<div id="hidden-href">
+<div id="data"></div>
 
-<form method="POST" action="add.php" name="form2" class="formed"><table>
-<span id="main2">
-<tr><td><span id ="label">Book name<span id="comment"> (Eg. "Introduction to Economics - Samuelson")</span></span></td><td> <input type="text" name="name" /></td></tr>
-<tr><td><span id="label">Semester<span id="comment">Eg. "1"</span></span></td><td><input type="text" name="semester" /></td></tr>
-<tr><td><span id="label">Course<span id="comment">Eg. "HS101"</span></span></td><td><input type="text" name="course" /></td></tr>
-<tr><td><span id="label">Cost<span id="comment">Eg. "50"; Enter "0" for donating the book</span></span></td><td><input type="text" name="cost" /></td></tr>
-
-<tr><td><span id="label">Tags<span id="comment">Eg. "Economics","Samuelson"</span></span></td><td><input type="text" name="tags" /></td></tr>
-</span>
-<tr><td><input type="submit" class="button" name='add' value="Add" onClick="return validate(form2)" id="addbutton"/></td><tr></table>
-</form>
 </div>
+
+
+
 
 </div>
 
@@ -350,9 +357,6 @@ bookBay © 2012. All rights reserved
 </div>
 
 
+
 </body>
-
-
-
-
 </html>

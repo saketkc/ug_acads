@@ -9,9 +9,10 @@ else {
 require_once("connect.php");
 if(isset($_GET['er']))
 {
-	if($_GET['er'] == "voted" ) { $error= "Sorry, you cannot vote multiple times." ;}
+	if($_GET['er'] == "loginfailed" ) { $error= "Login Failed" ;}
 	if($_GET['er'] == "wrong" ) { $error= "Invalid Roll no. or password" ;}
 	if($_GET['er'] == "complete" ) { $error= "Voted! " ;}
+	
 }
 if(isset($_GET['logout'])){
 	
@@ -161,9 +162,9 @@ body{
 <div id="login">
 <h3>Login to bookBay</h3>
 <form method="POST" action="login.php">
-<input type="text" name="username" value="LDAP ID"/><br />
-<input type="password" name="password"  value="Password"/><br />
-
+<input type="text" name="username" placeholder="LDAP ID"/><br />
+<input type="password" name="password"  placeholder="Password"/><br />
+<?php echo $error?><br/>
 <input type="submit" class="button" value="Login" />
 </form>
 </div>
