@@ -44,7 +44,7 @@ session_start();
 
     <script>
     $(document).ready(function(){
-	//	$("#info-new").hide();
+	$("a#single_image").fancybox();
 		var department = '<?php echo $mydepartment; ?>';
 		var username = '<?php echo $_SESSION['ldap_id'];?>';
 		
@@ -134,30 +134,42 @@ session_start();
 			height: 455,
 			width: 700,
 			autowidth: true,
-			colNames:['Prof. Name','Title ', 'Description','Eligibility','Apply'],
+			colNames:['Prof. Name','Project Title ', 'Project Description','Eligibility Criteria','Preference'],
 			colModel:[
 					
-					{name:'prof_name',index:'prof_name', width:65, sorttype:'text'},
+					{name:'prof_name',index:'prof_name', width:35, sorttype:'text'},
 					{name:'title',index:'title', width:50, sorttype: 'text'},
 					{name:'description',index:'description', width:100},
 					{name:'eligibility',index:'eligibility', width:100},
-					{name:'apply',index:'apply', width:10,formatter:format}
+					{name:'apply',index:'apply', width:25,formatter:format}
 				],
 			rowNum:50,
 			rowTotal: 2000,
 			rowList : [20,30,50],
 			loadonce:true,
 			mtype: "GET",
-			rownumbers: true,
-			rownumWidth: 40,
+			ignoreCase:true,
 			gridview: true,
 			pager: '#ptoolbar',
 			sortname: 'prof_name',
 			viewrecords: true,
 			sortorder: "asc",
+			onSelectRow: function(id){
+		$.ajax({
+  url: 'expanded.php?id='+id,
+  success: function(data) {
+   
+    $("#data").html(data);
+    $("#hidden-href").hide();
+    
+    $("a#single_image").trigger('click');
+    
+  }
+});
+	},
 			
 	
-	caption: "ISPA Projects"	
+	caption: "ISPA Projects(CLick on a row to expand)"	
 });
 
 jQuery("#toolbar").jqGrid('navGrid','#ptoolbar',{del:false,add:false,edit:false,search:false});
@@ -177,41 +189,55 @@ $("#choose-dep").change(function(){
 	    $('#toolbar').jqGrid('GridUnload');	
         
         $('#toolbar').trigger("reloadGrid");
-        jQuery("#toolbar").jqGrid({
+       jQuery("#toolbar").jqGrid({
 			url:'projects.php?department='+department,
 			datatype: "json",
 			height: 455,
 			width: 700,
-			autowidth:true,
-			colNames:['Prof. Name','Title ', 'Description','Eligibility','Apply'],
+			autowidth: true,
+			colNames:['Prof. Name','Project Title ', 'Project Description','Eligibility Criteria','Preference'],
 			colModel:[
 					
-					{name:'prof_name',index:'prof_name', width:65, sorttype:'text'},
+					{name:'prof_name',index:'prof_name', width:35, sorttype:'text'},
 					{name:'title',index:'title', width:50, sorttype: 'text'},
 					{name:'description',index:'description', width:100},
 					{name:'eligibility',index:'eligibility', width:100},
-					{name:'apply',index:'apply', width:10,formatter:format}
+					{name:'apply',index:'apply', width:25,formatter:format}
 				],
 			rowNum:50,
 			rowTotal: 2000,
 			rowList : [20,30,50],
 			loadonce:true,
 			mtype: "GET",
-			rownumbers: true,
-			rownumWidth: 40,
+			ignoreCase:true,
 			gridview: true,
 			pager: '#ptoolbar',
 			sortname: 'prof_name',
 			viewrecords: true,
 			sortorder: "asc",
+			onSelectRow: function(id){
+		$.ajax({
+  url: 'expanded.php?id='+id,
+  success: function(data) {
+
+    
+    $("#data").html(data);
+    $("#hidden-href").hide();
+    
+    $("a#single_image").trigger('click');
+    
+  }
+});
+	},
 			
 	
-	caption: "ISPA Projects"	
+	caption: "ISPA Projects(CLick on a row to expand)"	
 });
+
 $("#toolbar").trigger("reloadGrid");
 jQuery("#toolbar").jqGrid('navGrid','#ptoolbar2',{del:false,add:false,edit:false,search:false});
 jQuery("#toolbar").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
- $("#toolbar2").trigger("reloadGrid");
+ 
  
     }
 	function format(cellvalue, options, rowObject){
@@ -293,13 +319,17 @@ echo "</select>";
 <table id="toolbar"></table>
 <div id="ptoolbar" ></div>
 </div>
-<div id="info-new">
-<table id="toolbar2"></table>
-<div id="ptoolbar2" ></div>
+
+<a id="single_image" href="#data"></a>
+
+<div id="hidden-href">
+<div id="data"></div>
+
 </div>
 
 
-		 <input type='button' id='check' value='submit'>
+
+		 <input style="margin-left:50%;" type='button' class="btn btn-primary btn-large" id='check' value='Submit'>
 		</div>
 		
     

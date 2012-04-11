@@ -52,13 +52,13 @@ else{
 			 <fieldset>
 				 
 			 <form method="POST" action="login.php">
-				 <table>
+				 <table style="font-size:16px;margin-left:40px;">
 		<tr>	<td>LDAP ID:</td> <td><input type='text' name='username'></td></tr>
-<tr><td>Password</td> <td><input type='password' name='password'></td></tr>
+<tr><td>Password: </td> <td><input type='password' name='password'></td></tr>
 <?php if (isset($_GET['failed'])) {
 	echo "<tr><td>LDAP ID and Password Don't Match</td></tr>";
 }?>
-<tr><td><td><input type='submit' name='login' value='Login'></td></td></tr>
+<tr><td><td><input type='submit' class="btn btn-primary btn-large" name='login' value='Login'></td></td></tr>
 </table>
 </form>
 </fieldset>

@@ -27,16 +27,16 @@ session_start();
 		  </ul>
 		 <div class="row-fluid"> 
          <div class="contenthome1 span8">
-		 <p style="font-size:17px; line-height:25px; text-indent:10%;">Society for Promotion of Undergraduate Research (SPUR) has been formed as an initiative of the General Secretary of Academic Affairs '12-'13.</br> 
-		 The first initiative of SPUR is the Institute Summer Project Allocation (ISPA). </br>
-		 <ul style="font-size:17px; line-height:25px; list-style:square;">
+		 <p style="font-size:15px;">&nbsp;&nbsp;&nbsp;Society for Promotion of Undergraduate Research (SPUR) has been &nbsp;&nbsp;formed as an initiative of the General Secretary of Academic Affairs &nbsp;&nbsp;'12-'13.<br/><br/> 
+		 &nbsp;&nbsp;The first initiative of SPUR is the Institute Summer Project Allocation &nbsp;&nbsp; (ISPA). <br/><br/>
+		 <ul style="font-size:15px; list-style:square;">
 		 <li>Professors from all the Departments are being approached for floating projects for second year and first year students (primarily second year students).</li></br>
 		 <li>There will be a central online portal on which project details from all Departments will be put up.</li></br>
 		 <li>Students will login with their LDAP ID on the portal and will be asked to fill their preferences.</li></br>
 		 <li>Interviews will be later fixed with the respective Professors and projects will be allocated to the students selected by the Professors</li></p>
 		 </ul>
 		 </div>
-		 <div class="contenthome2 span4" style="font-size:17px; line-height:25px; text-align:center; padding-top:20px;"><h2>Updates</h2><br>
+		 <div class="contenthome2 span4" style="font-size:15px;  text-align:center; padding-top:20px;"><h2>Updates</h2><br>
 		 Summer project allocation list for Electrical Engineering Department is been declared.</br><a href="login.php">Click here to apply</a></div>
 		</div>
 		</div>
