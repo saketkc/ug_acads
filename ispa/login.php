@@ -7,7 +7,12 @@ if (isset($_POST['login'])){
 
 	if(ldap_auth($username,$password)){
 	$_SESSION['ldap_id']=$username;
+	if (!(is_registered($username))){
+	header("location: register.php");
+}
+else{
 	header("location: apply.php");
+}
 }
 	else {
 		header("location: login.php?failed=true");

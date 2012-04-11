@@ -4,6 +4,10 @@ require_once("functions.php");
 if (!(isset($_SESSION['ldap_id']))){
 	header ("location: index.php");
 }
+if (!(is_registered($_SESSION['ldap_id'])){
+	//header("location: register.php?redirect=apply.php");
+	echo "login at <a href="/register.php">here</a>";
+}
 $username = $_SESSION['ldap_id'];
 $department = $_POST['department'];
 $preference_1= $_POST['preference_1'];

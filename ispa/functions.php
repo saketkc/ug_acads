@@ -39,7 +39,7 @@ function is_registered($ldap_id){
 
 	mysql_select_db("ispa") or die("Error conecting to db.");
 
-	$query = "SELECT ldap_id FROM user_data WHERE ldap_id='$ldap_id'";
+	$query = "SELECT username FROM registered_users_for_project WHERE username='$ldap_id'";
 	$result= mysql_query($query);
 	$is_registered = mysql_num_rows($result);
 	
@@ -76,9 +76,16 @@ function DepartmentFindAll(){
 
 function register_user($username,$fullname,$department,$email,$alt_email,$year_of_study,$mobile,$hostel,$room)
 {
-	$db = new PDO("mysql:dbname=$dbname;host=localhost", "$dbuser", "$dbpasswd" );
+	/*$db = new PDO("mysql:dbname=ispa;host=localhost", "root", "fedora13" );
 	$created_at =date("Y-m-d H:i:s");
-	$query = $db->prepare("INSERT INTO users (username,fullname,department,email,alt_email,year_of_study,mobile,hostel,room,created_at) VALUES (?,?,?,?,?,?,?,?,?,?)");
+	$query = $db->prepare("INSERT INTO registered_users_for_project (username,fullname,department,email,alt_email,year_of_study,mobile,hostel,room) VALUES (?,?,?,?,?,?,?,?,?)");
+	*/
+	$db = mysql_connect("localhost", "root", "fedora13") or die("Connection Error: " . mysql_error());
+
+	mysql_select_db("ispa") or die("Error conecting to db.");
+
+	$query = "INSERT INTO registered_users_for_project (username,fullname,department,email,alt_email,year_of_study,mobile,hostel,room) VALUES ('$username','$fullname','$department','$email','$alt_email','$year_of_study','$mobile','$hostel','$room')";
+	$result= mysql_query($query);
 	
 	/*$query->bindParam(':username',$username);
 	$query->bindParam(':fullname',$fullname);
@@ -89,7 +96,7 @@ function register_user($username,$fullname,$department,$email,$alt_email,$year_o
 	$query->bindParam(':mobile',$mobile);
 	$query->bindParam(':hostel',$hostel);
 	$query->bindParam(':room',$room);*/
-	$query->execute(array($username,$fullname,$department,$email,$alt_email,$year_of_study,$mobile,$hostel,$room,$created_at));
+	//$query->execute(array($username,$fullname,$department,$email,$alt_email,$year_of_study,$mobile,$hostel,$room));
 //	$db=null;
 	
 	

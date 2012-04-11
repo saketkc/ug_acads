@@ -6,15 +6,12 @@ if (!(isset($_SESSION['ldap_id']))){
 require_once("functions.php");
 if (isset($_POST['register']))
 {
-	//$username=$info[0]['uid'][0];
+
 	$username= $_SESSION['ldap_id'];//$_POST['username'];
-	//$_SESSION['ldap_id']= $username;
-	
 	$fullname = $_POST['fullname'];
 	$email = $_POST['email'];
 	$alt_email = $_POST['altemail'];
 	$department = $_POST['department'];
-	print_r($department);
 	$year_of_study = $_POST['year'];
 	$mobile = $_POST['mobile'];
 	$hostel = $_POST['hostel'];
@@ -22,10 +19,11 @@ if (isset($_POST['register']))
 	if (!(is_registered($username)))
 	{
 		register_user($username,$fullname,$department,$email,$alt_email,$year_of_study,$mobile,$hostel,$room);
+		//header("location: apply.php");
 	}
 	else 
 	{
-		
+		//header("location:apply.php");
 	}
 	
 }
