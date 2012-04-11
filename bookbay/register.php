@@ -123,8 +123,8 @@ ul#navigation .add a      {
 ul#navigation .search a      {
     background-image: url(img/search.png);
 }
-ul#navigation .contactus a      {
-    background-image: url(img/contactus.png);
+ul#navigation .delete a      {
+    background-image: url(img/delete.png);
 }
 ul#navigation .logout a   {
     background-image: url(img/logout.png);
@@ -247,7 +247,6 @@ line-height:50px;
 <div class="span11" id="outer">
 <h1 id="logo"><a href="#"><img src="img/title1.png" /></a></h1>
 </div>
-<div id ="right"><a href="#"><img src="img/iitb_logo.gif"></a></div>
 </div>
 <div id="main1" class="row-fluid">
 <div id="main" class="formed">
@@ -306,9 +305,11 @@ foreach ($alldepartments as $key=>$value){
 
  <ul id="navigation">
           
-            <li class="add"><a href="" title="Add"></a></li>
-            <li class="search"><a href="" title="Search"></a></li>
+            <li class="add"><a href="" title="Add Books"></a></li>
+            <li class="search"><a href="" title="Search Books"></a></li>
             
+            <li class="delete"><a href="" title="Delete books"></a></li>
+        
             <li class="logout"><a href="" title="Log Out"></a></li>
         
         </ul>
@@ -322,9 +323,10 @@ foreach ($alldepartments as $key=>$value){
 <div class="row-fluid" id="footbar">
 <div class="span5" id="about">
 <h3>About bookBay</h3>
-Buy and sell your old books online with bookBay. You can search the books according to semester as well acording to the book titles as well.
+Buy and sell your old books online with bookBay. You can search the books according to semester as well as according to the book titles as well.
 </div>
 <div class="listing" id="links">
+<a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="img/iitb_logo1.jpg"><span id="qwer">  IIT Bombay UG Academics</span></a>
 </div>
 </div>
 <div class="row-fluid" id="footer">

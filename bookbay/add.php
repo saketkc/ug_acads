@@ -93,8 +93,8 @@ ul#navigation .add a      {
 ul#navigation .search a      {
     background-image: url(img/search.png);
 }
-ul#navigation .contactus a      {
-    background-image: url(img/contactus.png);
+ul#navigation .delete a      {
+    background-image: url(img/delete.png);
 }
 ul#navigation .logout a   {
     background-image: url(img/logout.png);
@@ -123,7 +123,7 @@ body{
 	padding-left:5%;
 }
 #toppest{
-	height:9px;
+	fdsfdsfdsfdsfsfdsheight:9px;
 	background-image:url(img/1.jpg);
 	margin:-10px;
 	width:100%
@@ -194,8 +194,41 @@ body{
 font-size:36px;
 line-height:50px;
 }
-
-
+.formed{
+	font-size:75%;
+line-height:2em;
+}
+#descrip{
+	font-size:20px;
+line-height:.5em;
+}
+#comment{
+color:#666666;
+display:block;
+font-size:14px;
+font-weight:normal;
+text-align:right;
+width:200px;
+}
+#label{
+	display:block;
+	text-align:right;
+	float:left;
+line-height:.8em;
+}
+#main input{
+float:left;
+font-size:24px;
+padding:4px 2px;
+border:solid 1px #aacfe4;
+width:100%;
+margin:2px 0 20px 10px;
+height:47px;
+}
+#addbutton{
+height:50px;
+font-size:20px;
+}
 </style>
 </head>
 
@@ -212,24 +245,27 @@ line-height:50px;
 </div>
 <div id="main1" class="row-fluid">
 <div id="main" class="span10">
-<form method="POST" action="add.php" name="form2">
-Book name: <input type="text" name="name" /><br />
-Semester: <input type="text" name="semester" /><br />
-Course: <input type="text" name="course" /><br />
-Cost: <input type="text" name="cost" /><br />
+<span id="descrip">To donate workshop tools please send a mail to <a href="mailto:gsecaaug@iitb.ac.in">gsecaaug@iitb.ac.in</a></span>
+</br><form method="POST" action="add.php" name="form2" class="formed"><table>
+<span id="main2">
+<tr><td><span id ="label">Book name<span id="comment"> (Eg. "Introduction to Economics - Samuelson")</span></span></td><td> <input type="text" name="name" /></td></tr>
+<tr><td><span id="label">Semester<span id="comment">Eg. "1"</span></span></td><td><input type="text" name="semester" /></td></tr>
+<tr><td><span id="label">Course<span id="comment">Eg. "HS101"</span></span></td><td><input type="text" name="course" /></td></tr>
+<tr><td><span id="label">Cost<span id="comment">Eg. "50"; Enter "0" for donating the book</span></span></td><td><input type="text" name="cost" /></td></tr>
 
-Tags: <input type="text" name="tags" /><br />
-<input type="submit" class="button" name='add' value="Add" onClick="return validate(form2)"/>
+<tr><td><span id="label">Tags<span id="comment">Eg. "Economics","Samuelson"</span></span></td><td><input type="text" name="tags" /></td></tr>
+</span>
+<tr><td><input type="submit" class="button" name='add' value="Add" onClick="return validate(form2)" id="addbutton"/></td><tr></table>
 </form>
 </div>
 
 </div>
 
  <ul id="navigation">
-            <li class="home"><a href="#" title="Home"></a></li>
-            <li class="add"><a href="add.php" title="Add"></a></li>
-            <li class="search"><a href="view.php" title="Search"></a></li>
-            <li class="contactus"><a href="" title="Contact Us"></a></li>
+           
+            <li class="add"><a href="add.php" title="Add Books"></a></li>
+            <li class="search"><a href="view.php" title="Search books"></a></li>
+            <li class="delete"><a href="view.php" title="Delete books"></a></li>
             <li class="logout"><a href="index.php?logout=true" title="Log Out"></a></li>
         
         </ul>
@@ -243,9 +279,10 @@ Tags: <input type="text" name="tags" /><br />
 <div class="row-fluid" id="footbar">
 <div class="span5" id="about">
 <h3>About bookBay</h3>
-Buy and sell your old books online with bookBay. You can search the books according to semester as well acording to the Book Titles as well.
+Buy and sell your old books online with bookBay. You can search the books according to semester as well as according to the book titles as well.
 </div>
 <div class="listing" id="links">
+<a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="img/iitb_logo1.jpg"><span id="qwer">  IIT Bombay UG Academics</span></a>
 </div>
 </div>
 <div class="row-fluid" id="footer">
