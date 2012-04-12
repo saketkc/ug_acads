@@ -6,15 +6,12 @@ if (!(isset($_SESSION['ldap_id']))){
 require_once("functions.php");
 if (isset($_POST['register']))
 {
-	//$username=$info[0]['uid'][0];
+
 	$username= $_SESSION['ldap_id'];//$_POST['username'];
-	//$_SESSION['ldap_id']= $username;
-	
 	$fullname = $_POST['fullname'];
 	$email = $_POST['email'];
 	$alt_email = $_POST['altemail'];
 	$department = $_POST['department'];
-	print_r($department);
 	$year_of_study = $_POST['year'];
 	$mobile = $_POST['mobile'];
 	$hostel = $_POST['hostel'];
@@ -22,10 +19,11 @@ if (isset($_POST['register']))
 	if (!(is_registered($username)))
 	{
 		register_user($username,$fullname,$department,$email,$alt_email,$year_of_study,$mobile,$hostel,$room);
+		//header("location: apply.php");
 	}
 	else 
 	{
-		
+		//header("location:apply.php");
 	}
 	
 }
@@ -123,8 +121,8 @@ ul#navigation .add a      {
 ul#navigation .search a      {
     background-image: url(img/search.png);
 }
-ul#navigation .contactus a      {
-    background-image: url(img/contactus.png);
+ul#navigation .delete a      {
+    background-image: url(img/delete.png);
 }
 ul#navigation .logout a   {
     background-image: url(img/logout.png);
@@ -305,9 +303,11 @@ foreach ($alldepartments as $key=>$value){
 
  <ul id="navigation">
           
-            <li class="add"><a href="" title="Add"></a></li>
-            <li class="search"><a href="" title="Search"></a></li>
+            <li class="add"><a href="" title="Add Books"></a></li>
+            <li class="search"><a href="" title="Search Books"></a></li>
             
+            <li class="delete"><a href="" title="Delete books"></a></li>
+        
             <li class="logout"><a href="" title="Log Out"></a></li>
         
         </ul>

@@ -13,6 +13,7 @@ if (isset($_POST['add'])){
 	$tags = $_POST['tags'];
 	add_new_book($created_by,$name,$semester,$course_no,$cost,$tags);
 	//echo $created_by. $name.$semester.$course_no.$cost.$tags;
+	$message = "Successfully Added Book";
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -230,6 +231,60 @@ height:50px;
 font-size:20px;
 }
 </style>
+
+  <script type="text/javascript">
+	  //form validation
+            function validatename(field){
+				if (field =="") 
+				{
+					return "No Name entered. \n";}
+				else{return "";}
+			}
+			function validatesemester(field){
+				if (field =="") {return "No Semester entered. \n";}
+				else if(isNaN(field)) {
+				return "Semester should be a number";
+			}
+			else {
+				return "";
+			}
+			}
+			function validatecourse(field){
+				if (field =="") {return "No Course entered. \n";
+			}
+			else{
+				return "";
+			}
+					
+			}
+			function validatecost(field){
+				if (field ==""){ return "No Cost entered. \n";}
+				else if(isNaN(field)) {
+				return "Semester should be a number";
+			}
+				else{
+					return "";}
+					
+			}
+			
+			
+			//form validation main program
+            function validate(form)
+            {
+				
+				fail=validatename(form.name.value);
+				fail+=validatesemester(form.semester.value);
+				fail+=validatecourse(form.course.value);
+				fail+=validatecost(form.cost.value);
+				
+				if (fail == "") return true
+				else { alert(fail); return false }
+			}
+	  
+	  
+	  
+            
+        </script>
 </head>
 
 <body>
@@ -245,8 +300,11 @@ font-size:20px;
 </div>
 <div id="main1" class="row-fluid">
 <div id="main" class="span10">
-<span id="descrip">To donate workshop tools please send a mail to <a href="mailto:gsecaaug@iitb.ac.in">gsecaaug@iitb.ac.in</a></span>
-</br><form method="POST" action="add.php" name="form2" class="formed"><table>
+<span id="descrip">To donate workshop tools please send a mail to <a href="mailto:gsecaaug@iitb.ac.in">gsecaaug@iitb.ac.in</a><br/><?php echo $message?><br/></span>
+
+
+
+<form method="POST" action="add.php" name="form2" class="formed"><table>
 <span id="main2">
 <tr><td><span id ="label">Book name<span id="comment"> (Eg. "Introduction to Economics - Samuelson")</span></span></td><td> <input type="text" name="name" /></td></tr>
 <tr><td><span id="label">Semester<span id="comment">Eg. "1"</span></span></td><td><input type="text" name="semester" /></td></tr>
@@ -265,7 +323,7 @@ font-size:20px;
            
             <li class="add"><a href="add.php" title="Add Books"></a></li>
             <li class="search"><a href="view.php" title="Search books"></a></li>
-            <li class="delete"><a href="view.php" title="Delete books"></a></li>
+            <li class="delete"><a href="delete.php" title="Delete books"></a></li>
             <li class="logout"><a href="index.php?logout=true" title="Log Out"></a></li>
         
         </ul>
@@ -293,42 +351,6 @@ bookBay © 2012. All rights reserved
 </div>
 
 
-  <script type="text/javascript">
-	  //form validation
-            function validatename(field){
-				if (field =="") return "No Name entered. \n"
-				return ""
-			}
-			function validatesemester(field){
-				if (field =="") return "No Semester entered. \n"
-				return ""
-			}
-			function validatecourse(field){
-				if (field =="") return "No Course entered. \n"
-				return ""
-					
-			}
-			function validatecost(field){
-				if (field =="") return "No Cost entered. \n"
-					return ""
-			}
-			
-			
-			//form validation main program
-            function validate(form)
-            {
-				fail==validatename(form.name.value)
-				fail+=validatesemester(form.semester.value)
-				fail+=validatecourse(form.course.value)
-				fail+=validatecost(form.cost.value)
-				if (fail == "") return true
-				else { alert(fail); return false }
-			}
-	  
-	  
-	  
-            
-        </script>
 </body>
 
 
