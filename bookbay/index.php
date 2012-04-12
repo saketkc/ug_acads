@@ -171,7 +171,7 @@ body{
 <div id="login_about">
 Login with your LDAP ID and,
 Sell/Donate your old books from previous semester within the campus.</br>
-Buy used books from students who studied them in previous semester.
+Buy used books from students who used them in previous semester.
 </div>
 
 </div>
