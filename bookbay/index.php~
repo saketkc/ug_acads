@@ -191,7 +191,7 @@ Buy used books from students who studied them in previous semester.
 Buy and sell your old books online with bookBay. You can search the books according to semester and according to the book titles as well.
 </div>
 <div class="listing" id="links">
-<a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="img/iitb_logo1.jpg"><span id="qwer">  IIT Bombay UG Academics</span></a>
+<a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="img/logo.jpg"><span id="qwer">  IIT Bombay UG Academics</span></a>
 </div>
 </div>
 <div class="row-fluid" id="footer">
