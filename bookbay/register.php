@@ -321,7 +321,7 @@ foreach ($alldepartments as $key=>$value){
 <div class="row-fluid" id="footbar">
 <div class="span5" id="about">
 <h3>About bookBay</h3>
-Buy and sell your old books online with bookBay. You can search the books according to semester as well as according to the book titles as well.
+Buy and sell your old books online with bookBay. You can search the books according to semester as well as according to the book titles.
 </div>
 <div class="listing" id="links">
 <a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="img/logo.jpg"><span id="qwer">  IIT Bombay UG Academics</span></a>
