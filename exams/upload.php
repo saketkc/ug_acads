@@ -13,9 +13,6 @@ if ((isset($_POST['info']))){
 
 	$prof_name= $_POST['prof-name'];
 	$course_code = $_POST['course-code'];
-	$course_code = str_replace('"',$course_code);
-	
-	$course_code = str_replace(' ',$course_code);
 	$department = $_POST['department'];
 	$yearofexam= $_POST['yearofexam'];
 	$yearofstudy = $_POST['yearofstudy'];

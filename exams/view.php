@@ -51,14 +51,15 @@ require_once("functions.php");
 			height: 455,
 			width: 700,
 			autowidth: true,
-			colNames:['Prof. Name', 'Course Code','Type','Year','Download'],
+			colNames:['Prof. Name', 'Course Code','Type','Year','Exam Paper','Consent Letter'],
 			colModel:[
 					
 					{name:'prof_name',index:'prof_name', width:35, sorttype:'text'},
 					{name:'course_code',index:'course_code', width:50, sorttype: 'text'},
 					{name:'type',index:'type', width:100},
 					{name:'year',index:'year', width:100},
-					{name:'download',index:'download', width:25,formatter:format}
+					{name:'download',index:'download', width:25,formatter:format},
+					{name:'consentdownload',index:'consentdownload', width:25,formatter:consentformat}
 				],
 			rowNum:50,
 			rowTotal: 2000,
@@ -107,19 +108,20 @@ $("#choose-dep").change(function(){
         
         $('#toolbar').trigger("reloadGrid");
        jQuery("#toolbar").jqGrid({
-			url:'alldata?department='+department,
+			url:'alldata.php?department='+department,
 			datatype: "json",
 			height: 455,
 			width: 700,
 			autowidth: true,
-			colNames:['Prof. Name', 'Course Code','Type','Year','Download'],
+			colNames:['Prof. Name', 'Course Code','Type','Year','Exam Paper','Consent Letter'],
 			colModel:[
 					
 					{name:'prof_name',index:'prof_name', width:35, sorttype:'text'},
 					{name:'course_code',index:'course_code', width:50, sorttype: 'text'},
 					{name:'type',index:'type', width:100},
 					{name:'year',index:'year', width:100},
-					{name:'download',index:'download', width:25,formatter:format}
+					{name:'download',index:'download', width:25,formatter:format},
+					{name:'consentdownload',index:'consentdownload', width:25,formatter:consentformat}
 				],
 			rowNum:50,
 			rowTotal: 2000,
@@ -159,8 +161,28 @@ jQuery("#toolbar").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : fa
     }
 	function format(cellvalue, options, rowObject){
 		rowid=options['rowId'];
-		alert(rowid);
-		return "<input type='button' name='file-"+rowid+"' value='Download' class ='download' onClick='download(" + rowid + ")'>";
+//		alert(rowid);	
+if(cellvalue="pdf"){
+return "<a href='download.php?id="+rowid+"'>Download</a>";
+	}
+	else {
+		return "<a href='downloadimg.php?id="+rowid+"'>Download</a>";
+	}
+	
+	//	return "<input type='button' name='file-"+rowid+"' value='Download' class ='download' onClick='download(" + rowid + ")'>";
+	}
+	function consentformat(cellvalue, options, rowObject){
+		rowid=options['rowId'];
+//		alert(rowid);	
+
+if(cellvalue=="pdf"){
+return "<a href='consentdownload.php?id="+rowid+"'>Download</a>";
+}
+else {
+		return "<a href='consentdownloadimg.php?id="+rowid+"'>Download</a>";
+	}
+		
+		//return "<input type='button' name='file-"+rowid+"' value='Download' class ='download' onClick='download(" + rowid + ")'>";
 	}
 	
 	function download(rowid){
@@ -168,8 +190,6 @@ jQuery("#toolbar").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : fa
 			type: "GET",
 			url: "download.php",
 			data: "id="+rowid
-			}).done(function( msg ) {
-				alert( "Data Saved: " + msg );
 			});
 	}
 	

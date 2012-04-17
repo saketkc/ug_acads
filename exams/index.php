@@ -4,12 +4,11 @@ require_once("functions.php");
 if (isset($_POST['login'])){
 	$username=$_POST['username'];
 	$password=$_POST['password'];
-	echo $username;
-	echo $password;
+	
 	if($username=="localhost" && $password=="thisisit"){
-		$_SESSION['admin']=$username;
+		$_SESSION['admin']="localhost";
 		
-		header("location: upload.php");
+		header("location: fill.php");
 	}
 	else 
 

@@ -8,7 +8,7 @@ $alldepartments =  DepartmentFindAll();
 <html>
 	<head>
 <title>Paper Info</title>
-<form method="POST" action="upload.php">
+<form method="POST" action="myupload.php">
 	<table>
 		<tr><td>Prof.Name</td><td><input type='text' name='prof-name'></td></tr>
 		<tr><td>Course Code</td><td><input type='text' name='course-code'></td></tr>
@@ -30,7 +30,7 @@ foreach ($alldepartments as $key=>$value){
 
 </select></td></tr>
 <tr><td>Type</td><td><select name='exam-type'><option value='quiz'>Quiz</option><option value='midesem'>MidSem</option><option value='endsem'>Endsem</option></select></td></tr>
-<tr><td>Applicable to[First/Second/Third/Fourth/All Year Students</td><td><select name="yearofstudy"><option value='1'>1</option><option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='all'>All</option></select></td></tr>
+
 <tr><td>Year of Examination</td><td><select name='yearofexam'>
 <option value='2001'>2001</option>
 <option value='2002'>2002</option>
