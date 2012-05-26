@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Netbeans
+Comment=Netbeans IDE
+Exec=/home/amit/netbeans-7.1.2/bin/netbeans
+Icon=/home/amit/netbeans-7.1.2/nb/netbeans.png
+Terminal=false
+Type=Application
+Categories=Development,IDE;
+StartupNotify=false
