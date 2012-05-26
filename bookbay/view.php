@@ -285,7 +285,7 @@ font-size:20px;
 
 jQuery("#toolbar").jqGrid('navGrid','#ptoolbar',{del:false,add:false,edit:false,search:false});
 jQuery("#toolbar").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : false});
-jQuery("#toolbar").showCol('subgrid');
+//jQuery("#toolbar").showCol('subgrid');
 
 
 	});
