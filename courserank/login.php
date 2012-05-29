@@ -12,14 +12,9 @@ if ($ldap_id!="" && $ldap_id!="")
 {
 if (ldap_auth($ldap_id,$ldap_password)){
 	$_SESSION['ldap_id'] = $ldap_id;
-	if (is_registered($ldap_id))
-	{
-		$_SESSION['registered']=$ldap_id;
-		header("location:main.php");
-	}
-	else {
+	
 		header("location: main.php");
-	}
+	
 	
 	
 }

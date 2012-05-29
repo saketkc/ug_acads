@@ -32,7 +32,7 @@ $inst = str_replace('"', '', $inst);
 $d1 = str_replace('"', '', $d1);
 $d2 = str_replace('"', '', $d2);             
              
-            $query = "INSERT INTO table1 VALUES" .
+            $query = "INSERT INTO reviews VALUES" .
 		"(NULL,'$deptt', '$cno', '$cna', '$inst', '$author', '$d1', '$d2')";
 
             if (!mysql_query($query, $db_server))

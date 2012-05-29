@@ -34,7 +34,7 @@ $d1 = str_replace('"', '', $d1);
 $d2 = str_replace('"', '', $d2);
              
 
-            $query = "INSERT INTO table1 VALUES" .
+            $query = "INSERT INTO reviews VALUES" .
 		"(NULL,'$deptt', '$cno', '$cna', '$inst', '$author', '$d1', '$d2')";
 
             if (!mysql_query($query, $db_server))
@@ -78,8 +78,7 @@ $d2 = str_replace('"', '', $d2);
 				if (field ==""){ return "No Course Number entered. \n";}
 				else if(isNaN(field)) {
 				return "Course Number should be a number.";
-			} else if(field%1000!=field)
-                            {return "Course Number should be three digits."}
+			} 
 				else{
 					return "";}
 					

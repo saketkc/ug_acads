@@ -18,7 +18,7 @@ if (!(isset($_SESSION['ldap_id']))){
     
 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 $start_from = ($page-1) * 5;
-$sql = "SELECT * FROM table1 WHERE Deptt='$dep' AND CourseNumber=$code ORDER BY id DESC LIMIT $start_from, 5";
+$sql = "SELECT * FROM reviews WHERE Deptt='$dep' AND CourseNumber=$code ORDER BY id DESC LIMIT $start_from, 5";
 $rs_result = mysql_query ($sql);
 ?>
 
