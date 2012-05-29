@@ -105,11 +105,17 @@ $rs_result = mysql_query ($sql);
                     <dt>Course Name</dt><dd><? echo $row["CourseName"]; ?></dd>
                     <dt>Instructor's Name</dt><dd><? echo $row["Instructor"]; ?></dd>
                     <br>
-                    <dt>Description 1</dt><dd><? echo $row["d1"]; ?></dd>
-                    <br>
-                    <dt>Description 2</dt><dd><? echo $row["d2"]; ?></dd>
-                    <hr>
+                    <dt>What he/she learned at the end of the course</dt><dd><? echo $row["d1"]; ?></dd>
+                    <br><hr>
+                    <dt>How the course load was</dt><dd><? echo $row["d2"]; ?></dd>
+                    <br><hr>
+                    <dt>How the Instructor was</dt><dd><? echo $row["d3"]; ?></dd>
+                    <br><hr>
+                    <dt>How the difficulty level was</dt><dd><? echo $row["d4"]; ?></dd>
+                    <br><hr>
                     <dt>Review written by</dt><dd><? echo $row["Author"]; ?></dd>
+                    <dt>Date of review</dt><dd><? echo $row["date"]; ?></dd>
+                    
                 </dl>
             </div>
             <div id="separation" class="span8"></div>
@@ -119,7 +125,7 @@ $rs_result = mysql_query ($sql);
             
             <div class="span8" id="navbar">
                 <?php
-$sql = "SELECT COUNT(ID) FROM table1";
+$sql = "SELECT COUNT(ID) FROM reviews";
 $rs_result = mysql_query($sql);
 $row = mysql_fetch_row($rs_result);
 $total_records = $row[0];

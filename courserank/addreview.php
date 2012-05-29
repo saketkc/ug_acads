@@ -1,9 +1,9 @@
-
 <?php
 session_start();
 if (!(isset($_SESSION['ldap_id']))){
 	header("location: index.php");
 }
+
     require_once 'logininfo.php';
     require_once 'functions.php';
     $db_server=  mysql_connect($db_hostname, $db_username, $db_password);
@@ -14,26 +14,35 @@ if (!(isset($_SESSION['ldap_id']))){
 	isset($_POST['CourseName']) &&
 	isset($_POST['Instructor']) &&
         isset($_POST['d1']) &&
-	isset($_POST['d2']))
+            isset($_POST['d2']) &&
+            isset($_POST['d3']) &&
+	isset($_POST['d4']))
             {
             $deptt   = get_post('Deptt');
             $cno    = get_post('CourseNumber');
             $cna = get_post('CourseName');
             $inst     = get_post('Instructor');
-            $author = "amit";
+            $author = $_SESSION['ldap_id'];
             $d1     = get_post('d1');
              $d2     = get_post('d2');
-
+             $d3=get_post('d3');
+             $d4=get_post('d4');
+            
+             
+             
              $deptt = str_replace('"', '', $deptt);
 $cno = str_replace('"', '', $cno);
 $cna = str_replace('"', '', $cna);
 $course_no = str_replace(' ', '', $course_no);
 $inst = str_replace('"', '', $inst);
 $d1 = str_replace('"', '', $d1);
-$d2 = str_replace('"', '', $d2);             
+$d2 = str_replace('"', '', $d2);
+$d3 = str_replace('"', '', $d3);
+$d4 = str_replace('"', '', $d4);
              
+
             $query = "INSERT INTO reviews VALUES" .
-		"(NULL,'$deptt', '$cno', '$cna', '$inst', '$author', '$d1', '$d2')";
+		"(NULL,'$deptt', '$cno', '$cna', '$inst', '$author', '$d1', '$d2','$d3','$d4',CURDATE())";
 
             if (!mysql_query($query, $db_server))
 		echo "Review could not be added.<br />" .
@@ -55,7 +64,7 @@ $d2 = str_replace('"', '', $d2);
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Course Rank | Get information/reviews of different courses to plan your semester better.</title>
 
- <script type="text/javascript">
+<script type="text/javascript">
 	  //form validation
             function validatename(field){
 				if (field =="") 
@@ -76,8 +85,7 @@ $d2 = str_replace('"', '', $d2);
 				if (field ==""){ return "No Course Number entered. \n";}
 				else if(isNaN(field)) {
 				return "Course Number should be a number.";
-			} else if(field/1000!=field)
-                            {return "Course Number should be three digits."}
+			} 
 				else{
 					return "";}
 					
@@ -93,16 +101,21 @@ $d2 = str_replace('"', '', $d2);
 				fail+=validateInstructor(form.Instructor.value);
 				fail+=validatename(form.d1.value);
                                 fail+=validatename(form.d2.value);
-                               
+                               fail+=validatename(form.d3.value);
+                               fail+=validatename(form.d4.value);
 				
 				if (fail == "") return true
 				else { alert(fail); return false }
 			}
 	  
 	  
+	 
 	  
             
         </script>
+
+
+
 
 
 </head>
@@ -114,7 +127,7 @@ $d2 = str_replace('"', '', $d2);
     <div class="row-fluid" id="main">
         <div class="spanhalf" id="sidebar">
         <ul class="nav nav-pills">
-       <li class="active" ><a href="depreviews.php?dept=AE" rel="tooltip" title="Aerospace Engineering (AE) Courses' Reviews">AE</a></li><br>
+    <li class="active" ><a href="depreviews.php?dept=AE" rel="tooltip" title="Aerospace Engineering (AE) Courses' Reviews">AE</a></li><br>
     <li class="active"><a href="depreviews.php?dept=AN" id="sideitem" rel="tooltip" title="Animation (AN) Courses' Reviews ">AN</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=GP" rel="tooltip" title="Applied Geophysics (GP) Courses' Reviews ">GP</a></li><br>
     
@@ -164,7 +177,7 @@ $d2 = str_replace('"', '', $d2);
             
                 <div id="fmenu">
                 <ul>
-                    <li><a href="main.php"><img src="src/1.png"></a></li><br>
+                   <li><a href="main.php"><img src="src/1.png"></a></li><br>
                     <li><a href="addreview.php"><img src="src/2.png"></a></li><br>
                     <li><a href="index.php?logout=true"><img src="src/3.png"></a></li><br>
                     <li><a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="src/4.png"></a></li><br>
@@ -172,10 +185,12 @@ $d2 = str_replace('"', '', $d2);
                 </div>
         </div>
         <div class="span8" id="postarea">
-           
+            
+          
+          
             <div class="span8" id="add">
                
-                <form class="form-horizontal" action="main.php" method="post" name="addco">  
+                <form class="form-horizontal" name="addco" action="main.php" method="post">  
         <fieldset>  
           <legend>Add your Course Reviews</legend>  
           
@@ -249,17 +264,36 @@ $d2 = str_replace('"', '', $d2);
             </div>  
           </div> 
            <div class="control-group">  
-            <label class="control-label" for="textarea" >Course Coverage and Relevance</label>  
+            <label class="control-label" for="textarea" >What did you learn at the end of this course?</label>  
             <div class="controls">  
               <textarea class="input-xlarge" id="textarea" rows="3" name="d1"></textarea>  
             </div>  
           </div> 
-          <div class="control-group">  
-            <label class="control-label" for="textarea" >Course Review</label>  
+           <div class="control-group">  
+            <label class="control-label" for="textarea" >How was the course load?</label>  
             <div class="controls">  
               <textarea class="input-xlarge" id="textarea" rows="3" name="d2"></textarea>  
+              <p class="help-block">Were there too many assignments or too few of them to apply the concepts?</p> 
             </div>  
           </div> 
+           <div class="control-group">  
+            <label class="control-label" for="textarea" >How was the Instructor for this course?</label>  
+            <div class="controls">  
+              <textarea class="input-xlarge" id="textarea" rows="3" name="d3"></textarea>  
+                <p class="help-block">Write your review of the Course Instructor here.</p> 
+            </div>  
+          </div> 
+          <div class="control-group">  
+            <label class="control-label" for="select01" >What was the difficulty level?</label>  
+            <div class="controls">  
+              <select id="select01" name="d4">  
+                <option>Easy</option>  
+                <option>Moderately Difficult</option>  
+                <option>Difficult</option>  
+              </select> 
+                <p class="help-block">Select the appropriate Difficulty level, of which the course was for you.</p>
+            </div>  
+          </div>  
           <div class="form-actions">  
             <button type="submit" class="btn btn-primary" onClick="return validate(addco)">Save changes</button>  
             <button class="btn">Cancel</button>  <hr><br>

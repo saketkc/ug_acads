@@ -114,17 +114,25 @@ _END;
                             else{*/
                 ?>
             <div class="span8" id="posts">
-                <dl id="postitem" class="dl-horizontal">
+                
+                   <dl id="postitem" class="dl-horizontal">
                     <dt>Department</dt><dd><? echo $row["Deptt"]; ?></dd>
                     <dt>Course Code</dt><dd><? echo $row["CourseNumber"]; ?></dd>
                     <dt>Course Name</dt><dd><? echo $row["CourseName"]; ?></dd>
                     <dt>Instructor's Name</dt><dd><? echo $row["Instructor"]; ?></dd>
                     <br>
-                    <dt>Description 1</dt><dd><? echo $row["d1"]; ?></dd>
-                    <br>
-                    <dt>Description 2</dt><dd><? echo $row["d2"]; ?></dd>
-                    <hr>
+                    <dt>What he/she learned at the end of the course</dt><dd><? echo $row["d1"]; ?></dd>
+                    <br><hr>
+                    <dt>How the course load was</dt><dd><? echo $row["d2"]; ?></dd>
+                    <br><hr>
+                    <dt>How the Instructor was</dt><dd><? echo $row["d3"]; ?></dd>
+                    <br><hr>
+                    <dt>How the difficulty level was</dt><dd><? echo $row["d4"]; ?></dd>
+                    <br><hr>
                     <dt>Review written by</dt><dd><? echo $row["Author"]; ?></dd>
+                    <dt>Date of review</dt><dd><? echo $row["date"]; ?></dd>
+                    
+              
                 </dl>
             </div>
             <div id="separation" class="span8"></div>
