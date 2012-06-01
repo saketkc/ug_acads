@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS `apping_database_data` (
   `university` varchar(256) NOT NULL,
   `programme` varchar(40) NOT NULL,
   `department` varchar(256) NOT NULL,
+  `year` varchar(4) NOT NULL,
   `status` varchar(20) NOT NULL,
   `funding` varchar(20) NOT NULL,
   `date_of_application` varchar(50) NOT NULL,
