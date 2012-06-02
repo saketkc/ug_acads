@@ -146,7 +146,7 @@ body{
 	align:center;
 }
 #main{
-	height:550px;
+	height:auto;
 	width:75%;
 	background-color:#FFF;
 	margin:auto;
@@ -222,6 +222,15 @@ width:200px;
 line-height:.8em;
 }
 #main input{
+float:left;
+font-size:24px;
+padding:4px 2px;
+border:solid 1px #aacfe4;
+width:100%;
+margin:2px 0 20px 10px;
+height:47px;
+}
+#main select{
 float:left;
 font-size:24px;
 padding:4px 2px;
@@ -332,16 +341,17 @@ font-size:20px;
 
 <tr><td><span id="label">Programme<span id="comment">Eg. "MS, PhD"</span></span></td><td><input type="text" name="programme" /></td></tr>
 <tr><td><span id="label">Department<span id="comment">Eg. "CSE"</span></span></td><td><input type="text" name="department" /></td></tr>
-<tr><td><span id="label">Status<span id="comment">Accepted/Rejected</span></span></td><td><input type='text'  name="status" ><option value="accepted">Accepted</option><option value="rejected">Rejected</option></select></td></tr>
+<tr><td><span id="label">Status<span id="comment">Accepted/Rejected</span></span></td><td><select type='text'  name="status" ><option value="accepted">Accepted</option><option value="rejected">Rejected</option></select></td></tr>
 <tr><td><span id="label">Funding<span id="comment">Self Funded/Scholarship</span></span></td><td><input type='text'  name="funding" ></td></tr>
 <!--<tr><td><span id ="label">Date Of Application<span id="comment">Tell us when you applied</span></span></td><td> <input type="text" id="datepicker" name='date-application'/></td></tr>
 <tr><td><span id ="label">Date Of Acceptance<span id="comment">Tell us when you heard back</span></span></td><td> <input type="text" id="datepicker1" name='date-acceptance'/></td></tr>
 --><tr><td><span id="label">Recommendations<span id="comment">Whom did you take it from ?(if you wish to answer)</span></span></td><td><input type="text" name="recommenders" /></td></tr>
 <tr><td><span id="label">General Fundae<span id="comment"></span></span></td><td><input type="text" name="fundae" /></td></tr>
 </span>
-<tr><td><input type="submit" class="button" name='add' value="Add" onClick="return validate(form2)" id="addbutton"/></td><tr></table>
+        <tr><td><span id ="label">Resume<span id="comment"> Upload your Resume</span></span></td><td> <input type="file" name="resume" /></td></tr>
+        </br><tr><td><input type="submit" class="button" name='add' value="Add" onClick="return validate(form2)" id="addbutton"/></td><tr></table>
+    
 
-<tr><td><span id ="label">Resume<span id="comment"> Upload your Resume</span></span></td><td> <input type="file" name="resume" /></td></tr>
 
 </form>
 </div>
@@ -350,9 +360,9 @@ font-size:20px;
 
  <ul id="navigation">
            
-            <li class="add"><a href="add.php" title="Add Books"></a></li>
-            <li class="search"><a href="view.php" title="Search books"></a></li>
-            <li class="delete"><a href="delete.php" title="Delete books"></a></li>
+            <li class="add"><a href="add.php" title="Add your Apping Experience"></a></li>
+            <li class="search"><a href="view.php" title="Search through all the entries written by students."></a></li>
+           
             <li class="logout"><a href="index.php?logout=true" title="Log Out"></a></li>
         
         </ul>
@@ -365,7 +375,7 @@ font-size:20px;
 
 <div class="row-fluid" id="footbar">
 <div class="span5" id="about">
-
+    
 </div>
 <div class="listing" id="links">
 <a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="img/logo.jpg"><span id="qwer">  IIT Bombay UG Academics</span></a>

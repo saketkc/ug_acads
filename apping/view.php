@@ -328,10 +328,9 @@ jQuery("#toolbar").jqGrid('filterToolbar',{stringResult: true,searchOnEnter : fa
 </div>
 
  <ul id="navigation">
+               <li class="add"><a href="add.php" title="Add your Apping Experience"></a></li>
+            <li class="search"><a href="view.php" title="Search through all the entries written by students."></a></li>
            
-            <li class="add"><a href="add.php" title="Add Books"></a></li>
-            <li class="search"><a href="view.php" title="Search books"></a></li>
-            <li class="delete"><a href="delete.php" title="Delete books"></a></li>
             <li class="logout"><a href="index.php?logout=true" title="Log Out"></a></li>
         
         </ul>

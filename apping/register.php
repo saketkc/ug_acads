@@ -166,7 +166,7 @@ body{
 	align:center;
 }
 #main{
-	height:600px;
+	height:auto;
 	width:75%;
 	background-color:#FFF;
 	margin:auto;
