@@ -163,7 +163,7 @@ $d4 = str_replace('"', '', $d4);
         </div>
         
         <div class="span3" id="content">
-                <div id="logo"></div>
+                <a href="main.php" title="Home"><div id="logo"></div></a>
             
                 <div id="fmenu">
                    
