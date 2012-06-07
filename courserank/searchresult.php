@@ -40,9 +40,9 @@ $rs_result = mysql_query ($sql);
         <!--Rainbow band-->
     </div>
     <div class="row-fluid" id="main">
-        <div class="spanhalf" id="sidebar">
+           <div class="spanhalf" id="sidebar">
         <ul class="nav nav-pills">
-       <li class="active" ><a href="depreviews.php?dept=AE" rel="tooltip" title="Aerospace Engineering (AE) Courses' Reviews">AE</a></li><br>
+    <li class="active" ><a href="depreviews.php?dept=AE" rel="tooltip" title="Aerospace Engineering (AE) Courses' Reviews">AE</a></li><br>
     <li class="active"><a href="depreviews.php?dept=AN" id="sideitem" rel="tooltip" title="Animation (AN) Courses' Reviews ">AN</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=GP" rel="tooltip" title="Applied Geophysics (GP) Courses' Reviews ">GP</a></li><br>
     
@@ -64,6 +64,73 @@ $rs_result = mysql_query ($sql);
     <li class="active" id="sideitem"><a href="depreviews.php?dept=EE" rel="tooltip" title="Electrical Engineering (EE) Courses' Reviews">EE</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=EN" rel="tooltip" title="Energy Science and Engineering (EN) Courses' Reviews">EN</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=EP" rel="tooltip" title="Engineering Physics (EP) Courses' Reviews">EP</a></li><br>
+    
+        </ul>
+        </div>
+        <div class="span3" id="content">
+                <div id="logo"></div>
+            
+               <div id="fmenu">
+                   
+                <ul>
+                   <li><a href="main.php"><img src="src/1.png"></a></li><br>
+                    <li><a href="addreview.php"><img src="src/2.png"></a></li><br>
+                    <li><a href="index.php?logout=true"><img src="src/3.png"></a></li><br>
+                    <li><a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="src/4.png"></a></li><br>
+                </ul>
+                     <form class="well form-inline" id="fixsearch" name="search" action="searchresult.php" method="post">
+                         <select id="selec" name="dep">  
+                <option>AE</option>  
+                <option>AN</option>  
+                <option>GP</option>  
+                <option>SI</option>  
+                <option>BM</option>  
+                <option>BS</option>  
+                <option>BT</option>  
+                <option>ES</option>  
+                <option>NT</option>  
+                <option>GNR</option> 
+                <option>CL</option>  
+                <option>CH</option>  
+                <option>CE</option>  
+                <option>CM</option>  
+                <option>CS</option> 
+                <option>CR</option>  
+                <option>TD</option>  
+                <option>GS</option>  
+                <option>ET</option>  
+                <option>EN</option> 
+                <option>EP</option>  
+                <option>GE</option>  
+                <option>HS</option>  
+                <option>ID</option>  
+                <option>IE</option> 
+                <option>IM</option>
+                <option>IN</option>
+                <option>MMM</option>
+                <option>MS</option>
+                <option>MA</option>
+                <option>ME</option>
+                <option>MM</option>
+                <option>MD</option>
+                <option>IT</option>
+                <option>PH</option>
+                <option>RE</option>
+                <option>MG</option>
+                <option>SC</option>
+                <option>VC</option>
+              </select> 
+ 
+  <input type="text" class="input-small" placeholder="3 digit code" name="code">
+  <button type="submit" onClick="return validate2(search)">Search course</button>  
+</form>
+                </div>
+        </div>
+        <div class="span8" id="postarea">
+            
+            
+             <div class="spanhalf" id="rsidebar">
+        <ul class="nav nav-pills">
     <li class="active" id="sideitem"><a href="depreviews.php?dept=GS" rel="tooltip" title="Earth Sciences (GS) Courses' Reviews">GS</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=GE" rel="tooltip" title="General (GE) Courses' Reviews">GE</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=HS" rel="tooltip" title="Humanities & Social Sciences (HS) Courses' Reviews">HS</a></li><br>
@@ -85,20 +152,9 @@ $rs_result = mysql_query ($sql);
     <li class="active" id="sideitem"><a href="depreviews.php?dept=VC" rel="tooltip" title="Visual Communication (VC) Courses' Reviews">VC</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=GNR" rel="tooltip" title="Centre of Studies in Resources Engineering (GNR) Courses' Reviews">GNR</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=MMM" rel="tooltip" title="Materials, Manufacturing and Modelling (MMM) Courses' Reviews">MMM</a></li><br>
+    
         </ul>
         </div>
-        <div class="span3" id="content">
-                <div id="logo"></div>
-            
-                <div id="fmenu">
-                <ul><li><a href="main.php"><img src="src/1.png"></a></li><br>
-                    <li><a href="addreview.php"><img src="src/2.png"></a></li><br>
-                    <li><a href="index.php?logout=true"><img src="src/3.png"></a></li><br>
-                    <li><a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="src/4.png"></a></li><br>
-                </ul>
-                </div>
-        </div>
-        <div class="span8" id="postarea">
             <?php
             /*$nrows=  mysql_num_rows($rs_result);
             echo $nrows;*/
@@ -113,6 +169,7 @@ _END;
                             }
                             else{*/
                 ?>
+              <div id="separation" class="span8"></div>
             <div class="span8" id="posts">
                 
                    <dl id="postitem" class="dl-horizontal">
@@ -124,8 +181,7 @@ _END;
                     <dt>What he/she learned at the end of the course</dt><dd><? echo $row["d1"]; ?></dd>
                     <br><hr>
                     <dt>How the course load was</dt><dd><? echo $row["d2"]; ?></dd>
-                    <br><hr>
-                    <dt>How the Instructor was</dt><dd><? echo $row["d3"]; ?></dd>
+                    
                     <br><hr>
                     <dt>How the difficulty level was</dt><dd><? echo $row["d4"]; ?></dd>
                     <br><hr>
@@ -140,7 +196,7 @@ _END;
                          //   }
                         };
                 ?> 
-            
+            <div id="separation" class="span8"></div>
             <div class="span8" id="posts">
                 
                 <?php

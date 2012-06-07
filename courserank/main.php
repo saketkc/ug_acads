@@ -25,7 +25,7 @@ if (!(isset($_SESSION['ldap_id']))){
             $author = $_SESSION['ldap_id'];
             $d1     = get_post('d1');
              $d2     = get_post('d2');
-             $d3=get_post('d3');
+            
              $d4=get_post('d4');
             
              
@@ -37,7 +37,7 @@ $course_no = str_replace(' ', '', $course_no);
 $inst = str_replace('"', '', $inst);
 $d1 = str_replace('"', '', $d1);
 $d2 = str_replace('"', '', $d2);
-$d3 = str_replace('"', '', $d3);
+
 $d4 = str_replace('"', '', $d4);
              
 
@@ -101,7 +101,7 @@ $d4 = str_replace('"', '', $d4);
 				fail+=validateInstructor(form.Instructor.value);
 				fail+=validatename(form.d1.value);
                                 fail+=validatename(form.d2.value);
-                               fail+=validatename(form.d3.value);
+                               
                                fail+=validatename(form.d4.value);
 				
 				if (fail == "") return true
@@ -119,6 +119,7 @@ $d4 = str_replace('"', '', $d4);
 				else { alert(fail); return false }
 			}
 	  
+      
             
         </script>
 
@@ -157,6 +158,72 @@ $d4 = str_replace('"', '', $d4);
     <li class="active" id="sideitem"><a href="depreviews.php?dept=EE" rel="tooltip" title="Electrical Engineering (EE) Courses' Reviews">EE</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=EN" rel="tooltip" title="Energy Science and Engineering (EN) Courses' Reviews">EN</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=EP" rel="tooltip" title="Engineering Physics (EP) Courses' Reviews">EP</a></li><br>
+    
+        </ul>
+        </div>
+        
+        <div class="span3" id="content">
+                <div id="logo"></div>
+            
+                <div id="fmenu">
+                   
+                <ul>
+                   <li><a href="main.php"><img src="src/1.png"></a></li><br>
+                    <li><a href="addreview.php"><img src="src/2.png"></a></li><br>
+                    <li><a href="index.php?logout=true"><img src="src/3.png"></a></li><br>
+                    <li><a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="src/4.png"></a></li><br>
+                </ul>
+                     <form class="well form-inline" id="fixsearch" name="search" action="searchresult.php" method="post">
+                         <select id="selec" name="dep">  
+                <option>AE</option>  
+                <option>AN</option>  
+                <option>GP</option>  
+                <option>SI</option>  
+                <option>BM</option>  
+                <option>BS</option>  
+                <option>BT</option>  
+                <option>ES</option>  
+                <option>NT</option>  
+                <option>GNR</option> 
+                <option>CL</option>  
+                <option>CH</option>  
+                <option>CE</option>  
+                <option>CM</option>  
+                <option>CS</option> 
+                <option>CR</option>  
+                <option>TD</option>  
+                <option>GS</option>  
+                <option>ET</option>  
+                <option>EN</option> 
+                <option>EP</option>  
+                <option>GE</option>  
+                <option>HS</option>  
+                <option>ID</option>  
+                <option>IE</option> 
+                <option>IM</option>
+                <option>IN</option>
+                <option>MMM</option>
+                <option>MS</option>
+                <option>MA</option>
+                <option>ME</option>
+                <option>MM</option>
+                <option>MD</option>
+                <option>IT</option>
+                <option>PH</option>
+                <option>RE</option>
+                <option>MG</option>
+                <option>SC</option>
+                <option>VC</option>
+              </select> 
+ 
+  <input type="text" class="input-small" placeholder="3 digit code" name="code">
+  <button type="submit" onClick="return validate2(search)">Search course</button>  
+</form>
+                </div>
+        </div>
+        <div class="span8" id="postarea">
+            <div class="spanhalf" id="rsidebar">
+        <ul class="nav nav-pills">
     <li class="active" id="sideitem"><a href="depreviews.php?dept=GS" rel="tooltip" title="Earth Sciences (GS) Courses' Reviews">GS</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=GE" rel="tooltip" title="General (GE) Courses' Reviews">GE</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=HS" rel="tooltip" title="Humanities & Social Sciences (HS) Courses' Reviews">HS</a></li><br>
@@ -178,21 +245,11 @@ $d4 = str_replace('"', '', $d4);
     <li class="active" id="sideitem"><a href="depreviews.php?dept=VC" rel="tooltip" title="Visual Communication (VC) Courses' Reviews">VC</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=GNR" rel="tooltip" title="Centre of Studies in Resources Engineering (GNR) Courses' Reviews">GNR</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=MMM" rel="tooltip" title="Materials, Manufacturing and Modelling (MMM) Courses' Reviews">MMM</a></li><br>
+    
         </ul>
         </div>
-        <div class="span3" id="content">
-                <div id="logo"></div>
-            
-                <div id="fmenu">
-                <ul>
-                   <li><a href="main.php"><img src="src/1.png"></a></li><br>
-                    <li><a href="addreview.php"><img src="src/2.png"></a></li><br>
-                    <li><a href="index.php?logout=true"><img src="src/3.png"></a></li><br>
-                    <li><a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="src/4.png"></a></li><br>
-                </ul>
-                </div>
-        </div>
-        <div class="span8" id="postarea">
+           
+            <div id="separation" class="span8"></div>
             <div class="span8" id="search">
                 <form class="form-horizontal" name="search" action="searchresult.php" method="post">  
         <fieldset>  
@@ -265,7 +322,7 @@ _END;
 </form>    To browse through all reviews,click <a href="posts.php">here</a>.  
            
             </div>
-           
+            
             <div id="separation" class="span8"></div>
             <div class="span8" id="add">
                
@@ -355,13 +412,7 @@ _END;
                <p class="help-block">Were there too many assignments or too few of them to apply the concepts?</p> 
             </div>  
           </div> 
-           <div class="control-group">  
-            <label class="control-label" for="textarea" >How was the Instructor for this course?</label>  
-            <div class="controls">  
-              <textarea class="input-xlarge" id="textarea" rows="3" name="d3"></textarea>  
-              <p class="help-block">Write your review of the Course Instructor here.</p> 
-            </div>  
-          </div> 
+          
           <div class="control-group">  
             <label class="control-label" for="select01" >What was the difficulty level?</label>  
             <div class="controls">  
@@ -387,7 +438,10 @@ _END;
 </form>  
                 
             </div>
+           
         </div>
+        
+          
     </div>
 
 </div>

@@ -1,17 +1,31 @@
 #container{
     background-image:url("src/back.jpg");
-    background-color: #b94a48;
+   
     height: 100%;
 }
 #top{
     background-image: url("src/top.jpg");
     height: 9px;
+    position:fixed;
     
    
 }
 #sidebar{
     padding: 10px;
     background-color: #000000;
+ 
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#rsidebar{
+    padding: 10px;
+    background-color: #000000;
+    margin-top: -12px;
+    margin-right: -12px;
+    float: right;
+   
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 #loginsidebar{
     
@@ -28,7 +42,8 @@
 }
 #loginmain2{
     padding-left: 5%;
-    background-image: url("src/back2.jpg");
+    background-image: url("src/back.jpg");
+    background-repeat: repeat; 
     float:right;
     height: 100%;
     width:62%;
@@ -59,33 +74,35 @@
     display: block;
     position: fixed;
     
-    margin-top: 20%;
+    margin-top: 350px;
 }
 #logo{
     background-image: url("src/logo.png");
     height: 210px;
     width: 320px;
     background-repeat: no-repeat;
-   
+   position:fixed;
 }
 #postarea{
   float:right;
   padding: 1%;
+  width:60%;
 }
 #search{
     background-color: #eeeeee;
     height: auto;
-    width:90%;
+    width:80%;
     padding: 2%;
-   overflow: hidden;
+   overflow: auto;
    -moz-border-radius: 15px;
 border-radius: 15px;
 box-shadow: 5px 5px 20px 2px #555;
+
 }
 #posts{
     background-color: #fff;
     height: auto;
-    width:90%;
+    width:80%;
     padding: 2%;
    overflow: hidden;
    -moz-border-radius: 15px;
@@ -95,13 +112,17 @@ box-shadow: 5px 5px 20px 2px #555;
 #separation{
     height:40px;
     background-color: none;
+    width:80%;
+}
+#fixsearch{
+    background-color: none;
 }
 #add{
     background-color: #eeeeee;
     height: auto;
-   width:90%;
+   width:80%;
    padding: 2%;
-   overflow: hidden;
+   overflow: auto;
    -moz-border-radius: 15px;
 border-radius: 15px;
    box-shadow: 5px 5px 20px 2px #555;
@@ -129,8 +150,11 @@ border-radius: 15px;
 #submitbutton{
   
 }
+#selec{
+    width:50px;
+}
 #instructor{
-    text-indent: 15px;
+    text-indent:15px;
 }
 #fmenu ul{
 	list-style-type:none;
