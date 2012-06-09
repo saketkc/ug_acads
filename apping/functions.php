@@ -65,7 +65,7 @@ function register_user($username,$fullname,$department,$email,$alt_email,$mobile
 	
 }    
 
-function add_new_university($created_by,$university,$programme,$department,$status,$funding,$date_of_application,$date_of_acceptance,$recommenders,$fundae){
+function add_new_university($created_by,$university,$programme,$department,$status,$funding,$finally_accepted,$fundae){
 //	require_once("dbconnect.php");
 //	$db = new PDO("mysql:host=localhost;dbname=ugacademics", "ugacademics", "ug_acads" );
 	$con = mysql_connect("localhost","ugacademics","ug_acads");
@@ -75,10 +75,25 @@ if (!$con)
   }
 
 mysql_select_db("ugacademics", $con);	
-	$query = mysql_query("INSERT INTO apping_database_data(username,university,programme,department,status,funding,recommenders,fundae) VALUES ('$created_by','$university','$programme','$department','$status','$funding','$recommenders','$fundae')");		
+	$query = mysql_query("INSERT INTO apping_database_data(username,university,programme,department,status,funding,finally_accepted,fundae) VALUES ('$created_by','$university','$programme','$department','$status','$funding','$finally_accepted','$fundae')");		
 	//$query->execute("created_by");
 //	$db=null;
 }
 
+
+function add_genral_data($created_by,$recommenders,$general_fundae,$resume_loaction){
+//	require_once("dbconnect.php");
+//	$db = new PDO("mysql:host=localhost;dbname=ugacademics", "ugacademics", "ug_acads" );
+	$con = mysql_connect("localhost","ugacademics","ug_acads");
+if (!$con)
+  {
+  die('Could not connect: ' . mysql_error());
+  }
+
+mysql_select_db("ugacademics", $con);	
+	$query = mysql_query("INSERT INTO apping_database_general_data(username,recommenders,general_fundae,resume_location) VALUES ('$created_by','$recommenders','$general_fundae','$resume_loaction')");		
+	//$query->execute("created_by");
+//	$db=null;
+}
 
 ?>

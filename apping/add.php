@@ -10,15 +10,21 @@ if (isset($_POST['add'])){
 	
         
       
-        for(i=0;i<10;i++)
+        for($i=0;$i<10;$i++)
         {
-        add_new_university($created_by,$_POST['university'.$i],$_POST['programme'.$i],$department,$_POST['status'.$i],$_POST['funding'.$i],$_POST['date-acceptance'.$i],$_POST['fundae'.$i]);
+$uni="univeristy".$i;
+$prog="programme".$i;
+$stat="status".$i;
+$funding="funding".$i;
+$accep="acceptance".$i;
+$fund="fundae".$i;
+        add_new_university($created_by,$_POST[$uni],$_POST[$prog],$department,$_POST[$stat],$_POST[$funding],$_POST[$accep],$_POST[$fund]);
 	
         }
         add_general_data($created_by,$_POST['recommenders'],$_POST['gfundae'],$_POST['resume']);
 
        	//echo $created_by. $name.$semester.$course_no.$cost.$tags;
-	$message = "$created_by,$department,$university,$programme,$status,$funding,$date_of_application,$date_of_acceptance,$recommenders,$fundae";
+	//$message = "$created_by,$department,$university,$programme,$status,$funding,$date_of_application,$date_of_acceptance,$recommenders,$fundae";
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -337,28 +343,27 @@ font-size:20px;
        
 <form method="POST" action="add.php" name="form2" class="formed"><table>
         <?php
-        for (i=0;i<10;i++)
+        for ($i=0;$i<10;$i++)
         {
 echo<<<_END
 <span id="main2">
 <tr><td><span id ="label">University<span id="comment"> (Eg. "MIT")</span></span></td><td> <input type="text" name="university$i" /></td></tr>
-<tr><td><span id ="label">University Specific Fundae<span id="comment"></span></span></td><td> <input type="text" name="university-fundae$i" /></td></tr>
+<tr><td><span id ="label">University Specific Fundae<span id="comment"></span></span></td><td> <input type="text" name="fundae$i" /></td></tr>
 
 
 <tr><td><span id="label">Programme<span id="comment">Eg. "MS, PhD"</span></span></td><td><input type="text" name="programme$i" /></td></tr>
 <tr><td><span id="label">Department<span id="comment">Eg. "CSE"</span></span></td><td><input type="text" name="department$i" /></td></tr>
 <tr><td><span id="label">Status<span id="comment">Accepted/Rejected</span></span></td><td><select type='text'  name="status$i" ><option value="accepted">Accepted</option><option value="rejected">Rejected</option></select></td></tr>
 <tr><td><span id="label">Funding<span id="comment">Self Funded/Scholarship</span></span></td><td><input type='text'  name="funding$i" ></td></tr>
-<!--<tr><td><span id ="label">Date Of Application<span id="comment">Tell us when you applied</span></span></td><td> <input type="text" id="datepicker" name='date-application$i'/></td></tr>
-<tr><td><span id ="label">Date Of Acceptance<span id="comment">Tell us when you heard back</span></span></td><td> <input type="text" id="datepicker1" name='date-acceptance$i'/></td></tr>
+<!--<tr><td><span id ="label">Date Of Application<span id="comment">Tell us when you applied</span></span></td><td> <input type="text" id="datepicker" name='date-application$i"/></td></tr>
+<tr><td><span id ="label">Date Of Acceptance<span id="comment">Tell us when you heard back</span></span></td><td> <input type="text" id="datepicker1" name="date-acceptance$i"/></td></tr>
 -->
-<tr><td><span id="label">University Specific Fundae<span id="comment"></span></span></td><td><input type="text" name="fundae$i" /></td></tr>
-</span> 
+<tr><td><span id="label">Finally Accepted<span id="comment">Yes/No</span></span></td><td><select type='text'  name="accpeted$i" ><option value="yes">Yes</option><option value="No">No</option></select></td></tr>
 _END;
         }
         echo<<<_END
             
-    tr><td><span id="label">Recommendations<span id="comment">Whom did you take it from ?(if you wish to answer)</span></span></td><td><input type="text" name="recommenders" /></td></tr>
+    <tr><td><span id="label">Recommendations<span id="comment">Whom did you take it from ?(if you wish to answer)</span></span></td><td><input type="text" name="recommenders" /></td></tr>
 <tr><td><span id="label">General Fundae<span id="comment"></span></span></td><td><input type="text" name="gfundae" /></td></tr>
 <tr><td><span id ="label">Resume<span id="comment"> Upload your Resume</span></span></td><td> <input type="file" name="resume" /></td></tr>
  </br><tr><td><input type="submit" class="button" name='add' value="Add" id="addbutton"/></td><tr></table>
