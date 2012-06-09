@@ -7,16 +7,17 @@ require_once("functions.php");
 if (isset($_POST['add'])){
 	$created_by = $_SESSION['ldap_id'];
 	$department = $_POST['department'];
-	$university = $_POST['university'];
-	$programme= $_POST['programme'];
-	$status = $_POST['status'];
-	$funding= $_POST['funding'];
-	$date_of_application = $_POST['date-application'];
-	$date_of_acceptance = $_POST['date-acceptance'];
-	$recommenders = $_POST['recommenders'];
-	$fundae = $_POST['fundae'];
-	add_new_university($created_by,$university,$programme,$department,$status,$funding,$date_of_application,$date_of_acceptance,$recommenders,$fundae);
-	//echo $created_by. $name.$semester.$course_no.$cost.$tags;
+	
+        
+      
+        for(i=0;i<10;i++)
+        {
+        add_new_university($created_by,$_POST['university'.$i],$_POST['programme'.$i],$department,$_POST['status'.$i],$_POST['funding'.$i],$_POST['date-acceptance'.$i],$_POST['fundae'.$i]);
+	
+        }
+        add_general_data($created_by,$_POST['recommenders'],$_POST['gfundae'],$_POST['resume']);
+
+       	//echo $created_by. $name.$semester.$course_no.$cost.$tags;
 	$message = "$created_by,$department,$university,$programme,$status,$funding,$date_of_application,$date_of_acceptance,$recommenders,$fundae";
 }
 ?>
@@ -332,28 +333,44 @@ font-size:20px;
 <span id="descrip"><br/><?php echo $message?><br/></span>
 
 
-
+ 
+       
 <form method="POST" action="add.php" name="form2" class="formed"><table>
+        <?php
+        for (i=0;i<10;i++)
+        {
+echo<<<_END
 <span id="main2">
-<tr><td><span id ="label">University<span id="comment"> (Eg. "MIT")</span></span></td><td> <input type="text" name="university" /></td></tr>
-<tr><td><span id ="label">University Specific Fundae<span id="comment"></span></span></td><td> <input type="text" name="university-fundae" /></td></tr>
+<tr><td><span id ="label">University<span id="comment"> (Eg. "MIT")</span></span></td><td> <input type="text" name="university$i" /></td></tr>
+<tr><td><span id ="label">University Specific Fundae<span id="comment"></span></span></td><td> <input type="text" name="university-fundae$i" /></td></tr>
 
 
-<tr><td><span id="label">Programme<span id="comment">Eg. "MS, PhD"</span></span></td><td><input type="text" name="programme" /></td></tr>
-<tr><td><span id="label">Department<span id="comment">Eg. "CSE"</span></span></td><td><input type="text" name="department" /></td></tr>
-<tr><td><span id="label">Status<span id="comment">Accepted/Rejected</span></span></td><td><select type='text'  name="status" ><option value="accepted">Accepted</option><option value="rejected">Rejected</option></select></td></tr>
-<tr><td><span id="label">Funding<span id="comment">Self Funded/Scholarship</span></span></td><td><input type='text'  name="funding" ></td></tr>
-<!--<tr><td><span id ="label">Date Of Application<span id="comment">Tell us when you applied</span></span></td><td> <input type="text" id="datepicker" name='date-application'/></td></tr>
-<tr><td><span id ="label">Date Of Acceptance<span id="comment">Tell us when you heard back</span></span></td><td> <input type="text" id="datepicker1" name='date-acceptance'/></td></tr>
---><tr><td><span id="label">Recommendations<span id="comment">Whom did you take it from ?(if you wish to answer)</span></span></td><td><input type="text" name="recommenders" /></td></tr>
-<tr><td><span id="label">General Fundae<span id="comment"></span></span></td><td><input type="text" name="fundae" /></td></tr>
-</span>
-        <tr><td><span id ="label">Resume<span id="comment"> Upload your Resume</span></span></td><td> <input type="file" name="resume" /></td></tr>
-        </br><tr><td><input type="submit" class="button" name='add' value="Add" onClick="return validate(form2)" id="addbutton"/></td><tr></table>
-    
+<tr><td><span id="label">Programme<span id="comment">Eg. "MS, PhD"</span></span></td><td><input type="text" name="programme$i" /></td></tr>
+<tr><td><span id="label">Department<span id="comment">Eg. "CSE"</span></span></td><td><input type="text" name="department$i" /></td></tr>
+<tr><td><span id="label">Status<span id="comment">Accepted/Rejected</span></span></td><td><select type='text'  name="status$i" ><option value="accepted">Accepted</option><option value="rejected">Rejected</option></select></td></tr>
+<tr><td><span id="label">Funding<span id="comment">Self Funded/Scholarship</span></span></td><td><input type='text'  name="funding$i" ></td></tr>
+<!--<tr><td><span id ="label">Date Of Application<span id="comment">Tell us when you applied</span></span></td><td> <input type="text" id="datepicker" name='date-application$i'/></td></tr>
+<tr><td><span id ="label">Date Of Acceptance<span id="comment">Tell us when you heard back</span></span></td><td> <input type="text" id="datepicker1" name='date-acceptance$i'/></td></tr>
+-->
+<tr><td><span id="label">University Specific Fundae<span id="comment"></span></span></td><td><input type="text" name="fundae$i" /></td></tr>
+</span> 
+_END;
+        }
+        echo<<<_END
+            
+    tr><td><span id="label">Recommendations<span id="comment">Whom did you take it from ?(if you wish to answer)</span></span></td><td><input type="text" name="recommenders" /></td></tr>
+<tr><td><span id="label">General Fundae<span id="comment"></span></span></td><td><input type="text" name="gfundae" /></td></tr>
+<tr><td><span id ="label">Resume<span id="comment"> Upload your Resume</span></span></td><td> <input type="file" name="resume" /></td></tr>
+ </br><tr><td><input type="submit" class="button" name='add' value="Add" id="addbutton"/></td><tr></table>
+</form>  
+
+_END;
+
+        ?>
+        
+   <   
 
 
-</form>
 </div>
 
 </div>
