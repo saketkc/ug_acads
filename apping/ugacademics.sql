@@ -26,18 +26,15 @@ SET time_zone = "+00:00";
 -- Table structure for table `apping_database_data`
 --
 
-CREATE TABLE IF NOT EXISTS `apping_database_data` (
+CREATE TABLE IF NOT EXISTS `apping_database_university_data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
   `university` varchar(256) NOT NULL,
-  `programme` varchar(40) NOT NULL,
   `department` varchar(256) NOT NULL,
-  `year` varchar(4) NOT NULL,
+  `programme` varchar(40) NOT NULL,  
   `status` varchar(20) NOT NULL,
   `funding` varchar(20) NOT NULL,
-  `date_of_application` varchar(50) NOT NULL,
-  `data_of_acceptance` varchar(40) NOT NULL,
-  `recommenders` text NOT NULL,
+  `finally_accepted` varchar(50) NOT NULL,  
   `fundae` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -61,6 +58,17 @@ CREATE TABLE IF NOT EXISTS `apping_database` (
   `created_at` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `apping_database_general_data` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) NOT NULL,  
+  `recommenders` text NOT NULL,
+  `general_fundae` text NOT NULL,
+  `resume_location` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
