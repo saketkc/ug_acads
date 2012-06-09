@@ -81,7 +81,7 @@ mysql_select_db("ugacademics", $con);
 }
 
 
-function add_genral_data($created_by,$recommenders,$general_fundae,$resume_loaction){
+function add_general_data($created_by,$recommenders,$general_fundae,$resume_loaction){
 //	require_once("dbconnect.php");
 //	$db = new PDO("mysql:host=localhost;dbname=ugacademics", "ugacademics", "ug_acads" );
 	$con = mysql_connect("localhost","ugacademics","ug_acads");
