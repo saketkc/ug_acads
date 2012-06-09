@@ -75,13 +75,13 @@ if (!$con)
   }
 
 mysql_select_db("ugacademics", $con);	
-	$query = mysql_query("INSERT INTO apping_database_data(username,university,programme,department,status,funding,finally_accepted,fundae) VALUES ('$created_by','$university','$programme','$department','$status','$funding','$finally_accepted','$fundae')");		
+	$query = mysql_query("INSERT INTO apping_database_university_data(username,university,programme,department,status,funding,finally_accepted,fundae) VALUES ('$created_by','$university','$programme','$department','$status','$funding','$finally_accepted','$fundae')");		
 	//$query->execute("created_by");
 //	$db=null;
 }
 
 
-function add_general_data($created_by,$recommenders,$general_fundae,$resume_loaction){
+function add_general_data($created_by,$recommenders,$general_fundae,$resume_location){
 //	require_once("dbconnect.php");
 //	$db = new PDO("mysql:host=localhost;dbname=ugacademics", "ugacademics", "ug_acads" );
 	$con = mysql_connect("localhost","ugacademics","ug_acads");
@@ -91,7 +91,7 @@ if (!$con)
   }
 
 mysql_select_db("ugacademics", $con);	
-	$query = mysql_query("INSERT INTO apping_database_general_data(username,recommenders,general_fundae,resume_location) VALUES ('$created_by','$recommenders','$general_fundae','$resume_loaction')");		
+	$query = mysql_query("INSERT INTO apping_database_general_data(username,recommenders,general_fundae,resume_location) VALUES ('$created_by','$recommenders','$general_fundae','$resume_location')");		
 	//$query->execute("created_by");
 //	$db=null;
 }
