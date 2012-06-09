@@ -15,7 +15,7 @@ if (!(isset($_SESSION['ldap_id']))){
 	isset($_POST['Instructor']) &&
         isset($_POST['d1']) &&
             isset($_POST['d2']) &&
-            isset($_POST['d3']) &&
+         
 	isset($_POST['d4']))
             {
             $deptt   = get_post('Deptt');
@@ -37,7 +37,7 @@ $course_no = str_replace(' ', '', $course_no);
 $inst = str_replace('"', '', $inst);
 $d1 = str_replace('"', '', $d1);
 $d2 = str_replace('"', '', $d2);
-
+$d3='no value';
 $d4 = str_replace('"', '', $d4);
              
 

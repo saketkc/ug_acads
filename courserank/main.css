@@ -91,7 +91,7 @@
 #search{
     background-color: #eeeeee;
     height: auto;
-    width:80%;
+    width:79%;
     padding: 2%;
    overflow: auto;
    -moz-border-radius: 15px;
@@ -102,7 +102,7 @@ box-shadow: 5px 5px 20px 2px #555;
 #posts{
     background-color: #fff;
     height: auto;
-    width:80%;
+    width:79%;
     padding: 2%;
    overflow: hidden;
    -moz-border-radius: 15px;
@@ -112,7 +112,7 @@ box-shadow: 5px 5px 20px 2px #555;
 #separation{
     height:40px;
     background-color: none;
-    width:80%;
+    width:79%;
 }
 #fixsearch{
     background-color: none;
@@ -120,7 +120,7 @@ box-shadow: 5px 5px 20px 2px #555;
 #add{
     background-color: #eeeeee;
     height: auto;
-   width:80%;
+   width:79%;
    padding: 2%;
    overflow: auto;
    -moz-border-radius: 15px;
