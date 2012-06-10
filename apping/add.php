@@ -6,20 +6,21 @@ if (!(isset($_SESSION['ldap_id']))){
 require_once("functions.php");
 if (isset($_POST['add'])){
 	$created_by = $_SESSION['ldap_id'];
-	$department = $_POST['department'];
+	
 	
   
       
         for($i=0;$i<10;$i++)
         {
-$uni="univeristy".$i;
+$uni="university".$i;
+$dep = "department".$i;
 $prog="programme".$i;
 $stat="status".$i;
 $funding="funding".$i;
-$accep="acceptance".$i;
+$accep="accepted".$i;
 $fund="fundae".$i;
-if ($_POST["$uni"] != ""){
-        add_new_university($created_by,$_POST["$uni"],$_POST["$prog"],$department,$_POST["$stat"],$_POST["$funding"],$_POST["$accep"],$_POST["$fund"]);
+if (!(empty($_POST["$uni"]))) {
+        add_new_university($created_by,$_POST["$uni"],$_POST["$prog"],$_POST["$dep"],$_POST["$stat"],$_POST["$funding"],$_POST["$accep"],$_POST["$fund"]);
 	}
         }
         add_general_data($created_by,$_POST['recommenders'],$_POST['gfundae'],$_POST['resume']);
@@ -360,7 +361,7 @@ echo<<<_END
 <!--<tr><td><span id ="label">Date Of Application<span id="comment">Tell us when you applied</span></span></td><td> <input type="text" id="datepicker" name='date-application$i"/></td></tr>
 <tr><td><span id ="label">Date Of Acceptance<span id="comment">Tell us when you heard back</span></span></td><td> <input type="text" id="datepicker1" name="date-acceptance$i"/></td></tr>
 -->
-<tr><td><span id="label">Finally Accepted<span id="comment">Yes/No</span></span></td><td><select type='text'  name="accpeted$i" ><option value="yes">Yes</option><option value="No">No</option></select></td></tr>
+<tr><td><span id="label">Finally Accepted<span id="comment">Yes/No</span></span></td><td><select type='text'  name="accepted$i" ><option value="yes">Yes</option><option value="No">No</option></select></td></tr>
 _END;
         }
         echo<<<_END
