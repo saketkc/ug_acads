@@ -8,7 +8,7 @@ if (isset($_POST['add'])){
 	$created_by = $_SESSION['ldap_id'];
 	$department = $_POST['department'];
 	
-         add_new_university($created_by,$_POST['university0'],$_POST['programme0'],$department,$_POST['status0'],$_POST['funding0'],$_POST['acceptance0'],$_POST['fundae0']);
+  
       
         for($i=0;$i<10;$i++)
         {
@@ -18,9 +18,9 @@ $stat="status".$i;
 $funding="funding".$i;
 $accep="acceptance".$i;
 $fund="fundae".$i;
-
+if ($_POST["$uni"] != ""){
         add_new_university($created_by,$_POST["$uni"],$_POST["$prog"],$department,$_POST["$stat"],$_POST["$funding"],$_POST["$accep"],$_POST["$fund"]);
-	
+	}
         }
         add_general_data($created_by,$_POST['recommenders'],$_POST['gfundae'],$_POST['resume']);
 
@@ -344,8 +344,7 @@ font-size:20px;
        
 <form method="POST" action="add.php" name="form2" class="formed"><table>
         <?php
-echo $uni;
-echo $_POST["$uni"];
+
         for ($i=0;$i<10;$i++)
         {
 echo<<<_END
