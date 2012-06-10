@@ -240,16 +240,15 @@ font-size:20px;
 	height: 255,
 	width: 600,
 	autowidth: true,
-   	colNames:['University','Programme','Department','Status','Funding','Recommenders','Fundae'],
+   	colNames:['Username ','University','Programme','Department','Status','Funding','Finally Accepted' ,'Fundae'],
    	colModel:[
+   		{name:'username',index:'uusername', width:100, sorttype:'text'},
    		{name:'university',index:'university', width:100, sorttype:'text'},
-   		
    		{name:'programme',index:'programme', width:50, sorttype: 'text'},
    		{name:'department',index:'department', width:50, sorttype:'text'},
    		{name:'status',index:'status', width:50,sorttyoe:'text'},
-   		{name:'funding',index:'funding', width:50, sorttype:'text'},
-   		
-   		{name:'recommonders',index:'recommonders', width:50,sorttyoe:'text'},
+   		{name:'funding',index:'funding', width:50, sorttype:'text'},   		
+   		{name:'accpeted',index:'accepted', width:50,sorttyoe:'text'},
    		{name:'fundae',index:'fundae', width:100,sorttype:'text'},
    		
    	],
