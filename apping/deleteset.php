@@ -18,7 +18,7 @@ $db = mysql_connect("localhost", "ugacademics", "ug_acads") or die("Connection E
 mysql_select_db("ugacademics") or die("Error conecting to db.");
 //populateDBRandom();
 $username=$_SESSION['ldap_id'];
-$result = mysql_query("SELECT COUNT(*) AS count FROM apping_database_data'");
+$result = mysql_query("SELECT COUNT(*) AS count FROM apping_database_university_data'");
 $row = mysql_fetch_array($result,MYSQL_ASSOC);
 $count = $row['count'];
 
@@ -31,7 +31,7 @@ if ($page > $total_pages) $page=$total_pages;
 if ($limit<0) $limit = 0;
 $start = $limit*$page - $limit; // do not put $limit*($page - 1)
 if ($start<0) $start = 0;
-$SQL = "SELECT * FROM apping_database_data";
+$SQL = "SELECT * FROM apping_database_university_data";
 $result = mysql_query( $SQL ) or die("Couldnt execute query.".mysql_error());
 $responce->page = $page;
 $responce->total = $total_pages;
@@ -39,7 +39,7 @@ $responce->records = $count;
 $i=0;
 while($row = mysql_fetch_array($result,MYSQL_ASSOC)) {
 	$responce->rows[$i]['id']=$row['id'];
-    $responce->rows[$i]['cell']=array($row['username'],$row['university'],$row['programme'],$row['department'],$row['status'],$row['funding'],$row['recommenders'],$row['fundae']);
+    $responce->rows[$i]['cell']=array($row['username'],$row['university'],$row['programme'],$row['department'],$row['status'],$row['funding'],$row['finally_accepted'],$row['fundae']);
     $i++;
 } 
 echo json_encode($responce);
