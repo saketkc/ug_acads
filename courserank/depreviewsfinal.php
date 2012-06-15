@@ -3,131 +3,41 @@ session_start();
 if (!(isset($_SESSION['ldap_id']))){
 	header("location: index.php");
 }
-
     require_once 'logininfo.php';
     require_once 'functions.php';
     $db_server=  mysql_connect($db_hostname, $db_username, $db_password);
     if (!$db_server) die("Unable to connect to MySQL:".  mysql_error());
     mysql_select_db($db_database,$db_server) or die("Unable to select database:".  mysql_error());
-    if (isset($_POST['Deptt']) &&
-	isset($_POST['CourseNumber']) &&
-	isset($_POST['CourseName']) &&
-	isset($_POST['Instructor']) &&
-        isset($_POST['d1']) &&
-            isset($_POST['d2']) &&
-          
-	isset($_POST['d4']))
-            {
-            $deptt   = get_post('Deptt');
-            $cno    = get_post('CourseNumber');
-            $cna = get_post('CourseName');
-            $inst     = get_post('Instructor');
-            $author = $_SESSION['ldap_id'];
-            $d1     = get_post('d1');
-             $d2     = get_post('d2');
-            
-             $d4=get_post('d4');
-            
-             
-             
-             $deptt = str_replace('"', '', $deptt);
-$cno = str_replace('"', '', $cno);
-$cna = str_replace('"', '', $cna);
-$course_no = str_replace(' ', '', $course_no);
-$inst = str_replace('"', '', $inst);
-$d1 = str_replace('"', '', $d1);
-$d2 = str_replace('"', '', $d2);
-$d3='no value';
-$d4 = str_replace('"', '', $d4);
-             
-
-            $query = "INSERT INTO reviews VALUES" .
-		"(NULL,'$deptt', '$cno', '$cna', '$inst', '$author', '$d1', '$d2','$d3','$d4',CURDATE())";
-
-            if (!mysql_query($query, $db_server))
-		echo "Review could not be added.<br />" .
-		mysql_error() . "<br /><br />";
-            }
-
-            
-            mysql_close($db_hostname);
-        
+    
+    $dep=$_GET["dept"];
+    
+if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+$start_from = ($page-1) * 5;
+$sql = "SELECT * FROM reviews WHERE Deptt='$dep' ORDER BY id DESC LIMIT $start_from, 5";
+$rs_result = mysql_query ($sql);
 ?>
 
-<!DOCTYPE html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="main.css">
 <link rel="icon" type="image/png" href="src/favicon.png">
-<link rel="image_src" href="src/logo.png">
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Course Rank | Get information/reviews of different courses to plan your semester better.</title>
-
-<script type="text/javascript">
-	  //form validation
-            function validatename(field){
-				if (field =="") 
-				{
-					return "No value entered. \n";}
-				else{return "";}
-			}
-			
-			function validateInstructor(field){
-				if (field =="") {return "No Instructor Name entered. \n";
-			}
-			else{
-				return "";
-			}
-					
-			}
-			function validatecode(field){
-				if (field ==""){ return "No Course Number entered. \n";}
-				else if(isNaN(field)) {
-				return "Course Number should be a number.";
-			} 
-				else{
-					return "";}
-					
-			}
-			
-			
-			//form validation main program
-            function validate(form)
-            {
-				
-				fail=validatename(form.CourseName.value);
-				fail+=validatecode(form.CourseNumber.value);
-				fail+=validateInstructor(form.Instructor.value);
-				fail+=validatename(form.d1.value);
-                                fail+=validatename(form.d2.value);
-                           
-                               fail+=validatename(form.d4.value);
-				
-				if (fail == "") return true
-				else { alert(fail); return false }
-			}
-	  
-	  
-	 
-	  
-            
-        </script>
-
-
-
-
 
 </head>
 <body>
 <div class="container-fluid" id="container">
     <div class="row-fluid" id="top">
         <!--Rainbow band-->
-    </div> 
+    </div>
     <div class="row-fluid" id="main">
         <div class="spanhalf" id="sidebar">
         <ul class="nav nav-pills">
-   <li class="active" ><a href="depreviews.php?dept=AE" rel="tooltip" title="Aerospace Engineering (AE) Courses' Reviews">AE</a></li><br>
+  <li class="active" ><a href="depreviews.php?dept=AE" rel="tooltip" title="Aerospace Engineering (AE) Courses' Reviews">AE</a></li><br>
     <li class="active"><a href="depreviews.php?dept=AN" id="sideitem" rel="tooltip" title="Animation (AN) Courses' Reviews ">AN</a></li><br>
  <li class="active" id="sideitem"><a href="depreviews.php?dept=BS" rel="tooltip" title="Biosciences & Bioengineering (BS) Courses' Reviews">BS</a></li><br>
  
@@ -152,24 +62,23 @@ $d4 = str_replace('"', '', $d4);
 
    
   <li class="active" id="sideitem"><a href="depreviews.php?dept=GNR" rel="tooltip" title="Centre of Studies in Resources Engineering (GNR) Courses' Reviews">GNR</a></li><br>
-    
+   
+   
         </ul>
         </div>
         <div class="span3" id="content">
-               <a href="main.php" title="Home"><div id="logo"></div></a>
-            
-                 <div id="fmenu">
+                <a href="main.php" title="Home"><div id="logo"></div></a>
+             <div id="fmenu">
                    
                 <ul>
                    <li><a href="main.php"><img src="src/1.png"></a></li><br>
                     <li><a href="addreview.php"><img src="src/2.png"></a></li><br>
-                    <li><a href="delete.php"><img src="src/5.png"></a></li><br>
                     <li><a href="index.php?logout=true"><img src="src/3.png"></a></li><br>
                     <li><a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="src/4.png"></a></li><br>
                 </ul>
                      <form class="well form-inline" id="fixsearch" name="search" action="searchresult.php" method="post">
                          <select id="selec" name="dep">  
-               <option>AE</option>  
+                 <option>AE</option>  
                 <option>AN</option>  
    <option>BM</option>  
                 <option>BS</option>  
@@ -241,9 +150,9 @@ $d4 = str_replace('"', '', $d4);
         </div>
         <div class="span8" id="postarea">
             
-          <div class="spanhalf" id="rsidebar">
+            <div class="spanhalf" id="rsidebar">
         <ul class="nav nav-pills">
-   <li class="active" id="sideitem"><a href="depreviews.php?dept=HS" rel="tooltip" title="Humanities & Social Sciences (HS) Courses' Reviews">HS</a></li><br>
+    <li class="active" id="sideitem"><a href="depreviews.php?dept=HS" rel="tooltip" title="Humanities & Social Sciences (HS) Courses' Reviews">HS</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=ID" rel="tooltip" title="Industrial Design Centre (ID) Courses' Reviews">ID</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=IE" rel="tooltip" title="Industrial Engineering & Operations Research (IE) Courses' Reviews">IE</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=IM" rel="tooltip" title="Industrial Management (IM) Courses' Reviews">IM</a></li><br>
@@ -273,159 +182,79 @@ $d4 = str_replace('"', '', $d4);
    
     
     <li class="active" id="sideitem"><a href="depreviews.php?dept=VC" rel="tooltip" title="Visual Communication (VC) Courses' Reviews">VC</a></li><br>
-  
     
         </ul>
         </div>
-          
+            
+            
             <div id="separation" class="span8"></div>
-            <div class="span8" id="add">
-               
-                <form class="form-horizontal" name="addco" action="main.php" method="post">  
-        <fieldset>  
-          <legend>Add your Course Reviews</legend>  
-          
-         
-          <div class="control-group">  
-            <label class="control-label" for="select01" >Department</label>  
-            <div class="controls">  
-              <select id="select01" name="Deptt">  
-                  <option>AE</option>  
-                <option>AN</option>  
-   <option>BM</option>  
-                <option>BS</option>  
-                <option>BT</option> 
-   <option>CL</option>  
-                <option>CH</option>  
-                <option>CE</option>  
-                <option>CM</option>  
-                <option>CS</option> 
-                <option>CR</option> 
- <option>EE</option> 
- <option>EN</option> 
-                <option>EP</option>  
- <option>ES</option> 
-
-                 <option>ET</option> 
-<option>GE</option>  
-<option>GNR</option>  
-                <option>GP</option> 
- 
-  <option>GS</option> 
- <option>HS</option>   
- <option>ID</option>  
-                <option>IE</option> 
-                <option>IM</option>
-                <option>IN</option>
- <option>IT</option>
- 
-                <option>MA</option>
-  <option>MD</option>
-                <option>ME</option>
-<option>MG</option>
-                <option>MM</option>
-<option>MMM</option>
-                <option>MS</option>
-              
-
-
- <option>NT</option> 
-  <option>SC</option>
-                <option>SI</option>  
-		  
-              
-               
-
-               
-              
-                <option>TD</option>  
-               <option>PH</option>
-                <option>RE</option>
-              
-              
-  
-                
-               
-               
-               
-               
-               
-                
-              
-                <option>VC</option>
-              </select> 
-                <p class="help-block">Select the appropriate Department code like "CS" for CS101 course.</p>
-            </div>  
-          </div>  
-          <div class="control-group">  
-            <label class="control-label" for="input01" >Three digit Course Code</label>  
-            <div class="controls">  
-              <input type="text" class="input-xlarge" id="input01" name="CourseNumber">  
-              <p class="help-block">Enter the appropriate Three Digit Course Code like "101" for CS101 course.</p>  
-            </div>  
-          </div>  
-           <div class="control-group">  
-            <label class="control-label" for="input01">Course Name</label>  
-            <div class="controls">  
-              <input type="text" class="input-xlarge" id="input01"  name="CourseName">  
-              <p class="help-block">Enter the name of the Course like "Computer Programming and Utilization" for CS101.</p>  
-            </div>  
-          </div> 
-           <div class="control-group">  
-            <label class="control-label" for="input01">Course Instructor</label>  
-            <div class="controls">  
-              <input type="text" class="input-xlarge" id="input01"  name="Instructor">  
-              <p class="help-block">Enter the name of the Instructor with whom you did the course.</p>  
-            </div>  
-          </div> 
-           <div class="control-group">  
-            <label class="control-label" for="textarea" >What did you learn at the end of this course?</label>  
-            <div class="controls">  
-              <textarea class="input-xlarge" id="textarea" rows="3" name="d1"></textarea>  
-            </div>  
-          </div> 
-           <div class="control-group">  
-            <label class="control-label" for="textarea" >How was the course load (Load=No. of Quizzes, Assigments, etc.)?</label>  
-            <div class="controls">  
-              <textarea class="input-xlarge" id="textarea" rows="3" name="d2"></textarea>  
-              <p class="help-block">Were there too many assignments or too few of them to apply the concepts?</p> 
-            </div>  
-          </div> 
-        
-          <div class="control-group">  
-            <label class="control-label" for="select01" >What was the difficulty level?</label>  
-            <div class="controls">  
-              <select id="select01" name="d4">  
-                <option>Easy</option>  
-                <option>Moderately Difficult</option>  
-                <option>Difficult</option>  
-              </select> 
-                <p class="help-block">Select the appropriate Difficulty level.</p>
-            </div>  
-          </div>  
-          <div class="form-actions">  
-            <button type="submit" class="btn btn-primary" onClick="return validate(addco)">Save changes</button>  
-            <button class="btn">Cancel</button>  <hr><br>
-            <?php if (count($_POST)>0) echo<<<_END
-                <META HTTP-EQUIV=Refresh CONTENT="0; URL='posts.php'">
+            <?php
+            /*$nrows=  mysql_num_rows($rs_result);
+            echo $nrows;*/
+                        while ($row = mysql_fetch_assoc($rs_result)) {
+                            /*if ($nrows==0)
+                            {
+                                echo<<<_END
+                Sorry,no reivews have been added for any of $dep courses.
+                    <br>
+                    Add one <a href="addreview.php">here</a>.
 _END;
-            ?>
-           
-
-          </div>  
-        </fieldset>  
-</form>  
-                
+                            }
+                            else{*/
+                ?>
+            <div class="span8" id="posts">
+                <dl id="postitem" class="dl-horizontal">
+                    <dt>Department</dt><dd><? echo $row["Deptt"]; ?></dd>
+                    <dt>Course Code</dt><dd><? echo $row["CourseNumber"]; ?></dd>
+                    <dt>Course Name</dt><dd><? echo $row["CourseName"]; ?></dd>
+                    <dt>Instructor's Name</dt><dd><? echo $row["Instructor"]; ?></dd>
+                    <br><hr>
+                    <dt>Learning at the end of the course</dt><dd><? echo $row["d1"]; ?></dd>
+                    <br><hr>
+                    <dt>Course load (Load = No of Quizzes, Assigments, etc.)</dt><dd><? echo $row["d2"]; ?></dd>
+                    
+                    <br><hr>
+                    <dt>Difficulty level</dt><dd><? echo $row["d4"]; ?></dd>
+                    <br><hr>
+                    <dt>Review written by</dt><dd><? echo $row["Author"]; ?></dd>
+                    <dt>Date of review</dt><dd><? echo $row["date"]; ?></dd>
+                    
+              
+                </dl>
             </div>
+            <div id="separation" class="span8"></div>
+            <?php
+                         //   }
+                        };
+                ?> 
+            
+            <div class="span8" id="posts">
+                
+                <?php
+                $sql = "SELECT COUNT(ID) FROM reviews WHERE Deptt='$dep'";
+$rs_result = mysql_query ($sql);
+                $row = mysql_fetch_row($rs_result);
+$total_records = $row[0];
+$total_pages = ceil($total_records / 5);
+  if (mysql_num_rows($rs_result)==0){
+      echo<<<_END
+               Sorry, no reivews have been added till now for $dep $code for any semester.
+                    <br>
+                    Add one <a href="addreview.php">here</a>.
+_END;
+  }
+for ($i=1; $i<=$total_pages; $i++) {
+            echo "<a href='depreviews.php?dept=".$dep."&page=".$i."'>".$i."</a> ";
+};
+?>
+            </div>   
+            
         </div>
     </div>
-  <div id="footer2">
-        <span id="f10"> <a href="disclaimer.php">Discaimer</a> | <a href="contact.php">Contact Us</a>  <span id="f11"> Copyright © 2012 Web Team <a href="http://gymkhana.iitb.ac.in/~ugacademics/">UG Academic Affairs</a> 
-                <a href="http://www.iitb.ac.in">IIT Bombay</a>
-         </span>  
-        <span id="f12"> Designed and Developed by <a href="https://www.facebook.com/amitsy">Amit Singh Yadav</a></span>
-        </span>
- </div>
+
 </div>
 </body>
 </html>
+
+
+

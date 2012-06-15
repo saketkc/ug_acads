@@ -10,6 +10,17 @@
     
    
 }
+#headin{
+    font-family:Helvetica,Ubuntu;
+}
+.button {
+    border: none;
+    background: #fff;
+    font-size: 1.7em;
+    box-shadow:none;
+    
+}
+
 #sidebar{
     padding: 10px;
     background-color: #000000;
@@ -74,6 +85,35 @@
     display: block;
     position: fixed;
     
+    margin-top: 300px;
+}
+#footer2{
+    height:40px;
+    width:100%;
+    background: #000;
+    margin-top:30px;
+    border-top-style: solid;
+    border-top-color:#fff;
+    padding:5px;
+    box-shadow: 5px 5px 20px 2px #555;
+  
+}
+#f10{
+    padding-left:100px;
+}
+#f12{
+    float:right;
+    padding-right: 30px;
+   
+}
+#f11{
+    padding-left:15%;
+}
+#fmenu2{
+    display: block;
+     position: fixed;
+    
+    margin-left:50px;
     margin-top: 350px;
 }
 #logo{
@@ -157,6 +197,9 @@ border-radius: 15px;
     text-indent:15px;
 }
 #fmenu ul{
+	list-style-type:none;
+}
+#fmenu2 ul{
 	list-style-type:none;
 }
 #navbar{

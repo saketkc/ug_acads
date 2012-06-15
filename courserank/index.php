@@ -55,6 +55,16 @@ $time = date("Y-m-d H:i:s");
             <div class="row-fluid" id="loginmain">
                 <div class="spanhalf" id="loginsidebar"></div>
                 <div  class="span2 offset1" id="loginlogo"><a href="main.php"><img src="src/logo.png"></a></div>
+
+         <div id="fmenu2">
+                   
+                <ul>
+                   
+                    <li><a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="src/4.png"></a></li><br>
+                </ul>
+               
+
+                </div>
                 <div class="span6 offset4" id="loginmain2">
                     <div id="space"></div>
                     <div id="loginmain3">

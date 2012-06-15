@@ -15,7 +15,7 @@ if (!(isset($_SESSION['ldap_id']))){
 	isset($_POST['Instructor']) &&
         isset($_POST['d1']) &&
             isset($_POST['d2']) &&
-         
+           
 	isset($_POST['d4']))
             {
             $deptt   = get_post('Deptt');
@@ -138,26 +138,36 @@ $d4 = str_replace('"', '', $d4);
         <ul class="nav nav-pills">
     <li class="active" ><a href="depreviews.php?dept=AE" rel="tooltip" title="Aerospace Engineering (AE) Courses' Reviews">AE</a></li><br>
     <li class="active"><a href="depreviews.php?dept=AN" id="sideitem" rel="tooltip" title="Animation (AN) Courses' Reviews ">AN</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=GP" rel="tooltip" title="Applied Geophysics (GP) Courses' Reviews ">GP</a></li><br>
-    
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=BS" rel="tooltip" title="Biosciences & Bioengineering (BS) Courses' Reviews">BS</a></li><br>
+ 
     <li class="active" id="sideitem"><a href="depreviews.php?dept=BM" rel="tooltip" title="Bio-Medical Engineering (BM) Courses' Reviews">BM</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=BS" rel="tooltip" title="Biosciences & Bioengineering (BS) Courses' Reviews">BS</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=BT" rel="tooltip" title="Bio-Technology (BT) Courses' Reviews ">BT</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=ES" rel="tooltip" title="Centre for Environmental Science & Engineering (ES) Courses' Reviews ">ES</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=NT" rel="tooltip" title="Centre for Research in Nano Technology and Sciences (NT) Courses' Reviews">NT</a></li><br>
-   
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=CL" rel="tooltip" title="Chemical Engineering (CL) Courses' Reviews">CL</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=CH" rel="tooltip" title="Chemistry (CH) Courses' Reviews">CH</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=CE" rel="tooltip" title="Civil Engineering (CE) Courses' Reviews ">CE</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=CM" rel="tooltip" title="Climate Studies (CM) Courses' Reviews">CM</a></li><br>
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=BT" rel="tooltip" title="Bio-Technology (BT) Courses' Reviews ">BT</a></li><br>
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=CE" rel="tooltip" title="Civil Engineering (CE) Courses' Reviews ">CE</a></li><br>
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=CH" rel="tooltip" title="Chemistry (CH) Courses' Reviews">CH</a></li><br>
+<li class="active" id="sideitem"><a href="depreviews.php?dept=CL" rel="tooltip" title="Chemical Engineering (CL) Courses' Reviews">CL</a></li><br>
+<li class="active" id="sideitem"><a href="depreviews.php?dept=CM" rel="tooltip" title="Climate Studies (CM) Courses' Reviews">CM</a></li><br>
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=CR" rel="tooltip" title="Corrosion Science & Engineering (CR) Courses' Reviews">CR</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=CS" rel="tooltip" title="Computer Science & Engineering (CS) Courses' Reviews">CS</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=CR" rel="tooltip" title="Corrosion Science & Engineering (CR) Courses' Reviews">CR</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=TD" rel="tooltip" title="CTARA (TD) Courses' Reviews ">TD</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=GS" rel="tooltip" title="Earth Sciences (GS) Courses' Reviews">GS</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=ET" rel="tooltip" title="Educational Technology (ET) Courses' Reviews">ET</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=EE" rel="tooltip" title="Electrical Engineering (EE) Courses' Reviews">EE</a></li><br>
+  <li class="active" id="sideitem"><a href="depreviews.php?dept=EE" rel="tooltip" title="Electrical Engineering (EE) Courses' Reviews">EE</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=EN" rel="tooltip" title="Energy Science and Engineering (EN) Courses' Reviews">EN</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=EP" rel="tooltip" title="Engineering Physics (EP) Courses' Reviews">EP</a></li><br>
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=ES" rel="tooltip" title="Centre for Environmental Science & Engineering (ES) Courses' Reviews ">ES</a></li><br>
+  <li class="active" id="sideitem"><a href="depreviews.php?dept=ET" rel="tooltip" title="Educational Technology (ET) Courses' Reviews">ET</a></li><br>
+<li class="active" id="sideitem"><a href="depreviews.php?dept=GE" rel="tooltip" title="General (GE) Courses' Reviews">GE</a></li><br>
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=GP" rel="tooltip" title="Applied Geophysics (GP) Courses' Reviews ">GP</a></li><br>
+  <li class="active" id="sideitem"><a href="depreviews.php?dept=GS" rel="tooltip" title="Earth Sciences (GS) Courses' Reviews">GS</a></li><br>
+   
+
+
+   
+  <li class="active" id="sideitem"><a href="depreviews.php?dept=GNR" rel="tooltip" title="Centre of Studies in Resources Engineering (GNR) Courses' Reviews">GNR</a></li><br>
+   
+   
+   
+   
+   
+   
+  
     
         </ul>
         </div>
@@ -170,6 +180,7 @@ $d4 = str_replace('"', '', $d4);
                 <ul>
                    <li><a href="main.php"><img src="src/1.png"></a></li><br>
                     <li><a href="addreview.php"><img src="src/2.png"></a></li><br>
+                    <li><a href="delete.php"><img src="src/5.png"></a></li><br>
                     <li><a href="index.php?logout=true"><img src="src/3.png"></a></li><br>
                     <li><a href="http://gymkhana.iitb.ac.in/~ugacademics/"><img src="src/4.png"></a></li><br>
                 </ul>
@@ -177,42 +188,66 @@ $d4 = str_replace('"', '', $d4);
                          <select id="selec" name="dep">  
                 <option>AE</option>  
                 <option>AN</option>  
-                <option>GP</option>  
-                <option>SI</option>  
-                <option>BM</option>  
+   <option>BM</option>  
                 <option>BS</option>  
-                <option>BT</option>  
-                <option>ES</option>  
-                <option>NT</option>  
-                <option>GNR</option> 
-                <option>CL</option>  
+                <option>BT</option> 
+   <option>CL</option>  
                 <option>CH</option>  
                 <option>CE</option>  
                 <option>CM</option>  
                 <option>CS</option> 
-                <option>CR</option>  
-                <option>TD</option>  
-                <option>GS</option>  
-                <option>ET</option>  
-                <option>EN</option> 
+                <option>CR</option> 
+ <option>EE</option> 
+ <option>EN</option> 
                 <option>EP</option>  
-                <option>GE</option>  
-                <option>HS</option>  
-                <option>ID</option>  
+ <option>ES</option> 
+
+                 <option>ET</option> 
+<option>GE</option>  
+<option>GNR</option>  
+                <option>GP</option> 
+ 
+  <option>GS</option> 
+ <option>HS</option>   
+ <option>ID</option>  
                 <option>IE</option> 
                 <option>IM</option>
                 <option>IN</option>
-                <option>MMM</option>
-                <option>MS</option>
+ <option>IT</option>
+ 
                 <option>MA</option>
+  <option>MD</option>
                 <option>ME</option>
+<option>MG</option>
                 <option>MM</option>
-                <option>MD</option>
-                <option>IT</option>
-                <option>PH</option>
+<option>MMM</option>
+                <option>MS</option>
+              
+
+
+ <option>NT</option> 
+  <option>SC</option>
+                <option>SI</option>  
+		  
+              
+               
+
+               
+              
+                <option>TD</option>  
+               <option>PH</option>
                 <option>RE</option>
-                <option>MG</option>
-                <option>SC</option>
+              
+              
+  
+                
+               
+               
+               
+               
+               
+                
+              
                 <option>VC</option>
               </select> 
  
@@ -224,27 +259,48 @@ $d4 = str_replace('"', '', $d4);
         <div class="span8" id="postarea">
             <div class="spanhalf" id="rsidebar">
         <ul class="nav nav-pills">
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=GS" rel="tooltip" title="Earth Sciences (GS) Courses' Reviews">GS</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=GE" rel="tooltip" title="General (GE) Courses' Reviews">GE</a></li><br>
+    
+   
+    
+  
+    
+
+   
+   
+   
+  
     <li class="active" id="sideitem"><a href="depreviews.php?dept=HS" rel="tooltip" title="Humanities & Social Sciences (HS) Courses' Reviews">HS</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=ID" rel="tooltip" title="Industrial Design Centre (ID) Courses' Reviews">ID</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=IE" rel="tooltip" title="Industrial Engineering & Operations Research (IE) Courses' Reviews">IE</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=IM" rel="tooltip" title="Industrial Management (IM) Courses' Reviews">IM</a></li><br>
     <li class="active" id="sideitem"><a href="depreviews.php?dept=IN" rel="tooltip" title="Interaction Design (IN) Courses' Reviews">IN</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=SI" rel="tooltip" title="Applied Statistics and Informatics (SI) Courses' Reviews">SI</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=MS" rel="tooltip" title="Materials Science (MS) Courses' Reviews">MS</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=MA" rel="tooltip" title="Mathematics (MA) Courses' Reviews">MA</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=ME" rel="tooltip" title="Mechanical Engineering (ME) Courses' Reviews">ME</a></li><br>
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=IT" rel="tooltip" title="School of Information Technology (IT)  Courses' Reviews">IT</a></li><br>
+<li class="active" id="sideitem"><a href="depreviews.php?dept=MA" rel="tooltip" title="Mathematics (MA) Courses' Reviews">MA</a></li><br>
+<li class="active" id="sideitem"><a href="depreviews.php?dept=ME" rel="tooltip" title="Mechanical Engineering (ME) Courses' Reviews">ME</a></li><br>
+   <li class="active" id="sideitem"><a href="depreviews.php?dept=MD" rel="tooltip" title="Mobility & Vehicle Design (MD) Courses' Reviews">MD</a></li><br>
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=MG" rel="tooltip" title="SJM School of Management (MG) Courses' Reviews">MG</a></li><br>
+
     <li class="active" id="sideitem"><a href="depreviews.php?dept=MM" rel="tooltip" title="Metallurgical Engineering & Materials Science (MM) Courses' Reviews">MM</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=MD" rel="tooltip" title="Mobility & Vehicle Design (MD) Courses' Reviews">MD</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=PH" rel="tooltip" title="Physics (PH) Courses' Reviews">PH</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=RE" rel="tooltip" title="Reliability Engineering (RE) Courses' Reviews">RE</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=IT" rel="tooltip" title="School of Information Technology (IT)  Courses' Reviews">IT</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=MG" rel="tooltip" title="SJM School of Management (MG) Courses' Reviews">MG</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=SC" rel="tooltip" title="Systems & Control Engineering (SC) Courses' Reviews">SC</a></li><br>
+<li class="active" id="sideitem"><a href="depreviews.php?dept=MMM" rel="tooltip" title="Materials, Manufacturing and Modelling (MMM) Courses' Reviews">MMM</a></li><br>
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=MS" rel="tooltip" title="Materials Science (MS) Courses' Reviews">MS</a></li><br>
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=NT" rel="tooltip" title="Centre for Research in Nano Technology and Sciences (NT) Courses' Reviews">NT</a></li><br>
+  <li class="active" id="sideitem"><a href="depreviews.php?dept=PH" rel="tooltip" title="Physics (PH) Courses' Reviews">PH</a></li><br>
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=RE" rel="tooltip" title="Reliability Engineering (RE) Courses' Reviews">RE</a></li><br>
+<li class="active" id="sideitem"><a href="depreviews.php?dept=SC" rel="tooltip" title="Systems & Control Engineering (SC) Courses' Reviews">SC</a></li><br>
+    <li class="active" id="sideitem"><a href="depreviews.php?dept=SI" rel="tooltip" title="Applied Statistics and Informatics (SI) Courses' Reviews">SI</a></li><br>
+   
+    
+    
+ 
+  
+   
+   
+ <li class="active" id="sideitem"><a href="depreviews.php?dept=TD" rel="tooltip" title="CTARA (TD) Courses' Reviews ">TD</a></li><br>
+   
+    
     <li class="active" id="sideitem"><a href="depreviews.php?dept=VC" rel="tooltip" title="Visual Communication (VC) Courses' Reviews">VC</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=GNR" rel="tooltip" title="Centre of Studies in Resources Engineering (GNR) Courses' Reviews">GNR</a></li><br>
-    <li class="active" id="sideitem"><a href="depreviews.php?dept=MMM" rel="tooltip" title="Materials, Manufacturing and Modelling (MMM) Courses' Reviews">MMM</a></li><br>
+  
+    
     
         </ul>
         </div>
@@ -254,50 +310,74 @@ $d4 = str_replace('"', '', $d4);
                 <form class="form-horizontal" name="search" action="searchresult.php" method="post">  
         <fieldset>  
           <legend>Search Course Reviews</legend>  
-          <p id="r3">Search though this form or use the navigation on the left hand sidebar.</p>
+          <p id="r3">Search though this form or use the navigation on the sidebars.</p>
           <br>
           <div class="control-group">  
             <label class="control-label" for="select01">Department</label>  
             <div class="controls">  
               <select id="select01" name="dep">  
-                <option>AE</option>  
+                 <option>AE</option>  
                 <option>AN</option>  
-                <option>GP</option>  
-                <option>SI</option>  
-                <option>BM</option>  
+   <option>BM</option>  
                 <option>BS</option>  
-                <option>BT</option>  
-                <option>ES</option>  
-                <option>NT</option>  
-                <option>GNR</option> 
-                <option>CL</option>  
+                <option>BT</option> 
+   <option>CL</option>  
                 <option>CH</option>  
                 <option>CE</option>  
                 <option>CM</option>  
                 <option>CS</option> 
-                <option>CR</option>  
-                <option>TD</option>  
-                <option>GS</option>  
-                <option>ET</option>  
-                <option>EN</option> 
+                <option>CR</option> 
+ <option>EE</option> 
+ <option>EN</option> 
                 <option>EP</option>  
-                <option>GE</option>  
-                <option>HS</option>  
-                <option>ID</option>  
+ <option>ES</option> 
+
+                 <option>ET</option> 
+<option>GE</option>  
+<option>GNR</option>  
+                <option>GP</option> 
+ 
+  <option>GS</option> 
+ <option>HS</option>   
+ <option>ID</option>  
                 <option>IE</option> 
                 <option>IM</option>
                 <option>IN</option>
-                <option>MMM</option>
-                <option>MS</option>
+ <option>IT</option>
+ 
                 <option>MA</option>
+  <option>MD</option>
                 <option>ME</option>
+<option>MG</option>
                 <option>MM</option>
-                <option>MD</option>
-                <option>IT</option>
-                <option>PH</option>
+<option>MMM</option>
+                <option>MS</option>
+              
+
+
+ <option>NT</option> 
+  <option>SC</option>
+                <option>SI</option>  
+		  
+              
+               
+
+               
+              
+                <option>TD</option>  
+               <option>PH</option>
                 <option>RE</option>
-                <option>MG</option>
-                <option>SC</option>
+              
+              
+  
+                
+               
+               
+               
+               
+               
+                
+              
                 <option>VC</option>
               </select> 
                 <p class="help-block">Select the appropriate Department code like "CS" for CS101 course.</p>
@@ -319,7 +399,7 @@ _END;
             
           </div>  
         </fieldset>  
-</form>    To browse through all reviews,click <a href="posts.php">here</a>.  
+</form>    To browse through all reviews, click <a href="posts.php">here</a>.  
            
             </div>
             
@@ -335,44 +415,68 @@ _END;
             <label class="control-label" for="select01" >Department</label>  
             <div class="controls">  
               <select id="select01" name="Deptt">  
-                <option>AE</option>  
+                 <option>AE</option>  
                 <option>AN</option>  
-                <option>GP</option>  
-                <option>SI</option>  
-                <option>BM</option>  
+   <option>BM</option>  
                 <option>BS</option>  
-                <option>BT</option>  
-                <option>ES</option>  
-                <option>NT</option>  
-                <option>GNR</option> 
-                <option>CL</option>  
+                <option>BT</option> 
+   <option>CL</option>  
                 <option>CH</option>  
                 <option>CE</option>  
                 <option>CM</option>  
                 <option>CS</option> 
-                <option>CR</option>  
-                <option>TD</option>  
-                <option>GS</option>  
-                <option>ET</option>  
-                <option>EN</option> 
+                <option>CR</option> 
+ <option>EE</option> 
+ <option>EN</option> 
                 <option>EP</option>  
-                <option>GE</option>  
-                <option>HS</option>  
-                <option>ID</option>  
+ <option>ES</option> 
+
+                 <option>ET</option> 
+<option>GE</option>  
+<option>GNR</option>  
+                <option>GP</option> 
+ 
+  <option>GS</option> 
+ <option>HS</option>   
+ <option>ID</option>  
                 <option>IE</option> 
                 <option>IM</option>
                 <option>IN</option>
-                <option>MMM</option>
-                <option>MS</option>
+ <option>IT</option>
+ 
                 <option>MA</option>
+  <option>MD</option>
                 <option>ME</option>
+<option>MG</option>
                 <option>MM</option>
-                <option>MD</option>
-                <option>IT</option>
-                <option>PH</option>
+<option>MMM</option>
+                <option>MS</option>
+              
+
+
+ <option>NT</option> 
+  <option>SC</option>
+                <option>SI</option>  
+		  
+              
+               
+
+               
+              
+                <option>TD</option>  
+               <option>PH</option>
                 <option>RE</option>
-                <option>MG</option>
-                <option>SC</option>
+              
+              
+  
+                
+               
+               
+               
+               
+               
+                
+              
                 <option>VC</option>
               </select> 
                 <p class="help-block">Select the appropriate Department code like "CS" for CS101 course.</p>
@@ -406,7 +510,7 @@ _END;
             </div>  
           </div> 
            <div class="control-group">  
-            <label class="control-label" for="textarea" >How was the course load?</label>  
+            <label class="control-label" for="textarea" >How was the course load (Load=No. of Quizzes, Assigments, etc.)?</label>  
             <div class="controls">  
               <textarea class="input-xlarge" id="textarea" rows="3" name="d2"></textarea>  
                <p class="help-block">Were there too many assignments or too few of them to apply the concepts?</p> 
@@ -421,7 +525,7 @@ _END;
                 <option>Moderately Difficult</option>  
                 <option>Difficult</option>  
               </select> 
-                <p class="help-block">Select the appropriate Difficulty level, of which the course was for you.</p>
+                <p class="help-block">Select the appropriate Difficulty level.</p>
             </div>  
           </div>  
           <div class="form-actions">  
@@ -443,7 +547,13 @@ _END;
         
           
     </div>
-
+    <div id="footer2">
+        <span id="f10"> <a href="disclaimer.php">Discaimer</a> | <a href="contact.php">Contact Us</a>  <span id="f11"> Copyright © 2012 Web Team <a href="http://gymkhana.iitb.ac.in/~ugacademics/">UG Academic Affairs</a> 
+                <a href="http://www.iitb.ac.in">IIT Bombay</a>
+         </span>  
+        <span id="f12"> Designed and Developed by <a href="https://www.facebook.com/amitsy">Amit Singh Yadav</a></span>
+        </span>
+ </div>
 </div>
 </body>
 </html>
