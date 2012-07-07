@@ -1,0 +1,216 @@
+#container{
+    background-image:url("src/back.jpg");
+   
+    height: 100%;
+}
+#top{
+    background-image: url("src/top.jpg");
+    height: 9px;
+    position:fixed;
+    
+   
+}
+#headin{
+    font-family:Helvetica,Ubuntu;
+}
+.button {
+    border: none;
+    background: #fff;
+    font-size: 1.7em;
+    box-shadow:none;
+    
+}
+
+#sidebar{
+    padding: 10px;
+    background-color: #000000;
+ 
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#rsidebar{
+    padding: 10px;
+    background-color: #000000;
+    margin-top: -12px;
+    margin-right: -12px;
+    float: right;
+   
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#loginsidebar{
+    
+    background-color: #000000;
+    height: 100%;
+    float:left;
+}
+#loginlogo{
+   float:left;
+   
+}
+#space{
+    height:5%;
+}
+#loginmain2{
+    padding-left: 5%;
+    background-image: url("src/back.jpg");
+    background-repeat: repeat; 
+    float:right;
+    height: 100%;
+    width:62%;
+}
+#loginmain3{
+    margin-top:100px;
+    background-image: url("src/back3.jpg");
+    width:85%;
+    clear:both;
+	border:solid thick #FFF;
+	color:#FFF;
+	
+}
+#loginform{
+    padding: 2.5%;
+    overflow: hidden;
+    
+}
+#loginmain{
+    height: 100%;
+}
+    
+
+.spanhalf{
+    width: 46px;
+}
+#fmenu{
+    display: block;
+    position: fixed;
+    
+    margin-top: 300px;
+}
+#footer2{
+    height:40px;
+    width:100%;
+    background: #000;
+    margin-top:30px;
+    border-top-style: solid;
+    border-top-color:#fff;
+    padding:5px;
+    box-shadow: 5px 5px 20px 2px #555;
+  
+}
+#f10{
+    padding-left:100px;
+}
+#f12{
+    float:right;
+    padding-right: 30px;
+   
+}
+#f11{
+    padding-left:15%;
+}
+#fmenu2{
+    display: block;
+     position: fixed;
+    
+    margin-left:50px;
+    margin-top: 350px;
+}
+#logo{
+    background-image: url("src/logo.png");
+    height: 210px;
+    width: 320px;
+    background-repeat: no-repeat;
+   position:fixed;
+}
+#postarea{
+  float:right;
+  padding: 1%;
+  width:60%;
+}
+#search{
+    background-color: #eeeeee;
+    height: auto;
+    width:79%;
+    padding: 2%;
+   overflow: auto;
+   -moz-border-radius: 15px;
+border-radius: 15px;
+box-shadow: 5px 5px 20px 2px #555;
+
+}
+#posts{
+    background-color: #fff;
+    height: auto;
+    width:79%;
+    padding: 2%;
+   overflow: hidden;
+   -moz-border-radius: 15px;
+border-radius: 15px;
+box-shadow: 5px 5px 20px 2px #555;
+}
+#separation{
+    height:40px;
+    background-color: none;
+    width:79%;
+}
+#fixsearch{
+    background-color: none;
+}
+#add{
+    background-color: #eeeeee;
+    height: auto;
+   width:79%;
+   padding: 2%;
+   overflow: auto;
+   -moz-border-radius: 15px;
+border-radius: 15px;
+   box-shadow: 5px 5px 20px 2px #555;
+}
+#r1{
+    color:#FFF;
+    font-size: 18px;
+    
+}
+#r4{
+    color:#FFF;
+    font-size: 24px;
+    
+}
+#r3{
+    color:#666;
+    font-size: 18px;
+    
+}
+#r2{
+    color:#CCC;
+    font-size: 14px;
+    
+}
+#submitbutton{
+  
+}
+#selec{
+    width:50px;
+}
+#instructor{
+    text-indent:15px;
+}
+#fmenu ul{
+	list-style-type:none;
+}
+#fmenu2 ul{
+	list-style-type:none;
+}
+#navbar{
+    max-height:40px;
+    background-color: #fff;
+    padding-left:2%;
+    padding-top:3px;
+    padding-right: 2%;
+    width:90%;
+   overflow: hidden;
+   -moz-border-radius: 15px;
+border-radius: 15px;
+box-shadow: 5px 5px 20px 2px #555;
+}
