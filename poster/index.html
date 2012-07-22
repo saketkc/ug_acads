@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+<link href="css/custom-theme/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/showhide.js"></script>
+<!-- InstanceBeginEditable name="documentready2" -->
+
+<script type="text/JavaScript" src="js/jquery.mousewheel.js"></script>
+<script type="text/JavaScript" src="js/slimbox-2.03/js/slimbox2.js"></script>
+<script type="text/JavaScript" src="js/cloud-carousel.1.0.5.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+		
+	$("#da-vinci-carousel").CloudCarousel( { 
+		reflHeight: 56,
+		reflGap:2,
+		titleBox: $('#da-vinci-title'),
+		altBox: $('#da-vinci-alt'),
+		buttonLeft: $('#but1'),
+		buttonRight: $('#but2'),
+		yRadius:40,
+		xPos: 285,
+		yPos: 120,
+		speed:0.15,
+		mouseWheel:true
+	});
+	
+	$("#carousel2").CloudCarousel({			
+		xPos:280,
+		yPos:80,
+		buttonLeft: $('#but3'),
+		buttonRight: $('#but4'),				
+		FPS:30,
+		autoRotate: 'left',
+		autoRotateDelay: 1200,
+		speed:0.2,
+		mouseWheel:true,
+		bringToFront:true
+	});	
+		
+});
+</script>
+
+</head>
+<body>
+<div id="midground">
+<div id="foreground">
+<div id='container'>
+  
+  
+  <div id="content-container" >
+    <div id='maincontent' >
+       <h1>Cloud Carousel - A 3d Carousel in Javascript</h1>
+  
+  
+	
+
+<div id="da-vinci-carousel" style="width:570px; height:384px;background: url(/images/carousel/bg.jpg);overflow:scroll;">
+	          
+              
+        <a href="images/carousel/big-da-vinci/382px-Leonardo_self.jpg" rel='lightbox' title="Leonardo Da Vinci"><img class="cloudcarousel" src="/images/carousel/test9.png" width="128" height="164" alt="Self-portrait in red chalk, circa 1512-1515." title="Leonardo Da Vinci" /></a>  
+
+        <a href="images/carousel/big-da-vinci/396px-Mona_Lisa.jpg" rel='lightbox' title="Mona Lisa"><img class="cloudcarousel" src="/images/carousel/test1.png" width="128" height="164" alt="Oil on cotton wood, circa 1503–1505." title="Mona Lisa" /></a>
+
+        <a href='images/carousel/big-da-vinci/439px-The_Lady_with_an_Ermine.jpg' rel='lightbox' title="Lady with an Ermine"><img class="cloudcarousel" src="/images/carousel/test2.png" width="128" height="164" alt="Oil on wood panel, 1485." title="Lady with an Ermine" /></a>
+
+  <a href="images/carousel/big-da-vinci/Madonna_of_the_Yarnwinder.jpg" rel="lightbox" title="Madonna of the Yarnwinder"><img class="cloudcarousel" src="/images/carousel/test3.png" width="128" height="164" alt="Oil on canvas, circa 1501." title="Madonna of the Yarnwinder" /></a>
+          
+        <a href="images/carousel/big-da-vinci/470px-Madonna_Litta.jpg" rel="lightbox" title="Madonna and the Child"><img class="cloudcarousel" src="/images/carousel/test4.png" width="128" height="164" alt="Oil on canvas (transferred from panel), circa 1490." title="Madonna and the Child" /></a>
+          
+        <a href="images/carousel/big-da-vinci/390px-Bacchus_painting.jpg" rel="lightbox" title="Bacchus"><img class="cloudcarousel" src="/images/carousel/test5.png" width="128" height="164" alt="Oil on walnut panel transferred to canvas, circa 1510–1515." title="Bacchus" /></a>
+        
+        <a href = "images/carousel/big-da-vinci/452px-Madonna_of_the_carnation_EUR.jpg" rel="lightbox" title="Madonna of the Carnation" ><img class="cloudcarousel" src="/images/carousel/test6.png" width="128" height="164" alt="Oil on panel, circa 1478–1480." title="Madonna of the Carnation" /></a>
+
+          <a href="images/carousel/big-da-vinci/454px-Leonardo_-_St._Anne_cartoon-alternative-downsampled.jpg" rel="lightbox" title="The Virgin and Child with St. Anne and St. John the Baptist"><img class="cloudcarousel" src="/images/carousel/test7.png" width="128" height="164" alt="
+Charcoal, black and white chalk on tinted paper, circa 1499–1500." title="The Virgin and Child with St. Anne and St. John the Baptist" /></a>
+          
+          <a href="images/carousel/big-da-vinci/FileLeonardo-da-Vinci-020.jpg" rel="lightbox" title="The Virgin and Child with St. Anne"><img class="cloudcarousel" src="/images/carousel/test8.png" width="128" height="164" alt="Oil on panel, circa 1510." title="The Virgin and Child with St. Anne" /></a>
+      
+          
+          <!-- ************************* -->
+           
+<!-- ************************ -->
+          
+
+            <div id="da-vinci-title"  ></div>
+      		<div id="da-vinci-alt" ></div>
+          
+<div id="but1" class="carouselLeft" style="position:absolute;top:20px;right:64px;"></div>
+ 			<div id="but2" class="carouselRight" style="position:absolute;top:20px;right:20px;"></div>      
+ 	</div>
+         
