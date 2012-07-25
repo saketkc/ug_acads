@@ -1,0 +1,41 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>SAC Room Booking System</title>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="script.js"></script>
+
+</head>
+<body style="background-color:rgb(59,82,124);">
+<div id="indexcontainer">
+<h1><b>Room Booking System</b></h1>
+
+<div id="login">
+
+<form action="login.php" method="post">
+
+<table id="tlogin">
+<tr>
+<td>Username :</td>
+<td><input type="text" name="username" style="background-color:#ffffff; opacity: 0.5; color:#000000; width:200px; height:30px; border:0; font-size:18px; padding:5px;"/></td>
+</tr>
+</br></br>
+<tr>
+<td>Password :</td>
+<td><input type="password" name="password" style="background-color:#ffffff; opacity: 0.5; color:#000000; width:200px; height:30px; border:0; font-size:18px; padding:5px;"/></td>
+</tr>
+</table>
+</br></br></br>
+<input type="submit" value="Login" style="border:0; color:#ffffff; background-color:#ffffff; opacity:0.5; color:#000000; font-weight:bold; width:75px; height:30px; cursor:pointer;"/>
+</form>
+
+</div>
+
+</div>
+</body>
+</html>
