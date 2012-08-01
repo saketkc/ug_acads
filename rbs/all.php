@@ -35,23 +35,7 @@ padding:5px;
 session_start();
 $userid=$_SESSION['id'];
 
-$host = "localhost";
-$user = "root";
-$pass = "RectumSempra";
-$db = "test";
-$r = mysql_connect($host, $user, $pass);
-
-if (!$r)
-{
-echo "Could not connect to server</br>";
-trigger_error(mysql_error(), E_USER_ERROR);
-}
-
-	mysql_select_db($db) or die(mysql_error());
-
-
-
-
+include("connect.php");
 
 $datenow=date('d');
 $mnthnow=date('m');

@@ -54,6 +54,6 @@ else {
 	}
 
 ?>
-<div style="margin-left:auto; margin-right:auto; text-align:center;"><b><a href="rbs.php" >Back</a></b></div>
+<div style="margin-left:auto; margin-right:auto; text-align:center;"><b><a href="index.php" >Back</a></b></div>
 
 </html>

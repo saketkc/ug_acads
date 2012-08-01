@@ -35,19 +35,7 @@ padding:5px;
 session_start();
 $userid=$_SESSION['id'];
 
-$host = "localhost";
-$user = "root";
-$pass = "RectumSempra";
-$db = "test";
-$r = mysql_connect($host, $user, $pass);
-
-if (!$r)
-{
-echo "Could not connect to server</br>";
-trigger_error(mysql_error(), E_USER_ERROR);
-}
-
-	mysql_select_db($db) or die(mysql_error());
+include("connect.php");
 
 
 
@@ -62,7 +50,7 @@ $nowid=(100*$yrnow)+$mnthnow;
 $result3=mysql_query("SELECT * FROM adminbookings ORDER BY mydate");
 echo "<a href=\"welcome.php\" style=\"text-decoration:underline; cursor:pointer; color:#000000;\"><b><i>Back</i></b></a></br>";
 echo "<table id=\"mybookings\" style=\"text-align:right; float:left;\">";
-echo "<tr><td><b>Event</b></td><td><b>Venue</b></td><td><b>Date</b></td><td><b>Time</b></td><td><b>Duration</b></td><td>Registeration done by</td></tr>";
+echo "<tr><td><b>Event</b></td><td><b>Venue</b></td><td><b>Date</b></td><td><b>Time</b></td><td><b>Duration</b></td><td><b>Registeration done by</b></td></tr>";
 while($details=mysql_fetch_array($result3)) {
 	if($details['mydate']<$todayid) {
 		continue;
