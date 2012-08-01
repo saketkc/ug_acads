@@ -39,6 +39,7 @@ violet : rgb(125,63,86)
 	margin-left:auto;
 	margin-right:auto;}
 	
+/*
 #parent{
 	background-color: #ffffff;
 	width:100%;
@@ -96,8 +97,70 @@ violet : rgb(125,63,86)
 	top: 90px;
 	height:470px;
 	width:470px;
-	overflow-x:scroll; }		
+	 }		
 	
+*/
+
+
+#base{
+	width:50%;
+	height:100%;
+	position:absolute;
+	left:0px;
+	top:0px;
+	background-color:rgb(59,82,124);
+	z-index: -1;  }
+
+#bigcontent{
+	width:940px;
+	height:;
+	z-index:10;
+	margin-left: auto;
+	margin-right: auto;
+   margin-top: 50px;
+}
+
+#contentleft{
+	width: 470px;
+	float: left;
+	color:#ffffff;}
+
+#contentright{
+	padding-right:20px;
+	padding-left:20px;
+	width: 430px;
+	height: 450px;
+	float: right;
+	color: #000000;
+	text-align: right;
+	overflow-y: scroll;}
+
+#contentright hr{
+	float: right;
+	width: 85%;}
+
+#contentright table{border:none;
+   color:#000000;
+	border-color:rgb(59,82,124);}
+
+#contentright tr{border:solid;
+
+	border-color:rgb(59,82,124);}
+	
+#contentright td{border:solid;
+padding:5px;
+	border-color:rgb(112,134,87);}
+
+
+h2, h3, h4{
+	color:rgb(59,82,124);}
+
+
+
+
+
+
+
 #container{
 	z-index: 20;
 	background-color:#000000;

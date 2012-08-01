@@ -1,6 +1,6 @@
 <html>
 <?php
-if($_POST['username']!='' && $_POST['password']!='')
+if($_POST['username']!=NULL && $_POST['password']!=NULL)
 {
 $us = $_POST['username'];
 $pa = $_POST['password'];
