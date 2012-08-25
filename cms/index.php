@@ -1,4 +1,9 @@
-<?php
+<html>
+
+
+<head>
+    <title>CMS For UG Acads</title>
+    <?php
 require_once("functions.php");
 $alldepartments = DepartmentFindAll();
 if(isset($_POST['submit'])){
@@ -25,10 +30,8 @@ else {
     $message = "Login Failed";
     
 }
+}
 ?>
-<html>
-<head>
-    <title>CMS For UG Acads</title>
 </head>
 <body>
     <?php echo $message; ?>

@@ -24,7 +24,7 @@ function ldap_find_all($attribute = 'uid', $value = '*', $baseDn = 'dc=iitb,dc=a
 } 
 
 function DepartmentFindAll(){
-	require_once("dbconnect.php");
+	require_once("logininfo.php");
 	$db = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpassword );	
 	$query = $db->prepare("SELECT value,department from ug_departments ");
 	$query->execute();
