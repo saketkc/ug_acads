@@ -22,53 +22,35 @@ Released   : 20120624
            
 
 <!-- Add mousewheel plugin (this is optional) -->
-<script type="text/javascript" src="/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+                
+                
+                
+		
+		<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+
+	<script type="text/javascript" src="/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
 
 <!-- Add fancyBox -->
-<link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
-<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.0"></script>
-
-                
-                
-                
-		<script type = "text/javascript" src = "jquery-1.7.1.min.js">
-		</script>
-		<script type = "text/javascript" src = "jquery.dropotron-1.0.js">
-		</script>
-		<script type = "text/javascript" src = "jquery.slidertron-1.1.js">
-		</script>
-
-	
+<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
+<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.0"></script>
 
 
-		<script type = "text/javascript">
+
+		<script>
                   
 		
               
                     $(document).ready(function() {
                         
-                          $('#menu > ul').dropotron({
-					mode: 'fade',
-					globalOffsetY: 11,
-					offsetY: -15
-				});
-				$('#slider').slidertron({
-					viewerSelector: '.viewer',
-					indicatorSelector: '.indicator span',
-					reelSelector: '.reel',
-					slidesSelector: '.slide',
-					speed: 'slow',
-					advanceDelay: 4000
-				});
-	
-                        
+                          
                         
                         
 			/*
 			 *  Simple image gallery. Uses default settings
 			 */
 
-			$('.fancybox').fancybox();
+			$(".fancybox").fancybox();
 
 			/*
 			 *  Different effects
@@ -368,7 +350,7 @@ Released   : 20120624
 				<div id = "content">
 					<div class = "box">
 						<p align = "justify">
-							<a class="fancybox" href="1_b.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><img src="1_s.jpg" alt="" /></a>
+						<a class="fancybox" rel="group" href="1_b.jpg"><img src="1_s.jpg" alt="" /></a>
 The Students’ Gymkhana along with its infrastructure is an organization to foster and develop all student activities in the Institute. It aims at promoting and developing organizational abilities in students. It has been successful over the years in evolving a well-informed, articulate and participatory student community life. It has been instrumental in identifying student issues and promoting discussion on them. It functions as the office for all election and nominations of students for gymkhana activities. The official year for all working shall be from the first day of April to the thirty-first day of March of the ensuing Calendar Year. This is also the period during which student officials of the Gymkhana hold tenure.
 						</p>
 					</div>
