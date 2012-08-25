@@ -248,7 +248,7 @@ Released   : 20120624
 
 	
                     
-			$(".fancybox").fancybox();
+			
 		</script>
 		<?php
 			include 'includes/db.inc.php';
