@@ -246,7 +246,7 @@ Released   : 20120624
 			});
 
 
-		});
+	
                     
 			$(".fancybox").fancybox();
 		</script>
