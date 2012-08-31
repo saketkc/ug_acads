@@ -1,0 +1,56 @@
+/* SLIDES (show a title, and when clicked on the content shows with a nice slide animation) */
+div.sliderContent{
+	padding: 10px;
+}
+div.sliderHead{
+	font-size:26px;
+}
+div.sliderHead:hover{
+	cursor:pointer;
+	color:#F90;
+}
+img.sliderImage{
+	height:24px;
+	width:24px;
+	vertical-align:middle;
+	margin-top:-6px;
+	margin-right: 10px;
+}
+
+/* MISC, used on pages, you can remove it if you don't need it */
+hr{
+	border-top:1px solid #EEE;
+}
+div .leftLine{
+	border-left:1px solid #EEE;
+	padding-left: 10px;
+	margin-bottom:20px;
+}
+
+/* When a tile links to nowhere, use this as optClass to not confuse visitors */
+a.noClick:hover{
+	cursor:default;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	padding: 1px;
+	border:none;
+}
+
+/*FOR THE TUERNED ARROW TILE IN TILE GROUP 3 - JUST AN EXAMPLE -  REMOVE THIS LINE!*/
+a.turnedArrow img{
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+/*FADED TILE */
+.blueGradient{
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6+ */
+background: -webkit-linear-gradient(-45deg,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* IE10+ */
+background: linear-gradient(135deg,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}

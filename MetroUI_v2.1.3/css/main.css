@@ -1,0 +1,162 @@
+/* METRO UI TEMPLATE v2.0.0
+/* Copyright 2012 Thomas Verelst, http://metro-webdesign.info
+
+/*GENERAL*/
+html{
+	margin:0;
+	padding:0;
+	font-family:  'Open Sans', Segoe UI, Tahoma,Helvetica,sans-serif;
+	font-size:13px;
+	color: #FFF;
+	overflow-y:scroll;
+}
+a{
+	color:#FFF;
+	text-decoration:underline;
+}
+a:hover{
+	color: #F90;
+}
+a:active, a:selected, a:visited, a:focus {
+ 	outline: none;
+	border:none;
+}
+p{
+	margin-left:20px;
+}
+
+/* HEADINGS */
+h1{
+	font-size:36px;
+	font-weight:normal;
+	margin:25px 0 2px 0;
+}
+h2{
+	font-size:26px;
+	font-weight:normal;
+	margin:20px 0 2px 0;
+}
+h3{
+	font-size:20px;
+	font-weight:bold;
+	margin:20px 0 2px 0;
+}
+
+/* FORMS */
+button{
+	 border:1px solid #FFF;
+	 background-color:#555;
+	 color: #FFF;
+}
+button:hover{
+	background-color:#777;
+}
+
+/*LAYOUT PARTS*/
+#wrapper{
+	max-width: 1000px;
+	min-width: 850px;
+	padding: 0 50px;;
+	margin:30px auto; /* auto margin to center horizontally, 50px for bottom and top margin */
+	z-index:-99;
+}
+#header{
+	position:relative;
+	z-index:1;
+}
+#content{
+	-webkit-transition:margin-left 600ms;
+	-moz-transition:margin-left 600ms;
+	-o-transition:margin-left 600ms;
+	-ms-transition:margin-left 600ms;
+	transition:margin-left 600ms;
+	position:relative;
+	margin-bottom: 100px;
+	z-index:0;
+}
+#footer{ /*show a little footer in the rightdown corner*/
+	position:fixed;
+	bottom:5px;
+	right:5px;
+	color:#BBB;
+	font-size:12px;
+	font-weight:lighter;
+	text-decoration:none;
+	z-index:-98; /* draw it behind everything */
+}
+#footer:hover{
+	cursor:default;
+}
+#catchScroll{
+	width:100%;height:100%;position:fixed;z-index:-99;top:0;left:0;
+}
+#leftArrow,#rightArrow{
+	position:absolute;
+	top: 20px;
+	opacity: 0.3;
+	height:32px;
+	display:none;
+}
+#leftArrow:hover,#rightArrow:hover{
+	cursor:pointer;
+}
+#leftArrow{
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform:rotate(180deg);
+}
+
+/* NAVIGATION */
+#siteTitle{ /*the siteName */
+	font-size: 46px;
+	text-decoration:none;
+	font-weight:lighter;
+}
+#subTitle{ /*the title of the tilepage we are on */
+	font-size: 26px;
+	text-decoration:none;
+	font-weight:lighter;
+	position:absolute;
+	margin-top:-45px; /*Dirty way to place it above the tiles */
+}
+#subTitle h2{
+	margin:0;
+	font-weight:inherit;
+	font-size:inherit;
+}
+#nav{
+	display:none;
+	position:relative;
+	top: 28px;
+	float:right;
+	z-index:1;
+}
+#navStripe{
+	border-top:1px solid #FFF;
+	display:none;
+	margin-top:5px;
+}
+.navItem{ /* Navigation link */
+	padding:3px 8px;
+	margin: 0px 5px 0 0;
+	top: 100px;
+	color:#FFF;
+	font-size:16px;
+	text-decoration:none;
+}
+.navItem:visited{
+	color:#FFF;
+}
+.navItem:hover{
+	color:#FFF;
+	border:1px solid #FFF;
+	padding: 2px 7px;
+	-moz-box-shadow: 0 0 7px #fff;
+	-webkit-box-shadow: 0 0 7px #fff;
+	box-shadow: 0 0 7px #fff;
+}
+.navItemActive{
+	border:1px solid #FFF;
+	padding: 2px 7px;
+}

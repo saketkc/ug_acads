@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Amit" >
+
+   <!--  Le styles-->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      } 
+    </style>
+   <link href="css/bootstrap-responsive.css" rel="stylesheet">
+   <script src="js/jquery.js"></script>
+  <!--    Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    
+  
+    <link rel="apple-touch-icon-precomposed" href="">
+     <link href="css/main.css" rel="stylesheet">
+ 
+    
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Gymkhana, IIT Bombay</a>
+          <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              Add a Notice as <a href="#" class="navbar-link">Admin</a>
+            </p>
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li class="dropdown" id="accountmenu">  
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Links<b class="caret"></b></a>  
+                        <ul class="dropdown-menu">  
+                            <li><a href="#">UG Academics</a></li>  
+                            <li><a href="#">PG Academics</a></li>  
+                            <li class="divider"></li>  
+                            <li><a href="#">Hostel Affairs</a></li>  
+                            <li><a href="#">Cultural Affairs</a></li>  
+                            <li><a href="#">Sports Affairs</a></li> 
+                             <li><a href="#">STAB</a></li> 
+                             <li class="divider"></li>  
+                             <li><a href="#">Mood Indigo</a></li>  
+                            <li><a href="#">Techfest</a></li>  
+                            <li><a href="#">E Cell</a></li> 
+                                 <li><a href="#">SARC</a></li> 
+                                  <li class="divider"></li>  
+                             <li><a href="#">Insight</a></li>  
+                            <li><a href="#">Aawaaz</a></li>  
+                        </ul>  
+                    </li>  
+              <li><a href="#contact">Complaint Management System</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span1" id="sidebar1">
+          <div class="well sidebar-nav" id="sidebar2">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <li class="active"><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="span9">
+          <div class="hero-unit">
+            <h1>Hello, world!</h1>
+            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+            <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+          </div>
+          <div class="row-fluid">
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div>
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div>
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div>
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div>
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div>
+          </div>
+        </div> 
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
+
+    </div> -->
+
+<div id="contentbox">
+<div class="metro" id ="box">
+    <div class="layout">
+<div class="metro-scroll">
+            <div class="content clearfix" id="content">
+                <div class="metro-sections">
+                    <div class="metro-section size5" id="section-general">
+                        <a href="#"><h2>Notices<small></small></h2></a>
+                        <a href="#" class="tile tile-double tile-double-vertical bg-color-blue">
+                            <div class="tile-announce">
+                                <div class="announce-content">
+                                    <img src="img/windows-8-metro.jpg"/>
+                                </div>
+                                <div class="announce-description">
+                                    <div class="label label-color-red">description</div>
+                                    <div class="text">Here the description goes</div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="http://opensource.org/" class="tile" style="background: #fff">
+                            <div class="tile-icon-cover">
+                                <img src="img/osi-1.png"/>
+                            </div>
+                        </a>
+<a href="http://opensource.org/" class="tile" style="background: #fff">
+                            <div class="tile-icon-cover">
+                                <img src="img/osi-1.png"/>
+                            </div>
+                        </a>
+                        <a href="http://opensource.org/" class="tile" style="background: #fff">
+                            <div class="tile-icon-cover">
+                                <img src="img/osi-1.png"/>
+                            </div>
+                        </a>
+                        <div class="tile bg-color-red">
+                            <div class="tile-icon-large">
+                                <img src="img/mit.png"/>
+                            </div>
+                        </div>
+
+                        <a href="http://lesscss.org/" class="tile bg-color-blueDark">
+                            <div class="tile-icon-large">
+                                <h2 style="margin-top: 35px; color: #fff;">{Notice}</h2>
+                            </div>
+                        </a>
+  <a href="http://lesscss.org/" class="tile bg-color-blueDark">
+                            <div class="tile-icon-large">
+                                <h2 style="margin-top: 35px; color: #fff;">{Notice}</h2>
+                            </div>
+                        </a>
+                        <a href="mailto:sergey@pimenov.com.ua" class="tile">
+
+                            <div class="tile-image">
+                                <img src="img/myface.jpg"/>
+                            </div>
+
+                            <div class="tile-announce">
+                                <div class="announce-description">
+                                    <div class="label label-color-green">Notice</div>
+                                    <div class="text">Description content</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="metro-section size2">
+                        <a href="#"><h2>Google Calendar<small></small></h2></a>
+                        <a href="#" class="tile tile-double tile-double-vertical bg-color-white">
+                            <div class="tile-cover">
+                                <img src="img/IC568017.png"/>
+                            </div>
+                            <div class="tile-announce">
+                                <div class="announce-description">
+                                    <div class="label label-color-blue">Calendar</div>
+                                    <div class="text">Add the calendar here</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="metro-section size2" id="section-tiles">
+                        <a href="#"><h2>Points Tally <small></small></h2></a>
+                        <a href="#" class="tile tile-double tile-double-vertical">
+                            <div class="tile-announce">
+                                <div class="announce-content">
+                                    <img src="img/tiles.png" />
+                                </div>
+                                <div class="announce-description">
+                                    <div class="label label-color-red">Points Tally</div>
+                                 <div class="text">add the points tally here</div>
+                            </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="metro-section size2" id="section-elements">
+                        <a href="#"><h2>CMS <small></small></h2></a>
+                        <a href="#" class="tile tile-double tile-double-vertical">
+                            <div class="tile-announce">
+                                <div class="announce-content">
+                                    <img src="img/cp_dp.jpg" />
+                                </div>
+                                <div class="announce-description">
+                                    <div class="label label-color-blue">CMS</div>
+                                    <div class="text">Addt the CMS here</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+</div>
+</div>
+</div></div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" >
+    
+ $(document).ready(function () {     
+    $('.dropdown-toggle').dropdown()
+});
+
+  
+</script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>
