@@ -1,0 +1,71 @@
+/* TILES */ 
+/*General*/
+.tile{
+	text-decoration:none; /* They are links for google, so we'll decorate them like normal text :) */
+	color: #FFF;
+	padding:1px;
+	margin: 0;
+	margin-bottom:500px;
+	display:none;
+	position:absolute;
+	overflow:hidden;
+}
+.tile:visited{
+	color:#FFF;
+}
+.tile img{
+	border:none;
+}
+.tile:hover{
+	padding:0;
+	text-decoration: none;
+	color:#FFF;
+	border: 1px solid #FFF;
+	-moz-box-shadow: 0 0 7px #fff;
+	-webkit-box-shadow: 0 0 7px #fff;
+	box-shadow: 0 0 7px #fff;
+}
+
+/* tileTitleText */
+#title{
+	margin:3px 3px 0 10px;
+	padding: 0px;
+	font-size: 30px;
+	font-weight:500;
+}
+#desc{
+	margin: 0 12px 0 12px;
+	padding: 0;
+	font-size: 13px;
+	position:absolute;
+	
+}
+
+/*Image Slider Tile */
+#tileSliderText{
+	padding:5px;
+	font-size:26px;
+	text-align:center;
+}
+
+/* Slideshow tile */
+.tileSlideshowImage, .tileSlideshowImageBack{
+	position:absolute;
+	top: 0;
+	left:0;
+	margin:0;
+	padding:0;
+	width: 100%;
+	height:100%;
+	z-index:3;	
+}
+.tileSlideshowImageBack{
+	z-index:2;
+}
+.tileSlideshowTitle{
+	position:absolute;
+	bottom:5px;
+	left:5px;
+	font-size:24px;
+	z-index:4;
+}

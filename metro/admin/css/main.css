@@ -1,0 +1,122 @@
+/*GENERAL*/
+html{
+	background-color:#2C0E2C;
+	font-family:  'Open Sans', Segoe UI, Tahoma,Helvetica,sans-serif;
+	font-size:13px;
+	color: #FFF;
+	overflow-y:scroll;
+}
+#wrapper{
+	width: 1000px;
+	margin:0 auto 50px auto;
+	position:relative;
+}
+#footer{ /*show a little footer in the rightdown corner*/
+	position:fixed;
+	bottom:5px;
+	right:5px;
+	font-size:12px;
+	font-weight:lighter;
+	z-index:-100; /* draw it behind everything */
+	text-decoration:none;
+	color:#BBB;	
+}
+#footer:hover{
+	text-decoration:underline;
+	color:#BBB;
+}
+#logoutLink{
+	position:absolute;
+	top:20px;
+	right:0;
+	text-decoration:none;
+	font-size:14px;
+}
+/* FORMS */
+button{
+	 border:1px solid #FFF;
+	 padding: 2px 5px;
+	 margin-left:5px;
+	 background-color:#555;
+	 color: #FFF;
+}
+button:hover{
+	background-color:#777;
+	cursor:pointer;
+}
+button:active{
+	background-color:#F90;
+}
+input{
+}
+
+h1{
+	font-size:36px;
+	font-weight:500;
+	margin:25px 0 5px 0;
+}
+h2{
+	font-size:26px;
+	font-weight:500;
+	margin:15px 0 10px 0;
+}
+h3{
+	font-size:18px;
+	font-weight:600;
+	margin:20px 0 7px 0;
+}
+
+h1 a{
+	color:#FFF;
+	text-decoration:none;
+}
+h1 a:hover{
+	color:#FFF;
+	text-decoration:underline;
+}
+
+a{
+	color:#FFF;
+	text-decoration:underline;
+}
+a:hover{
+	color: #F90;
+}
+a:active, a:selected, a:visited, a:focus {
+ 	outline: none;
+	border:none;
+}
+/*--------------------------*/
+.messagebox{
+	width:100px;
+	margin-left:15px;
+	border:1px solid #F90;
+	background:#DDD;
+	padding:3px;
+	color:#F90;
+	margin-top: 2px;
+}
+.messageboxok{
+	width:auto;
+	margin-left:15px;
+	border:1px solid #608600;
+	background:#DDD;
+	padding:3px;
+	font-weight:bold;
+	color:#608600;
+	margin-top: 2px;
+}
+.messageboxerror{
+	width:auto;
+	margin-left:15px;
+	border:1px solid #CC0000;
+	background:#DDD;
+	padding:3px;
+	font-weight:bold;
+	color:#CC0000;
+	margin-top: 2px;
+}
+hr{
+	border:none;
+	border-top:1px solid #EEE;
+}

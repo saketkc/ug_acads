@@ -1,0 +1,24 @@
+.pageLink{
+	color:#FFF;
+	text-decoration:none;
+}
+.pageLink:hover{
+	color:#FFF;
+	text-decoration:underline;
+}
+#newPage{
+	margin-top:30px; 
+	padding:2px;
+	font-size:12px;
+}
+#newPageWrapper{
+	margin: 30px 40px 30px 0;
+	padding:30px;
+	background-color:#765876;
+	border: 3px #4B384B solid;
+	display:none;
+}
+#goPathLink{
+	margin-right:10px;
+	margin-bottom:10px;
+}
