@@ -3,13 +3,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Gymkhana, IIT Bombay </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="Amit" >
+    <meta name="author" content="WebTeam UG Academic Council" >
 
    <!--  Le styles-->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/flip.css" rel="stylesheet">
+    <link href="css/html5.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -21,6 +23,8 @@
     </style>
   
      <script src="js/jquery.js"></script>
+     <script src="js/jquery.flip.js"></script>
+     
   <!--    Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -35,7 +39,35 @@
  
     
     
-    
+    <script type="text/javascript">
+			$(function(){
+				
+				$("#flipPad a:not(.revert)").bind("click",function(){
+					var $this = $(this);
+					$("#flipbox").flip({
+						direction: $this.attr("rel"),
+						color: $this.attr("rev"),
+						content: $this.attr("title"),//(new Date()).getTime(),
+						onBefore: function(){$(".revert").show()}
+					})
+					return false;
+				});
+				
+				$(".ug").bind("click",function(){
+										$("#flipbox").flip({
+						direction: "tb",
+						color: "red",
+						content: "jkj",//(new Date()).getTime(),
+						onBefore: function(){$(".revert").show()}
+					})
+					return false;
+					
+				});
+				
+
+				
+			});
+		</script>		
     
   </head>
 
@@ -89,28 +121,46 @@
         
         <div class="span9">
           <div class="hero-unit">
-            <h1>Notices</h1>
-            <p>Insert corousel plugin here</p>
+           <div class="clearfix">
+				<article class="main">
+					
+					<h3>
+						What is Flip?
+					</h3>
+					<p>
+						<strong>Flip</strong> is a <a href="http://www.jquery.com" title="jQuery">jQuery</a> plugin that will flip easily your elements in four directions. Try it
+					</p>
+					
+					<div id="flipbox">Hello! I'm a flip-box! :)</div>
+					<div id="flipPad">
+						<a href="#" class="left" rel="rl" rev="#39AB3E" title="Change content as <em>you</em> like!">left</a>
+						<a href="#" class="top" rel="bt" rev="#B0EB17" title="Ohhh yeah!">top</a>
+						<a href="#" class="bottom" rel="tb" rev="#82BD2E" title="Hey oh let's go!">bottom</a>
+						<a href="#" class="right" rel="lr" rev="#C8D97E" title="Waiting for css3...">right</a>
+						<a href="#" class="revert">revert!</a>
+					</div>
+		</div>				
            
           </div>
           
           
         </div><!--/span-->
+       	
         <div class="span3">
           <div class="well sidebar-nav" id="rsidebar">
             <ul class="nav nav-list">
-         <div id="sidetileo">   <div id="sidetile"> <h2>UG Academics</h2></div></div>
+         <a href="#" class="ug"><div id="sidetileo">   <div id="sidetile"> <h2>UG Academics</h2></div></div></a>
             <div id="sidetilespace"></div>
-   <div id="sidetileo">   <div id="sidetile"><h2>Cultural</h2></div></div>
+   <a href="#cult"><div id="sidetileo">   <div id="sidetile"><h2>Cultural</h2></div></div></a>
 
 <div id="sidetilespace"></div>
-          <div id="sidetileo">   <div id="sidetile"><h2>Sports</h2></div></div>
+          <a href="#sports" id="sports"><div id="sidetileo">   <div id="sidetile"><h2>Sports</h2></div></div></a>
 <div id="sidetilespace"></div>
-           <div id="sidetileo">   <div id="sidetile"><h2>Technical</h2></div></div>
+           <a href="#tech" id="tech"><div id="sidetileo">   <div id="sidetile"><h2>Technical</h2></div></div></a>
 <div id="sidetilespace"></div>
-            <div id="sidetileo">   <div id="sidetile"><h2>Hostel</h2></div></div>
+            <a href="hostel" id="hostel"><div id="sidetileo">   <div id="sidetile"><h2>Hostel</h2></div></div></a>
 <div id="sidetilespace"></div>
-           <div id="sidetileo">   <div id="sidetile"><h2>PG Academics</h2></div></div>
+           <a href="#pg" id="pg" ><div id="sidetileo">   <div id="sidetile"><h2>PG Academics</h2></div></div></a>
             
            
             </ul>
@@ -138,7 +188,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
  <script type="text/javascript" >
  $(document).ready(function () {     
- 	$('.dropdown-toggle').dropdown()
+ 	$('.dropdown-toggle').dropdown();
+ 	
  });
 </script>
  

@@ -1,5 +1,5 @@
 <?php
-require_once("connect.php");
+
 function cleanQuery($string)
 {
   if(get_magic_quotes_gpc())  // prevents duplicate backslashes
@@ -71,33 +71,54 @@ function DepartmentFindAll(){
 	
 }
 
-function register_user($username,$fullname,$department,$email,$alt_email,$year_of_study,$mobile,$hostel,$room)
-{
-	$db = new PDO("mysql:dbname=bookbay;host=localhost", "root", "fedora13" );
-	$created_at =date("Y-m-d H:i:s");
-	$query = $db->prepare("INSERT INTO users (username,fullname,department,email,alt_email,year_of_study,mobile,hostel,room,created_at) VALUES (?,?,?,?,?,?,?,?,?,?)");
-	
-	/*$query->bindParam(':username',$username);
-	$query->bindParam(':fullname',$fullname);
-	$query->bindParam(':department',$department);
-	$query->bindParam(':email',$email);
-	$query->bindParam(':alt_email',$alt_email);
-	$query->bindParam(':year_of_study',$year_of_study);
-	$query->bindParam(':mobile',$mobile);
-	$query->bindParam(':hostel',$hostel);
-	$query->bindParam(':room',$room);*/
-	$query->execute(array($username,$fullname,$department,$email,$alt_email,$year_of_study,$mobile,$hostel,$room,$created_at));
-//	$db=null;
-	
-	
-	
-	
-}    
-
-function add_new_book($created_by,$name,$semester,$course,$cost,$tags){
-$db = new PDO("mysql:dbname=bookbay;host=localhost", "root", "fedora13" );
-$query=$db->prepare("INSERT INTO books(created_by,name,semester_used,course,cost,tags) VALUES (?,?,?,?,?,?)");
-$query->execute(array($created_by,$name,$semester,$course,$cost,$tags));
-return true;
+function admin_login($username,$password){
+	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora" );
+	$query = $db->prepare("SELECT COUNT(*) FROM ug_acads_gymkhana_admins WHERE username=? AND password=?");
+	$result = $query->execute(array($username,$password));
+	$number_of_rows = $query->fetchColumn();
+	return $number_of_rows;
 }
+
+function mail_subscription($category){
+	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora" );
+	$query = $db->prepare("SELECT ldap_id FROM ug_acads_gymkhana_subscriptions WHERE category=? ");
+	$result = $query->execute(array($category));
+	$number_of_rows = $query->fetchColumn();
+	return $number_of_rows;
+}
+
+function add_poster($username,$event_name,$start_date,$start_time,$end_date,$end_time,$location,$poster_location,$category){
+	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora" );
+	$created_at =date("Y-m-d H:i:s");
+	$sql = "INSERT INTO ug_acads_gymkhana_posters(uploaded_by,event_name,event_start_date,event_start_time,event_end_date,event_end_time,event_location,event_poster_location,event_category) VALUES(?,?,?,?,?,?,?,?,?)";
+	
+	$query = $db->prepare($sql);
+	$query->execute(array("username","event_name","start_date","start_time","end_date","end_time","location","poster_location","category"));
+	
+	//return $query;
+
+}
+
+function add_my_subscription($ldap_id,$category){
+	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora" );
+	$created_at =date("Y-m-d H:i:s");
+	$sql = "INSERT INTO ug_acads_gymkhana_subscriptions(ldap_id,category) VALUES(?,?)";
+	
+	$query = $db->prepare($sql);
+	$query->execute(array($ldap_id,$category));
+	
+	
+}
+
+function fetch_all_posters($category){
+	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora" );
+	$query = $db->prepare("SELECT * FROM ug_acads_gymkhana_posters WHERE event_category=? ");
+	$result = $query->execute(array($category));
+	$results = $query->fetchAll();
+	return $results;
+	
+	
+
+}
+
 ?>
