@@ -72,7 +72,7 @@ function DepartmentFindAll(){
 }
 
 function admin_login($username,$password){
-	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora" );
+	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora13" );
 	$query = $db->prepare("SELECT COUNT(*) FROM ug_acads_gymkhana_admins WHERE username=? AND password=?");
 	$result = $query->execute(array($username,$password));
 	$number_of_rows = $query->fetchColumn();
@@ -80,7 +80,7 @@ function admin_login($username,$password){
 }
 
 function mail_subscription($category){
-	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora" );
+	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora13" );
 	$query = $db->prepare("SELECT ldap_id FROM ug_acads_gymkhana_subscriptions WHERE category=? ");
 	$result = $query->execute(array($category));
 	$number_of_rows = $query->fetchColumn();
@@ -88,7 +88,7 @@ function mail_subscription($category){
 }
 
 function add_poster($username,$event_name,$start_date,$start_time,$end_date,$end_time,$location,$poster_location,$category){
-	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora" );
+	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora13" );
 	$created_at =date("Y-m-d H:i:s");
 	$sql = "INSERT INTO ug_acads_gymkhana_posters(uploaded_by,event_name,event_start_date,event_start_time,event_end_date,event_end_time,event_location,event_poster_location,event_category) VALUES(?,?,?,?,?,?,?,?,?)";
 	
@@ -100,7 +100,7 @@ function add_poster($username,$event_name,$start_date,$start_time,$end_date,$end
 }
 
 function add_my_subscription($ldap_id,$category){
-	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora" );
+	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora13" );
 	$created_at =date("Y-m-d H:i:s");
 	$sql = "INSERT INTO ug_acads_gymkhana_subscriptions(ldap_id,category) VALUES(?,?)";
 	
@@ -112,7 +112,7 @@ function add_my_subscription($ldap_id,$category){
 
 function fetch_all_posters($category){
 	
-	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora" );
+	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora13" );
 	if ($category==""){
 	$query = $db->prepare("SELECT * FROM ug_acads_gymkhana_posters");
 }
