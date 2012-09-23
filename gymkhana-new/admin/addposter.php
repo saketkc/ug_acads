@@ -11,6 +11,7 @@ if (isset($_POST['poster-submit'])){
 	$event_name = $_POST['event-name'];
 	$location = $_POST['location'];
 	$category = $_POST['category'];
+	$description = $_POST['description'];
 	$s_times = explode("@",$start);
 	$start_date = $s_times[0];
 	$start_time = $s_times[1];
@@ -18,7 +19,7 @@ if (isset($_POST['poster-submit'])){
 	$end_date = $e_times[0];
 	$end_time = $e_times[1];
 	
-	$upload_dir = "/var/myuploads";
+	$upload_dir = "/var/www/ug_acads/gymkhana-new/uploads";
 	//echo "DDD".$start_date,$start_time;
 	$username = $_SESSION['username'];
 	$tf = $upload_dir.'/'.md5(rand()).".test";
@@ -39,8 +40,8 @@ unlink($tf);
 	        $filename = $_FILES['file']['name']; // file name 
 	        
             $extension=pathinfo($filename, PATHINFO_EXTENSION);
-            
-	        $filename = "$category"."_"."$event_name"."_"."$start_date"."_"."."."$extension";            
+            $event_n = str_replace (" ","_",$event_name);
+	        $filename = "$category"."_"."$event_n"."_"."$start_date"."_"."."."$extension";            
             move_uploaded_file($_FILES['file']['tmp_name'], $upload_dir.'/'.$filename);            
             $result = 'Ev';
             
@@ -51,8 +52,9 @@ unlink($tf);
       $result_msg = 'Unknown error';
 
     }
-    $poster_location = $upload_dir ."/". $filename;
-	add_poster($username,$event_name,$start_date,$start_time,$end_date,$end_time,$location,$poster_location,$category);
+    $poster_location =  "uploads/".$filename;
+	add_poster($username,$event_name,$start_date,$start_time,$end_date,$end_time,$location,$poster_location,$category,$description);
+	mail_subscription($category);
 	$message = "Event Updated successfully";
 	//$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora" );
 	//$created_at =date("Y-m-d H:i:s");
@@ -78,21 +80,21 @@ unlink($tf);
 	<script>
 	$(document).ready(function(){
 		$('#start').datetimepicker({
-			timeFormat: 'h:m',
+			timeFormat: 'h-m',
 			separator: ' @ ',
 			dateFormat : 'dd-mm-yy',
 			hour: 18,
-			minute: 01,
+			minute: 010,
 			
 			
 		});
 		
 		$('#end').datetimepicker({
-			timeFormat: 'h:m',
+			timeFormat: 'h-m',
 			separator: ' @ ',
 			dateFormat : 'dd-mm-yy',
 			hour: 20,
-			minute : 01
+			minute : 010,
 		});
 
 		});
@@ -109,6 +111,9 @@ unlink($tf);
 			<div><input type="text" id="end" name="end"></div>
 			<label> Location</label>
 			<div><input type="text" id="location" name="location"></div>
+			<label> Description</label>
+			<div><textarea rows=4 col=20 id="description" name="description"></textarea></div>
+			
 			<label>Upload Poster </label>
 			<div><input type="file" id="file" name="file"></div>
 			<label>Category</label>
