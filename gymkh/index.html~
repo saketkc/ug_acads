@@ -177,6 +177,7 @@
       
         
         <div id="footer1" class="span3">
+        <fb:like action=”like” colorscheme=”light” expr:href=”data:post.url” font=”arial” layout=”box_count” send=”false” show_faces=”false”></fb:like>
         </div>
         <div id ="footer2" class="span3"></div>
      
@@ -196,6 +197,9 @@
 </script>
 <script type=”text/javascript” src=”https://apis.google.com/js/plusone.js”>
 </script>
+<script type=”text/javascript”>tweetmeme_url = &#39;<data:post.url/>&#39;;</script>
+<script src=”http://tweetmeme.com/i/scripts/button.js” type=”text/javascript”></script>
+
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-transition.js"></script>
     <script src="js/bootstrap-alert.js"></script>

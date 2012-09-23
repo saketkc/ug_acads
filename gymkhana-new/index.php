@@ -14,7 +14,7 @@ require_once("functions.php");
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/flip.css" rel="stylesheet">
     <link href="css/html5.css" rel="stylesheet">
-    <style type="text/css">
+   <!-- <style type="text/css">
       body {
         padding-top: 60px;
         padding-bottom: 40px;
@@ -22,9 +22,9 @@ require_once("functions.php");
       .sidebar-nav {
         padding: 9px 0;
       } 
-    </style>
+    </style> -->
   
-	 <script src="js/jquery.js"></script>
+
 	 <script type="text/javascript" src="js/jquery.js"></script>
 	 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 	 <script type="text/javascript" src="static/js/showhide.js"></script>
@@ -250,22 +250,14 @@ for ($i=0;$i<count($posters);$i++){
       
         
         <div id="footer1" class="span3">
-        <fb:like action=”like” colorscheme=”light” expr:href=”data:post.url” font=”arial” layout=”box_count” send=”false” show_faces=”false”></fb:like>
+   
         </div>
         <div id ="footer2" class="span3"></div>
      
 <div id ="footer3" class="span3"></div>
       </div>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
- <script type="text/javascript" >
- $(document).ready(function () {     
- 	$('.dropdown-toggle').dropdown();
- 	
- });
-</script>
+   
 
 
     <script src="js/bootstrap.js"></script>
@@ -281,116 +273,6 @@ for ($i=0;$i<count($posters);$i++){
     <script src="js/bootstrap-collapse.js"></script>
     <script src="js/bootstrap-carousel.js"></script>
     <script src="js/bootstrap-typeahead.js"></script>
-
-  <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a> 
-          sdgsfgdsfgsdg
-          <a class="brand" href="#">Gymkhana, IIT Bombay</a>
-          <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              Add a Notice as <a href="#" class="navbar-link">Admin</a>
-            </p>
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li class="dropdown" id="accountmenu">  
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Links<b class="caret"></b></a>  
-                        <ul class="dropdown-menu">  
-                            <li><a href="#">UG Academics</a></li>  
-                            <li><a href="#">PG Academics</a></li>  
-                            <li class="divider"></li>  
-                            <li><a href="#">Hostel Affairs</a></li>  
-                            <li><a href="#">Cultural Affairs</a></li>  
-                            <li><a href="#">Sports Affairs</a></li> 
-                             <li><a href="#">STAB</a></li> 
-                             <li class="divider"></li>  
-                             <li><a href="#">Mood Indigo</a></li>  
-                            <li><a href="#">Techfest</a></li>  
-                            <li><a href="#">E Cell</a></li> 
-                                 <li><a href="#">SARC</a></li> 
-                                  <li class="divider"></li>  
-                             <li><a href="#">Insight</a></li>  
-                            <li><a href="#">Aawaaz</a></li>  
-                        </ul>  
-                    </li>  
-              <li><a href="#contact">Complaint Management System</a></li>
-              <li><a href="#contact">Points Tally</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-     <div class="container-fluid">
-      <div class="row-fluid">
-        
-        <div class="span9">
-          <div class="hero-unit">
-            <div class="clearfix">
-				<article class="main">
-					
-					
-					
-					<div id="flipbox">
-					
-						<div id="notices-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-							<?         
-								for($i=0;$i<count($event_names);$i++){
-									{
-										echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='test'/></a> ";
-									}
-								}  
-							?>       
-						</div>
-					</div>
-					<div id="flipPad">
-						
-					</div>
-				</div>				
-			</div>
-          
-        </div><!--/span-->
-       	
-        <div class="span3">
-          <div class="well sidebar-nav" id="rsidebar">
-            <ul class="nav nav-list">
-				<a href="#" id="ug"><div id="sidetileo">   <div id="sidetile"> <h2>UG Academics</h2></div></div></a>
-				<div id="sidetilespace"></div>
-				<a href="#cult"><div id="sidetileo">   <div id="sidetile"><h2>Cultural</h2></div></div></a>
-				<div id="sidetilespace"></div>
-				<a href="#sports" id="sports"><div id="sidetileo">   <div id="sidetile"><h2>Sports</h2></div></div></a>
-				<div id="sidetilespace"></div>
-				<a href="#tech" id="tech"><div id="sidetileo">   <div id="sidetile"><h2>Technical</h2></div></div></a>
-				<div id="sidetilespace"></div>
-				<a href="hostel" id="hostel"><div id="sidetileo">   <div id="sidetile"><h2>Hostel</h2></div></div></a>
-				<div id="sidetilespace"></div>
-				<a href="#pg" id="pg" ><div id="sidetileo">   <div id="sidetile"><h2>PG Academics</h2></div></div></a>
-                
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-        
-        
-        
-        
-      </div><!--/row-->
-
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
-
-    </div><!--/.fluid-container-->
-
-
 
 
     <!-- Le javascript
