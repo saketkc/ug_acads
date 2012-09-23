@@ -1,0 +1,37 @@
+#sidetile{
+	width:96%;
+	height: 70px;
+	background-color:#cbebed; 
+	
+	}
+	#sidetile h2{
+		padding:9px;
+		padding-left: 15px;
+		}
+	#sidetileo{
+	width:100%;
+	
+
+	background-color:#cbebed; 
+	border-style: solid;
+	border-width: 3px;
+	border-color: #fff;
+	}
+		#sidetileo:hover{
+	width:100%;
+	
+
+	background-color:#cbebed; 
+	border-style: solid;
+	border-width: 3px;
+	border-color: #666;
+	}
+	#sidetilespace{
+		width: 100%;
+		height:10px;
+		
+		
+		}
+		#rsidebar{
+			background-color:#fff;
+			border-style: none; }
