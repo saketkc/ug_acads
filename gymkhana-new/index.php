@@ -319,7 +319,7 @@ for ($i=0;$i<count($posters);$i++){
 
          <a href="#" id="ug"><div id="sidetileo" >   <div id="sidetile" style="background-color:#00AEDB;"> <h2>UG Academics</h2></div></div></a>
             <div id="sidetilespace"></div>
-   <a href="#cult"><div id="sidetileo">   <div id="sidetile" style="background-color:#00B159;"><h2>Cultural</h2></div></div></a>
+   <a href="#cult" id="cult" ><div id="sidetileo">   <div id="sidetile" style="background-color:#00B159;"><h2>Cultural</h2></div></div></a>
 
 <div id="sidetilespace"></div>
           <a href="#sports" id="sports"><div id="sidetileo">   <div id="sidetile" style="background-color:#F37735;"><h2>Sports</h2></div></div></a>
