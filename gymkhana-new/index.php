@@ -291,6 +291,7 @@ for ($i=0;$i<count($posters);$i++){
            <div class="clearfix">
 				<article class="main">
 					
+
 					
 					<div id="flipbox">
 						<div id="notices-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
@@ -315,6 +316,7 @@ for ($i=0;$i<count($posters);$i++){
         <div class="span3">
           <div class="well sidebar-nav" id="rsidebar">
             <ul class="nav nav-list">
+
          <a href="#" id="ug"><div id="sidetileo" >   <div id="sidetile" style="background-color:#00AEDB;"> <h2>UG Academics</h2></div></div></a>
             <div id="sidetilespace"></div>
    <a href="#cult"><div id="sidetileo">   <div id="sidetile" style="background-color:#00B159;"><h2>Cultural</h2></div></div></a>
@@ -351,6 +353,7 @@ for ($i=0;$i<count($posters);$i++){
       </div>
 
    
+
 
 
     <script type="text/javaScript" src="js/bootstrap.js"></script>
@@ -411,6 +414,7 @@ for ($i=0;$i<count($posters);$i++){
 
 </div> 
 
+
 <div id ="hostel-notices" style="visibility:hidden;">
 	<div id="hostel-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 	<?
@@ -437,7 +441,6 @@ for ($i=0;$i<count($posters);$i++){
 	</div>
 
 </div> 
-    
   </body>
 
 </html>

@@ -1,0 +1,197 @@
+@font-face {
+  font-family: 'ChunkFive Regular';
+  src: url('fonts/Chunkfive.eot');
+  src: local('ChunkFive Regular'), local('ChunkFive'), url('fonts/Chunkfive.woff') format('woff'), url('fonts/Chunkfive.svg#ChunkFive') format('svg'), url('fonts/Chunkfive.otf') format('opentype');
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+a { color: #1e90ff; }
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+.container header {
+ 
+  font-size: 6em;
+  color: #527699;
+  margin: 25px 0;
+  text-shadow: 2px 2px 1px #aabfd4;
+}
+.container header .subtitle {
+  font-size: 0.3em;
+  color: #aabfd4;
+  height: 100%;
+  vertical-align: top;
+  padding-left: 15px;
+  text-shadow: none;
+}
+.container header .subtitle .version {
+  font-size: 0.75em;
+  
+  padding-left: 15px;
+  vertical-align: top;
+}
+.container header div.aboutMe {
+  
+  text-shadow: 1px 1px 1px #ffffff;
+  margin-top: 5px;
+}
+.container article.main {
+  float: left;
+  width: 70%;
+}
+.container article.main p {
+  font-size: 1.3em;
+  color: #999999;
+  margin: 5px 0 20px;
+}
+.container article.main p pre {
+  font-family: monospace;
+  font-size: 15px;
+  margin: 10px;
+  display: block;
+  color: #333333;
+}
+.container article.main .usage { margin-top: 50px; }
+.container aside {
+  float: right;
+  width: 25%;
+}
+.container aside #dependencies { margin-bottom: 25px; }
+.container aside #license {
+  font-size: 1.1em;
+  color: #666666;
+  margin-bottom: 25px;
+}
+.container aside #compat {
+  font-size: 1.1em;
+  color: #666666;
+  margin-bottom: 25px;
+}
+.container aside #thanksTo {
+  margin-bottom: 25px;
+  font-size: 1.1em;
+  color: #999999;
+  line-height: 1.5em;
+}
+.container aside #thanksTo .others { color: #1e90ff; }
+.container aside #notes {
+  color: #999999;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  margin-bottom: 25px;
+}
+.container footer {
+  clear: both;
+  margin: 25px 0;
+}
+.container h3 {
+  font-family: 'ChunkFive Regular', Tahoma, Helvetica;
+  font-size: 2em;
+  color: #aabfd4;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding-top: 20px;
+  text-shadow: 1px 1px 1px #ffffff;
+}
+.container ul.options strong {
+  font-family: monospace;
+  font-size: 1.2em;
+}
+.container li {
+  list-style: none;
+  font-size: 1.2em;
+  margin: 7px 0;
+}
+.container li strong { display: block; }
+#flipbox {
+  width: 500px;
+  height: 200px;
+  line-height: 200px;
+  background-color: #ff9000;
+  font-family: 'ChunkFive Regular', Tahoma, Helvetica;
+  font-size: 2.5em;
+  color: #ffffff;
+  text-align: center;
+}
+#flipPad {
+  margin: 15px 0;
+  width: 500px;
+  text-align: center;
+}
+#flipPad a {
+  padding: 5px 15px;
+  background: #1e90ff;
+  border: 2px solid #1e90ff;
+  border-radius: 2px;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1em;
+  font-family: Helvetica, Tahoma, Verdana, sans-serif;
+  line-height: 30px;
+  height: 30px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-box-shadow: 1px 1px 2px #999999;
+  -webkit-box-shadow: 1px 1px 2px #999999;
+  -webkit-transition-duration: 1s;
+}
+#flipPad a:hover {
+  background-color: #ff9000;
+  border: 2px solid #ff9000;
+}
+#flipPad .revert {
+  background-color: #ff9000;
+  border: 2px solid #ff9000;
+  display: none;
+}
+.downloadBtn {
+  display: block;
+  font-size: 2em;
+  margin: 0 auto;
+  padding: 10px 25px;
+  background: #1e90ff;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'ChunkFive Regular', Tahoma, Helvetica;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-box-shadow: 1px 1px 2px #999999;
+  -webkit-box-shadow: 1px 1px 2px #999999;
+  -webkit-transition-duration: 1s;
+}
+.downloadBtn:hover { background-color: #ff9000; }
+.downloadGithub {
+  display: block;
+  text-align: right;
+  margin: 3px 3px 25px 0;
+}
+.retweet { margin-top: 30px; }
+.tweetThis {
+  position: fixed;
+  bottom: 0;
+  right: 5px;
+  text-decoration: none;
+}
+.tweetThis span {
+  display: none;
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  padding: 5px;
+  background: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  border: 2px solid #ff9000;
+  white-space: no-wrap;
+}
+.tweetThis:hover span { display: block; }
