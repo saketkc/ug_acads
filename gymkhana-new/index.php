@@ -8,13 +8,13 @@ require_once("functions.php");
     <title>Gymkhana, IIT Bombay </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="WebTeam UG Academic Council" >
+    <meta name="author" content="Amit" >
 
    <!--  Le styles-->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/flip.css" rel="stylesheet">
     <link href="css/html5.css" rel="stylesheet">
-    <style type="text/css">
+   <!-- <style type="text/css">
       body {
         padding-top: 60px;
         padding-bottom: 40px;
@@ -22,18 +22,18 @@ require_once("functions.php");
       .sidebar-nav {
         padding: 9px 0;
       } 
-    </style>
+    </style> -->
   
-	 <script src="js/jquery.js"></script>
+
 	 <script type="text/javascript" src="js/jquery.js"></script>
 	 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
-	 <script type="text/javascript" src="static/js/showhide.js"></script>
+	 
 	 <script type="text/javascript" src="static/js/jquery.fancybox-1.3.4.js"></script>
 	 <script type="text/javascript" src="static/js/jquery.fancybox-1.3.4.pack.js"></script>
-	 <script type="text/JavaScript" src="static/js/jquery.mousewheel.js"></script>
-	 <script type="text/JavaScript" src="static/js/slimbox-2.03/js/slimbox2.js"></script>
-	 <script type="text/JavaScript" src="static/js/cloud-carousel.1.0.5.js"></script>
-	 <script src="js/jquery.flip.js"></script>
+	 <script type="text/javaScript" src="static/js/jquery.mousewheel.js"></script>
+	 <script type="text/javaScript" src="static/js/slimbox2.js"></script>
+	 <script type="text/javaScript" src="static/js/cloud-carousel.1.0.5.js"></script>
+	 <script type="text/javaScript"src="js/jquery.flip.js"></script>
 	 
 	
 	<link href="css/bootstrap-responsive.css" rel="stylesheet"/>
@@ -45,7 +45,7 @@ require_once("functions.php");
 	<script type="text/javascript">
 
 	$(document).ready(function(){
-		$('.dropdown-toggle').dropdown();	
+		//$('.dropdown-toggle').dropdown();	
 		$("a.notice").fancybox();
 		$("#notices-carousel").CloudCarousel( { 
 			reflHeight: 56,
@@ -63,11 +63,51 @@ require_once("functions.php");
 		
 		$("#ug-carousel").CloudCarousel( { 
 			reflHeight: 56,
-			reflGap:2,
-			
-			titleBox: $('#da-vinci-title'),
-			altBox: $('#da-vinci-alt'),
-			
+			reflGap:2,		
+			yRadius:40,
+			xPos: 285,
+			yPos: 120,
+			speed:0.15,
+			mouseWheel:true
+		});
+		
+		
+		$("#sports-carousel").CloudCarousel( { 
+			reflHeight: 56,
+			reflGap:2,		
+			yRadius:40,
+			xPos: 285,
+			yPos: 120,
+			speed:0.15,
+			mouseWheel:true
+		});
+		
+		
+		$("#tech-carousel").CloudCarousel( { 
+			reflHeight: 56,
+			reflGap:2,		
+			yRadius:40,
+			xPos: 285,
+			yPos: 120,
+			speed:0.15,
+			mouseWheel:true
+		});
+		
+		
+		$("#cult-carousel").CloudCarousel( { 
+			reflHeight: 56,
+			reflGap:2,		
+			yRadius:40,
+			xPos: 285,
+			yPos: 120,
+			speed:0.15,
+			mouseWheel:true
+		});
+		
+		
+		$("#hostel-carousel").CloudCarousel( { 
+			reflHeight: 56,
+			reflGap:2,		
 			yRadius:40,
 			xPos: 285,
 			yPos: 120,
@@ -109,6 +149,60 @@ require_once("functions.php");
 				
 			});
 			
+				$("#hostel").bind("click",function(){
+				
+     				content = $("#hostel-notices").html();
+     				console.log(content);
+					$("#flipbox").flip({
+					direction: "tb",
+					color: "red",
+					content: content,//(new Date()).getTime(),
+					
+				})
+				return false;
+				
+			});
+			
+				$("#sports").bind("click",function(){
+				
+     				content = $("#sports-notices").html();
+     				console.log(content);
+					$("#flipbox").flip({
+					direction: "tb",
+					color: "red",
+					content: content,//(new Date()).getTime(),
+					
+				})
+				return false;
+				
+			});
+			
+				$("#tech").bind("click",function(){
+				
+     				content = $("#tech-notices").html();
+     				console.log(content);
+					$("#flipbox").flip({
+					direction: "tb",
+					color: "red",
+					content: content,//(new Date()).getTime(),
+					
+				})
+				return false;
+				
+			});
+				$("#cult").bind("click",function(){
+				
+     				content = $("#cult-notices").html();
+     				console.log(content);
+					$("#flipbox").flip({
+					direction: "tb",
+					color: "red",
+					content: content,//(new Date()).getTime(),
+					
+				})
+				return false;
+				
+			});
 
 			
 		});
@@ -149,7 +243,7 @@ for ($i=0;$i<count($posters);$i++){
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -194,46 +288,47 @@ for ($i=0;$i<count($posters);$i++){
         
         <div class="span9">
           <div class="hero-unit">
-            <div class="clearfix">
+           <div class="clearfix">
 				<article class="main">
 					
 					
-					
 					<div id="flipbox">
-					
 						<div id="notices-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-							<?         
-								for($i=0;$i<count($event_names);$i++){
-									{
-										echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='test'/></a> ";
-									}
-								}  
-							?>       
-						</div>
+						<?
+	for($i=0;$i<count($event_names);$i++){
+		{
+			
+			echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
+		}
+	}
+	?>
+	</div>
+					
 					</div>
-					<div id="flipPad">
-						
-					</div>
-				</div>				
-			</div>
+		</div>				
+           
+          </div>
+          
           
         </div><!--/span-->
        	
         <div class="span3">
           <div class="well sidebar-nav" id="rsidebar">
             <ul class="nav nav-list">
-				<a href="#" id="ug"><div id="sidetileo">   <div id="sidetile"> <h2>UG Academics</h2></div></div></a>
-				<div id="sidetilespace"></div>
-				<a href="#cult"><div id="sidetileo">   <div id="sidetile"><h2>Cultural</h2></div></div></a>
-				<div id="sidetilespace"></div>
-				<a href="#sports" id="sports"><div id="sidetileo">   <div id="sidetile"><h2>Sports</h2></div></div></a>
-				<div id="sidetilespace"></div>
-				<a href="#tech" id="tech"><div id="sidetileo">   <div id="sidetile"><h2>Technical</h2></div></div></a>
-				<div id="sidetilespace"></div>
-				<a href="hostel" id="hostel"><div id="sidetileo">   <div id="sidetile"><h2>Hostel</h2></div></div></a>
-				<div id="sidetilespace"></div>
-				<a href="#pg" id="pg" ><div id="sidetileo">   <div id="sidetile"><h2>PG Academics</h2></div></div></a>
-                
+         <a href="#" id="ug"><div id="sidetileo" >   <div id="sidetile" style="background-color:#00AEDB;"> <h2>UG Academics</h2></div></div></a>
+            <div id="sidetilespace"></div>
+   <a href="#cult"><div id="sidetileo">   <div id="sidetile" style="background-color:#00B159;"><h2>Cultural</h2></div></div></a>
+
+<div id="sidetilespace"></div>
+          <a href="#sports" id="sports"><div id="sidetileo">   <div id="sidetile" style="background-color:#F37735;"><h2>Sports</h2></div></div></a>
+<div id="sidetilespace"></div>
+           <a href="#tech" id="tech"><div id="sidetileo">   <div id="sidetile" style="background-color:#EC098C;"><h2>Technical</h2></div></div></a>
+<div id="sidetilespace"></div>
+            <a href="hostel" id="hostel"><div id="sidetileo">   <div id="sidetile" style="background-color:#7C4199;"><h2>Hostel</h2></div></div></a>
+<div id="sidetilespace"></div>
+           <a href="#pg" id="pg" ><div id="sidetileo">   <div id="sidetile" style="background-color:#FFC425;"><h2>PG Academics</h2></div></div></a>
+            
+           
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
@@ -242,16 +337,35 @@ for ($i=0;$i<count($posters);$i++){
         
         
       </div><!--/row-->
-
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
-
     </div><!--/.fluid-container-->
 
+ <div id="footer">
+      
+        
+        <div id="footer1" class="span3">
+   
+        </div>
+        <div id ="footer2" class="span3"></div>
+     
+<div id ="footer3" class="span3"></div>
+      </div>
 
+   
+
+
+    <script type="text/javaScript" src="js/bootstrap.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-transition.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-alert.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-modal.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-dropdown.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-scrollspy.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-tab.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-tooltip.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-popover.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-button.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-collapse.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-carousel.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-typeahead.js"></script>
 
 
     <!-- Le javascript
@@ -270,6 +384,7 @@ for ($i=0;$i<count($posters);$i++){
 	</div>
 
 <div id ="sports-notices" style="visibility:hidden;">
+		<div id="sports-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 	<?
 	for($i=0;$i<count($event_names);$i++){
 		
@@ -279,43 +394,50 @@ for ($i=0;$i<count($posters);$i++){
 		}
 	}
 	?>
+	</div>
 
 </div>
 <div id ="cult-notices" style="visibility:hidden;">
-
+	<div id="cult-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 	<?
 	for($i=0;$i<count($event_names);$i++){
-		if ($event_category[$i] == "acads"){
+		if ($event_category[$i] == "cult"){
 			
 			echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
 		}
 	}
 	?>
+	</div>
+
+</div> 
+
+<div id ="hostel-notices" style="visibility:hidden;">
+	<div id="hostel-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+	<?
+	for($i=0;$i<count($event_names);$i++){
+		if ($event_category[$i] == "hostel"){
+			
+			echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
+		}
+	}
+	?>
+	</div>
+
+</div> 
+<div id ="tech-notices" style="visibility:hidden;">
+	<div id="tech-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+	<?
+	for($i=0;$i<count($event_names);$i++){
+		if ($event_category[$i] == "tech"){
+			
+			echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
+		}
+	}
+	?>
+	</div>
 
 </div> 
     
   </body>
 
-
-
-
-  
-  
-	
-
-
- 	
-	<script src="js/bootstrap.js"></script>
-    <script src="js/bootstrap-transition.js"></script>
-    <script src="js/bootstrap-alert.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <script src="js/bootstrap-scrollspy.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
-    <script src="js/bootstrap-tooltip.js"></script>
-    <script src="js/bootstrap-popover.js"></script>
-    <script src="js/bootstrap-button.js"></script>
-    <script src="js/bootstrap-collapse.js"></script>
-    <script src="js/bootstrap-carousel.js"></script>
-    <script src="js/bootstrap-typeahead.js"></script>
 </html>
