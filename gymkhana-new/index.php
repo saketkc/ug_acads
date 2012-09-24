@@ -65,8 +65,8 @@ require_once("functions.php");
 			reflHeight: 56,
 			reflGap:2,		
 			yRadius:40,
-			xPos: 285,
-			yPos: 120,
+			xPos: 485,
+			yPos: 80,
 			speed:0.15,
 			mouseWheel:true
 		});
@@ -76,8 +76,8 @@ require_once("functions.php");
 			reflHeight: 56,
 			reflGap:2,		
 			yRadius:40,
-			xPos: 285,
-			yPos: 120,
+			xPos: 485,
+			yPos: 80,
 			speed:0.15,
 			mouseWheel:true
 		});
@@ -87,8 +87,8 @@ require_once("functions.php");
 			reflHeight: 56,
 			reflGap:2,		
 			yRadius:40,
-			xPos: 285,
-			yPos: 120,
+			xPos: 485,
+			yPos: 80,
 			speed:0.15,
 			mouseWheel:true
 		});
@@ -98,8 +98,8 @@ require_once("functions.php");
 			reflHeight: 56,
 			reflGap:2,		
 			yRadius:40,
-			xPos: 285,
-			yPos: 120,
+			xPos: 485,
+			yPos: 80,
 			speed:0.15,
 			mouseWheel:true
 		});
@@ -109,8 +109,8 @@ require_once("functions.php");
 			reflHeight: 56,
 			reflGap:2,		
 			yRadius:40,
-			xPos: 285,
-			yPos: 120,
+		xPos: 485,
+			yPos: 80,
 			speed:0.15,
 			mouseWheel:true
 		});
@@ -308,8 +308,8 @@ for ($i=0;$i<count($posters);$i++){
 			Here is the sample text </div>	
 				
 				
-		<!--		
-				<div id ="ug-notices" style="visibility:hidden;">
+			
+				<div id ="ug-notices" style="display:none;">
 		<div id="ug-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 		<?
 			for($i=0;$i<count($event_names);$i++){
@@ -320,8 +320,8 @@ for ($i=0;$i<count($posters);$i++){
 		?>
 		</div>
 	</div>
-
-<div id ="sports-notices" style="visibility:hidden;">
+	
+<div id ="sports-notices" style="display:none;">
 		<div id="sports-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 	<?
 	for($i=0;$i<count($event_names);$i++){
@@ -335,7 +335,7 @@ for ($i=0;$i<count($posters);$i++){
 	</div>
 
 </div>
-<div id ="cult-notices" style="visibility:hidden;">
+<div id ="cult-notices" style="display:none;">
 	<div id="cult-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 	<?
 	for($i=0;$i<count($event_names);$i++){
@@ -350,7 +350,7 @@ for ($i=0;$i<count($posters);$i++){
 </div> 
 
 
-<div id ="hostel-notices" style="visibility:hidden;">
+<div id ="hostel-notices" style="display:none;">
 	<div id="hostel-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 	<?
 	for($i=0;$i<count($event_names);$i++){
@@ -363,7 +363,7 @@ for ($i=0;$i<count($posters);$i++){
 	</div>
 
 </div> 
-<div id ="tech-notices" style="visibility:hidden;">
+<div id ="tech-notices" style="display:none;">
 	<div id="tech-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 	<?
 	for($i=0;$i<count($event_names);$i++){
@@ -377,7 +377,7 @@ for ($i=0;$i<count($posters);$i++){
 
 </div> 
 
--->
+<!---->
 
 
 
