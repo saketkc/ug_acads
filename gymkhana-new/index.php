@@ -1,6 +1,45 @@
 <?php
 require_once("functions.php");
 ?>
+<?php
+$posters= fetch_all_posters("");
+$event_names = array();
+$poster_locations = array();
+$event_category = array();
+$poster_id = array();
+for ($i=0;$i<count($posters);$i++){
+	$start_time = $posters[$i]["event_start_date"]." ".$posters[$i]["event_start_time"];
+	$end_time = "now";//$posters[$i]["event_end_date"]." ".$posters[$i]["event_end_time"];
+	$diff = abs(strtotime($start_time) - strtotime($end_time));	 
+	$years = floor($diff / (365*60*60*24));
+	$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+	$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+	if ($days<=7)
+	{
+		array_push($poster_id, $posters[$i][0]);
+		array_push($event_names , $posters[$i]["event_name"]);
+		array_push($poster_locations, $posters[$i]["event_poster_location"]);
+		array_push($event_category, $posters[$i]["event_category"]);
+	 }
+
+//print_r($poster_locations);
+}
+
+
+?>
+<?
+	$sports ="<div id=\"sports-carousel\" style=\"width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;\">";
+	
+	for($i=0;$i<count($event_names);$i++){
+		
+		if ($event_category[$i] == "sports"){
+					
+			$sports = $sports."<a class=\"notice\" href=\"$poster_locations[$i]\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"$poster_locations[$i]\" width=\"128\" height=\"164\" title=\"$event_names[$i]\"/></a>";
+			//echo $sports;
+		}
+	}
+	$sports =$sports."</div>";
+	?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,6 +84,7 @@ require_once("functions.php");
 	<script type="text/javascript">
 
 	$(document).ready(function(){
+		
 	  $('.dropdown-toggle').dropdown();	
 		$("a.notice").fancybox();
 		$("#notices-carousel").CloudCarousel( { 
@@ -85,10 +125,12 @@ require_once("functions.php");
 			yRadius:40,
 			xPos: 400,
 			yPos: 80,
+			titleBox: $('#da-vinci-title'),
+			altBox: $('#da-vinci-alt'),
 			speed:0.15,
 			mouseWheel:true,
 			autoRotate: 'left',
-		autoRotateDelay: 1200,
+			autoRotateDelay: 1200,
 		});
 		
 		
@@ -153,8 +195,7 @@ require_once("functions.php");
 			
 			$("#ug").bind("click",function(){
 				
-     				content = $("#ug-notices").clone(true,true).contents();
-     				alert(content);     				
+     				content = $("#ug-notices").clone(true,true).contents();     				
      				console.log(content);
      				$(".hero-unit").css("background-color","#00AEDB");
      				
@@ -187,14 +228,16 @@ require_once("functions.php");
 			
 				$("#sports").bind("click",function(){
 					
-     				content = '<?php echo $sports;?>';
-     				console.log(content);
+     	var content2 = '<?php echo $sports;?>';
+					
+     				console.log(content2);
      				$(".hero-unit").css("background-color","#F37735");
 					$("#flipbox").flip({
 					direction: "tb",
 					color: "#F37735",
-					content: content,//(new Date()).getTime(),
-					onBefore: function(){$("#flipbox").html("")}
+					content: content2,//(new Date()).getTime(),
+					
+					
 					
 				})
 				return false;
@@ -238,32 +281,7 @@ require_once("functions.php");
 <title> Online Notice Board Demo </title>
 </head>
 
-<?php
-$posters= fetch_all_posters("");
-$event_names = array();
-$poster_locations = array();
-$event_category = array();
-$poster_id = array();
-for ($i=0;$i<count($posters);$i++){
-	$start_time = $posters[$i]["event_start_date"]." ".$posters[$i]["event_start_time"];
-	$end_time = "now";//$posters[$i]["event_end_date"]." ".$posters[$i]["event_end_time"];
-	$diff = abs(strtotime($start_time) - strtotime($end_time));	 
-	$years = floor($diff / (365*60*60*24));
-	$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-	$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
-	if ($days<=7)
-	{
-		array_push($poster_id, $posters[$i][0]);
-		array_push($event_names , $posters[$i]["event_name"]);
-		array_push($poster_locations, $posters[$i]["event_poster_location"]);
-		array_push($event_category, $posters[$i]["event_category"]);
-	 }
 
-//print_r($poster_locations);
-}
-
-
-?>
 
 <body>
 
@@ -348,19 +366,7 @@ for ($i=0;$i<count($posters);$i++){
 	</div>
 	
 <div id ="sports-notices" style="display:none;">
-		<div id="sports-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-	<?
-	$sports ="";
-	for($i=0;$i<count($event_names);$i++){
 		
-		if ($event_category[$i] == "sports"){
-					
-			$sports = $sports."<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
-			echo $sports;
-		}
-	}
-	?>
-	</div>
 
 </div>
 <div id ="cult-notices" style="display:none;">
