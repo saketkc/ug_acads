@@ -37,7 +37,7 @@ def InsertEvent(title='Tennis with Beth', content='Meet for a quick lesson', whe
     if category=="acads":
 		new_event = cal_client.InsertEvent(event,academic)
     elif category =="sports":
-		new_event = cal_client.cInsertEvent(event,sports)
+		new_event = cal_client.InsertEvent(event,sports)
     elif category == "tech":
 		new_event = cal_client.InsertEvent(event,tech)
     elif category == "hostel":

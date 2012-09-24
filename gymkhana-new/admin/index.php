@@ -56,8 +56,7 @@ if (isset($_POST['login'])){
 	 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 	 
 	
-	 <script type="text/javaScript" src="static/js/jquery.mousewheel.js"></script>
-	
+	 
 	
 	 
 	
@@ -67,7 +66,6 @@ if (isset($_POST['login'])){
 	<link rel="apple-touch-icon-precomposed" href="">
 	<link href="css/main.css" rel="stylesheet">
 
-	<script type="text/javascript"></script>
 
 	
 <title> Admin </title>

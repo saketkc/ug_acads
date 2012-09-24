@@ -35,7 +35,7 @@ require_once("functions.php");
 	 <script type="text/javaScript" src="static/js/cloud-carousel.1.0.5.js"></script>
 	 <script type="text/javaScript"src="js/jquery.flip.js"></script>
 	 
-	
+ <script type="text/javaScript" src="js/bootstrap-dropdown.js"></script>
 	<link href="css/bootstrap-responsive.css" rel="stylesheet"/>
 	<link href="static/css/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" />
 	<link href="static/css/fancybox.css" rel="stylesheet" type="text/css" />	
@@ -45,7 +45,7 @@ require_once("functions.php");
 	<script type="text/javascript">
 
 	$(document).ready(function(){
-		//$('.dropdown-toggle').dropdown();	
+	  $('.dropdown-toggle').dropdown();	
 		$("a.notice").fancybox();
 		$("#notices-carousel").CloudCarousel( { 
 			reflHeight: 56,
@@ -55,20 +55,27 @@ require_once("functions.php");
 			altBox: $('#da-vinci-alt'),
 			
 			yRadius:40,
-			xPos: 485,
+			xPos: 400,
 			yPos: 80,
-			speed:0.15,
-			mouseWheel:true
+			speed:0.05,
+			mouseWheel:false,
+			autoRotate: 'left',
+		autoRotateDelay: 1200,
 		});
 		
 		$("#ug-carousel").CloudCarousel( { 
 			reflHeight: 56,
 			reflGap:2,		
 			yRadius:40,
-			xPos: 485,
+			
+			titleBox: $('#da-vinci-title'),
+			altBox: $('#da-vinci-alt'),
+			xPos: 400,
 			yPos: 80,
 			speed:0.15,
-			mouseWheel:true
+			mouseWheel:true,
+			autoRotate: 'left',
+			autoRotateDelay: 1200,
 		});
 		
 		
@@ -76,10 +83,12 @@ require_once("functions.php");
 			reflHeight: 56,
 			reflGap:2,		
 			yRadius:40,
-			xPos: 485,
+			xPos: 400,
 			yPos: 80,
 			speed:0.15,
-			mouseWheel:true
+			mouseWheel:true,
+			autoRotate: 'left',
+		autoRotateDelay: 1200,
 		});
 		
 		
@@ -87,10 +96,12 @@ require_once("functions.php");
 			reflHeight: 56,
 			reflGap:2,		
 			yRadius:40,
-			xPos: 485,
+			xPos: 400,
 			yPos: 80,
 			speed:0.15,
-			mouseWheel:true
+			mouseWheel:true,
+			autoRotate: 'left',
+		autoRotateDelay: 1200,
 		});
 		
 		
@@ -98,10 +109,12 @@ require_once("functions.php");
 			reflHeight: 56,
 			reflGap:2,		
 			yRadius:40,
-			xPos: 485,
+			xPos: 400,
 			yPos: 80,
 			speed:0.15,
-			mouseWheel:true
+			mouseWheel:true,
+			autoRotate: 'left',
+		autoRotateDelay: 1200,
 		});
 		
 		
@@ -109,10 +122,12 @@ require_once("functions.php");
 			reflHeight: 56,
 			reflGap:2,		
 			yRadius:40,
-		xPos: 485,
+		xPos: 400,
 			yPos: 80,
 			speed:0.15,
-			mouseWheel:true
+			mouseWheel:true,
+			autoRotate: 'left',
+		autoRotateDelay: 1200,
 		});
 			
 			
@@ -123,6 +138,7 @@ require_once("functions.php");
     
     <script type="text/javascript">
 		$(function(){
+			
 			
 			$("#flipPad a:not(.revert)").bind("click",function(){
 				var $this = $(this);
@@ -137,11 +153,15 @@ require_once("functions.php");
 			
 			$("#ug").bind("click",function(){
 				
-     				content = $("#ug-notices").html();
+     				content = $("#ug-notices").clone(true,true).contents();
+     				alert(content);     				
      				console.log(content);
+     				$(".hero-unit").css("background-color","#00AEDB");
+     				
 					$("#flipbox").flip({
 					direction: "tb",
-					color: "red",
+					color: "#00AEDB",
+					
 					content: content,//(new Date()).getTime(),
 					
 				})
@@ -151,26 +171,30 @@ require_once("functions.php");
 			
 				$("#hostel").bind("click",function(){
 				
-     				content = $("#hostel-notices").html();
-     				console.log(content);
+     				hcontent = $("#hostel-notices").contents();
+     				console.log(hcontent);
+     				$("flipbox").html("");
+     				$(".hero-unit").css("background-color","#7C4199");
 					$("#flipbox").flip({
 					direction: "tb",
-					color: "red",
-					content: content,//(new Date()).getTime(),
-					
+					color: "#7C4199",
+					content: hcontent,//(new hostel-noticesDate()).getTime(),
+					onBefore: function(){$("#flipbox").html("")}
 				})
 				return false;
 				
 			});
 			
 				$("#sports").bind("click",function(){
-				
-     				content = $("#sports-notices").html();
+					
+     				content = '<?php echo $sports;?>';
      				console.log(content);
+     				$(".hero-unit").css("background-color","#F37735");
 					$("#flipbox").flip({
 					direction: "tb",
-					color: "red",
+					color: "#F37735",
 					content: content,//(new Date()).getTime(),
+					onBefore: function(){$("#flipbox").html("")}
 					
 				})
 				return false;
@@ -179,11 +203,12 @@ require_once("functions.php");
 			
 				$("#tech").bind("click",function(){
 				
-     				content = $("#tech-notices").html();
+     				content = $("#tech-notices").contents();
      				console.log(content);
+     				$(".hero-unit").css("background-color","#EC098C");
 					$("#flipbox").flip({
 					direction: "tb",
-					color: "red",
+					color: "#EC098C",
 					content: content,//(new Date()).getTime(),
 					
 				})
@@ -192,12 +217,14 @@ require_once("functions.php");
 			});
 				$("#cult").bind("click",function(){
 				
-     				content = $("#cult-notices").html();
+     				content = $("#cult-notices").contents();
      				console.log(content);
+     				$(".hero-unit").css("background-color","#00B159");
 					$("#flipbox").flip({
 					direction: "tb",
-					color: "red",
+					color: "#00B159",
 					content: content,//(new Date()).getTime(),
+					
 					
 				})
 				return false;
@@ -293,7 +320,7 @@ for ($i=0;$i<count($posters);$i++){
 					
 
 					
-					<div id="Should be flipbox">
+					<div id="flipbox">
 						<div id="notices-carousel" style="width:870px; height:384px; background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 						<?
 	for($i=0;$i<count($event_names);$i++){
@@ -304,8 +331,6 @@ for ($i=0;$i<count($posters);$i++){
 	}
 	?>
 	</div>
-			<div id="sometext">
-			Here is the sample text </div>	
 				
 				
 			
@@ -315,6 +340,7 @@ for ($i=0;$i<count($posters);$i++){
 			for($i=0;$i<count($event_names);$i++){
 				if ($event_category[$i] == "acads"){
 					echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
+					
 				}
 			}
 		?>
@@ -324,11 +350,13 @@ for ($i=0;$i<count($posters);$i++){
 <div id ="sports-notices" style="display:none;">
 		<div id="sports-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 	<?
+	$sports ="";
 	for($i=0;$i<count($event_names);$i++){
 		
 		if ($event_category[$i] == "sports"){
 					
-			echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
+			$sports = $sports."<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
+			echo $sports;
 		}
 	}
 	?>
@@ -436,7 +464,7 @@ for ($i=0;$i<count($posters);$i++){
     <script type="text/javaScript" src="js/bootstrap-transition.js"></script>
     <script type="text/javaScript" src="js/bootstrap-alert.js"></script>
     <script type="text/javaScript" src="js/bootstrap-modal.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-dropdown.js"></script>
+   
     <script type="text/javaScript" src="js/bootstrap-scrollspy.js"></script>
     <script type="text/javaScript" src="js/bootstrap-tab.js"></script>
     <script type="text/javaScript" src="js/bootstrap-tooltip.js"></script>
