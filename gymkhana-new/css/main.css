@@ -52,17 +52,18 @@ body{
 		}
 #footer1{
 	background-color: #fff;
-	height:80px;
+	height:180px;
 	margin-left: 5%;
 	margin-right: 10%;}
 	#footer2{
 	background-color: #fff;
-	height:80px;
+	height:180px;
 	margin-right: 10%;}
 	#footer3{
 	background-color: #fff;
-	height:80px;
+	height:180px;
 	}
 	
-	
-div.c1 {position: fixed; margin-bottom:90%; margin-left:1%;}
+	#notices-carousel{
+		margin-left:-100px;		
+		}

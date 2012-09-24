@@ -14,7 +14,7 @@ require_once("functions.php");
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/flip.css" rel="stylesheet">
     <link href="css/html5.css" rel="stylesheet">
-   <!-- <style type="text/css">
+<style type="text/css">
       body {
         padding-top: 60px;
         padding-bottom: 40px;
@@ -22,7 +22,7 @@ require_once("functions.php");
       .sidebar-nav {
         padding: 9px 0;
       } 
-    </style> -->
+    </style> 
   
 
 	 <script type="text/javascript" src="js/jquery.js"></script>
@@ -55,8 +55,8 @@ require_once("functions.php");
 			altBox: $('#da-vinci-alt'),
 			
 			yRadius:40,
-			xPos: 285,
-			yPos: 120,
+			xPos: 485,
+			yPos: 80,
 			speed:0.15,
 			mouseWheel:true
 		});
@@ -289,12 +289,12 @@ for ($i=0;$i<count($posters);$i++){
         <div class="span9">
           <div class="hero-unit">
            <div class="clearfix">
-				<article class="main">
+			
 					
 
 					
-					<div id="flipbox">
-						<div id="notices-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+					<div id="Should be flipbox">
+						<div id="notices-carousel" style="width:870px; height:384px; background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 						<?
 	for($i=0;$i<count($event_names);$i++){
 		{
@@ -304,77 +304,12 @@ for ($i=0;$i<count($posters);$i++){
 	}
 	?>
 	</div>
-					
-					</div>
-		</div>				
-           
-          </div>
-          
-          
-        </div><!--/span-->
-       	
-        <div class="span3">
-          <div class="well sidebar-nav" id="rsidebar">
-            <ul class="nav nav-list">
-
-         <a href="#" id="ug"><div id="sidetileo" >   <div id="sidetile" style="background-color:#00AEDB;"> <h2>UG Academics</h2></div></div></a>
-            <div id="sidetilespace"></div>
-   <a href="#cult" id="cult" ><div id="sidetileo">   <div id="sidetile" style="background-color:#00B159;"><h2>Cultural</h2></div></div></a>
-
-<div id="sidetilespace"></div>
-          <a href="#sports" id="sports"><div id="sidetileo">   <div id="sidetile" style="background-color:#F37735;"><h2>Sports</h2></div></div></a>
-<div id="sidetilespace"></div>
-           <a href="#tech" id="tech"><div id="sidetileo">   <div id="sidetile" style="background-color:#EC098C;"><h2>Technical</h2></div></div></a>
-<div id="sidetilespace"></div>
-            <a href="hostel" id="hostel"><div id="sidetileo">   <div id="sidetile" style="background-color:#7C4199;"><h2>Hostel</h2></div></div></a>
-<div id="sidetilespace"></div>
-           <a href="#pg" id="pg" ><div id="sidetileo">   <div id="sidetile" style="background-color:#FFC425;"><h2>PG Academics</h2></div></div></a>
-            
-           
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-        
-        
-        
-        
-      </div><!--/row-->
-    </div><!--/.fluid-container-->
-
- <div id="footer">
-      
-        
-        <div id="footer1" class="span3">
-   
-        </div>
-        <div id ="footer2" class="span3"></div>
-     
-<div id ="footer3" class="span3"></div>
-      </div>
-
-   
-
-
-
-    <script type="text/javaScript" src="js/bootstrap.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-transition.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-alert.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-modal.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-dropdown.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-scrollspy.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-tab.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-tooltip.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-popover.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-button.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-collapse.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-carousel.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-typeahead.js"></script>
-
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <div id ="ug-notices" style="visibility:hidden;">
+			<div id="sometext">
+			Here is the sample text </div>	
+				
+				
+		<!--		
+				<div id ="ug-notices" style="visibility:hidden;">
 		<div id="ug-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 		<?
 			for($i=0;$i<count($event_names);$i++){
@@ -441,6 +376,76 @@ for ($i=0;$i<count($posters);$i++){
 	</div>
 
 </div> 
+
+-->
+
+
+
+
+	
+					</div>
+		</div>				
+           
+          </div>
+          
+          
+        </div><!--/span-->
+       	
+        <div class="span3">
+          <div class="well sidebar-nav" id="rsidebar">
+            <ul class="nav nav-list">
+
+         <a href="#" id="ug"><div id="sidetileo" >   <div id="sidetile" style="background-color:#00AEDB;"> <h2>UG Academics</h2></div></div></a>
+            <div id="sidetilespace"></div>
+   <a href="#cult" id="cult" ><div id="sidetileo">   <div id="sidetile" style="background-color:#00B159;"><h2>Cultural</h2></div></div></a>
+
+<div id="sidetilespace"></div>
+          <a href="#sports" id="sports"><div id="sidetileo">   <div id="sidetile" style="background-color:#F37735;"><h2>Sports</h2></div></div></a>
+<div id="sidetilespace"></div>
+           <a href="#tech" id="tech"><div id="sidetileo">   <div id="sidetile" style="background-color:#EC098C;"><h2>Technical</h2></div></div></a>
+<div id="sidetilespace"></div>
+            <a href="hostel" id="hostel"><div id="sidetileo">   <div id="sidetile" style="background-color:#7C4199;"><h2>Hostel</h2></div></div></a>
+<div id="sidetilespace"></div>
+           <a href="#pg" id="pg" ><div id="sidetileo">   <div id="sidetile" style="background-color:#FFC425;"><h2>PG Academics</h2></div></div></a>
+            
+           
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        
+        
+        
+        
+      </div><!--/row-->
+    </div><!--/.fluid-container-->
+
+ <div id="footer">
+      
+        
+        <div id="footer1" class="span3">
+   
+        </div>
+        <div id ="footer2" class="span3"></div>
+     
+<div id ="footer3" class="span3"></div>
+      </div>
+
+
+
+    <script type="text/javaScript" src="js/bootstrap.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-transition.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-alert.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-modal.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-dropdown.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-scrollspy.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-tab.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-tooltip.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-popover.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-button.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-collapse.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-carousel.js"></script>
+    <script type="text/javaScript" src="js/bootstrap-typeahead.js"></script>
+    
   </body>
 
 </html>
