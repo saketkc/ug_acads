@@ -64,4 +64,9 @@ body{
 	height:180px;
 	}
 	
-	
+	#notices-carousel{
+		margin-left:-100px;		
+		}
+		#subscribe{
+			margin-top: 30px;
+			}
