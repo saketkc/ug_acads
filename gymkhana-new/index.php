@@ -420,6 +420,18 @@ for ($i=0;$i<count($posters);$i++){
 					</div>
 		</div>				
            
+           <div id="subscribe">
+               <form class="form-inline">
+    <input type="text" class="input-small" placeholder="Email">
+    <input type="password" class="input-small" placeholder="Password">
+    <label class="checkbox">
+    <input type="checkbox"> Remember me
+    </label>
+    <button type="submit" class="btn">Subscribe</button>
+    </form>
+           
+           
+           </div>
           </div>
           
           
