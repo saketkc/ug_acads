@@ -15,14 +15,6 @@ if (isset($_POST['login'])){
 	}
 }
 ?>
-<html>
-<body>
-
-</body>
-</html>
-
-
-
 
 
 
@@ -132,8 +124,9 @@ if (isset($_POST['login'])){
 		<br/>
 		<label>Password</label>
 		<div><input type="password" name="password" id="password"></div>
+		<input type="hidden" name="category"
 		<br/>
-		<input type="submit" class="btn btn-large btn-primary" name="login" value="Login">
+		<input type="submit" class="btn btn-large btn-primary" name="login" value="Login" id="button-subscribe">
 	</fieldset>
 </form>
 					

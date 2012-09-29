@@ -154,12 +154,12 @@ require_once("functions.php");
 			$("#ug").bind("click",function(){
 				
      				content = $("#ug-notices").clone(true,true).contents();
-     				alert(content);     				
+     			     				
      				console.log(content);
      				$(".hero-unit").css("background-color","#00AEDB");
      				
 					$("#flipbox").flip({
-					direction: "tb",
+					direction: "lr",
 					color: "#00AEDB",
 					
 					content: content,//(new Date()).getTime(),
@@ -176,7 +176,7 @@ require_once("functions.php");
      				$("flipbox").html("");
      				$(".hero-unit").css("background-color","#7C4199");
 					$("#flipbox").flip({
-					direction: "tb",
+					direction: "lr",
 					color: "#7C4199",
 					content: hcontent,//(new hostel-noticesDate()).getTime(),
 					onBefore: function(){$("#flipbox").html("")}
@@ -191,7 +191,7 @@ require_once("functions.php");
      				console.log(content);
      				$(".hero-unit").css("background-color","#F37735");
 					$("#flipbox").flip({
-					direction: "tb",
+					direction: "lr",
 					color: "#F37735",
 					content: content,//(new Date()).getTime(),
 					onBefore: function(){$("#flipbox").html("")}
@@ -207,7 +207,7 @@ require_once("functions.php");
      				console.log(content);
      				$(".hero-unit").css("background-color","#EC098C");
 					$("#flipbox").flip({
-					direction: "tb",
+					direction: "lr",
 					color: "#EC098C",
 					content: content,//(new Date()).getTime(),
 					
@@ -221,7 +221,7 @@ require_once("functions.php");
      				console.log(content);
      				$(".hero-unit").css("background-color","#00B159");
 					$("#flipbox").flip({
-					direction: "tb",
+					direction: "lr",
 					color: "#00B159",
 					content: content,//(new Date()).getTime(),
 					
@@ -313,14 +313,14 @@ for ($i=0;$i<count($posters);$i++){
      <div class="container-fluid">
       <div class="row-fluid">
         
-        <div class="span9">
-          <div class="hero-unit">
-           <div class="clearfix">
+        <div class="span9" id="flipcont">
+          <div  id="flipbox" class="hero-unit">
+           <div class="clearfix" id="box12">
 			
 					
 
 					
-					<div id="flipbox">
+					<div id="flipboxerr">
 						<div id="notices-carousel" style="width:870px; height:384px; background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 						<?
 	for($i=0;$i<count($event_names);$i++){
@@ -335,7 +335,7 @@ for ($i=0;$i<count($posters);$i++){
 				
 			
 				<div id ="ug-notices" style="display:none;">
-		<div id="ug-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+		<div id="ug-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 		<?
 			for($i=0;$i<count($event_names);$i++){
 				if ($event_category[$i] == "acads"){
@@ -348,7 +348,7 @@ for ($i=0;$i<count($posters);$i++){
 	</div>
 	
 <div id ="sports-notices" style="display:none;">
-		<div id="sports-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+		<div id="sports-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 	<?
 	$sports ="";
 	for($i=0;$i<count($event_names);$i++){
@@ -364,7 +364,7 @@ for ($i=0;$i<count($posters);$i++){
 
 </div>
 <div id ="cult-notices" style="display:none;">
-	<div id="cult-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+	<div id="cult-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 	<?
 	for($i=0;$i<count($event_names);$i++){
 		if ($event_category[$i] == "cult"){
@@ -379,7 +379,7 @@ for ($i=0;$i<count($posters);$i++){
 
 
 <div id ="hostel-notices" style="display:none;">
-	<div id="hostel-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+	<div id="hostel-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 	<?
 	for($i=0;$i<count($event_names);$i++){
 		if ($event_category[$i] == "hostel"){
@@ -392,7 +392,7 @@ for ($i=0;$i<count($posters);$i++){
 
 </div> 
 <div id ="tech-notices" style="display:none;">
-	<div id="tech-carousel" style="width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+	<div id="tech-carousel" style="width:870px; height:584px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 	<?
 	for($i=0;$i<count($event_names);$i++){
 		if ($event_category[$i] == "tech"){
@@ -412,25 +412,27 @@ for ($i=0;$i<count($posters);$i++){
 
 	
 					</div>
+					
+				
+					
+					
 		</div>				
            
-           <div id="subscribe">
-               <form class="form-inline">
-    <input type="text" class="input-small" placeholder="Email">
-    <input type="password" class="input-small" placeholder="Password">
-    <label class="checkbox">
-    <input type="checkbox"> Remember me
-    </label>
-    <button type="submit" class="btn">Subscribe</button>
-    </form>
            
-           
-           </div>
           </div>
-          
+          <div id="subscribe">
+               <form class="form-inline">
+    				<input type="text" class="input-small" placeholder="Email">
+  				  <input type="password" class="input-small" placeholder="Password">
+  				 
+   		          <button type="submit" class="btn">Subscribe</button>
+  			   </form>
+           
+           
+           </div>	
           
         </div><!--/span-->
-       	
+       
         <div class="span3">
           <div class="well sidebar-nav" id="rsidebar">
             <ul class="nav nav-list">
@@ -462,14 +464,27 @@ for ($i=0;$i<count($posters);$i++){
  <div id="footer">
       
         
-        <div id="footer1" class="span3">
-   
+        <div id="footer1" class="span2">
+   <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
         </div>
-        <div id ="footer2" class="span3"></div>
+        <div id ="footer2" class="span2">
+        <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
+        </div>
      
-<div id ="footer3" class="span3"></div>
-      </div>
+<div id ="footer3" class="span2">
 
+<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
+</div>
+<div id ="footer4" class="span2">
+<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
+</div>
+<div id ="footer5" class="span2">
+<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
+</div>
+      </div>
+<div id="infifooter">
+		<span id="footertext">Copyright UG Academics Team | IIT Bombay</span> 
+</div>
 
 
     <script type="text/javaScript" src="js/bootstrap.js"></script>
