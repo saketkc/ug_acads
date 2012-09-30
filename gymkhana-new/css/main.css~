@@ -44,29 +44,62 @@ body{
 				
 				
 	#footer{
-			background-color: #000;
-			height:250px;
+			background-color:#DCF0F7	;
+			height:350px;
 			width:100%;
 			margin-bottom: -40px;
 			padding-top:50px;
+			margin-top: 30px;
 		}
 #footer1{
 	background-color: #fff;
-	height:180px;
-	margin-left: 5%;
-	margin-right: 10%;}
+	height:280px;
+	margin-left: 3%;
+	margin-right: 4.5%;}
 	#footer2{
 	background-color: #fff;
-	height:180px;
-	margin-right: 10%;}
+	height:280px;
+	margin-right: 4.5%;}
 	#footer3{
 	background-color: #fff;
-	height:180px;
+	height:280px;
+	margin-right: 4.5%;
 	}
+	#footer4{
+	background-color: #fff;
+	height:280px;
+	margin-right: 4.5%;
+	}
+	#footer5{
+	background-color: #fff;
+	height:280px;
+	}
+	#infifooter{
+		background-color: #000;
+	height:30px;
+	width:100%;
+	margin-bottom: -40px;
+			margin-top:30px;
+			padding-top:5px;
+		}
+		#footertext{
+			
+			padding-left:4%;
+			}
+	
 	
 	#notices-carousel{
 		margin-left:-100px;		
 		}
 		#subscribe{
 			margin-top: 30px;
+			margin-left: 2%;
 			}
+			#flipcont{
+				margin-top: 10px;
+								
+				}
+				.boxing{
+					height:900px;
+					width:100%;
+					}

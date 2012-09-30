@@ -547,7 +547,7 @@ a:hover {
 .container {
   margin-right: auto;
   margin-left: auto;
-  height: 768px;
+  
   *zoom: 1;
 }
 
@@ -5578,8 +5578,11 @@ a.badge:hover {
 }
 
 .hero-unit {
-  padding: 60px;
+  padding: 80px;
+  padding-bottom: 230px;
   margin-bottom: 30px;
+  padding-left: 130px;
+  padding-right: 130px;
   background-color: #eeeeee;
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
