@@ -22,7 +22,6 @@ for ($i=0;$i<count($posters);$i++){
 		array_push($event_category, $posters[$i]["event_category"]);
 	 }
 
-//print_r($poster_locations);
 }
 
 
@@ -74,7 +73,7 @@ for ($i=0;$i<count($posters);$i++){
 	 <script type="text/javaScript" src="static/js/cloud-carousel.1.0.5.js"></script>
 	 <script type="text/javaScript"src="js/jquery.flip.js"></script>
 	 
- <script type="text/javaScript" src="js/bootstrap-dropdown.js"></script>
+	<script type="text/javaScript" src="js/bootstrap-dropdown.js"></script>
 	<link href="css/bootstrap-responsive.css" rel="stylesheet"/>
 	<link href="static/css/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" />
 	<link href="static/css/fancybox.css" rel="stylesheet" type="text/css" />	
@@ -85,7 +84,7 @@ for ($i=0;$i<count($posters);$i++){
 
 	$(document).ready(function(){
 		
-	  $('.dropdown-toggle').dropdown();	
+	    $('.dropdown-toggle').dropdown();	
 		$("a.notice").fancybox();
 		$("#notices-carousel").CloudCarousel( { 
 			reflHeight: 56,
@@ -100,8 +99,8 @@ for ($i=0;$i<count($posters);$i++){
 			speed:0.05,
 			mouseWheel:false,
 			autoRotate: 'left',
-		autoRotateDelay: 1200,
-		});
+			autoRotateDelay: 1200,
+		});alert("DSA");
 		
 		$("#ug-carousel").CloudCarousel( { 
 			reflHeight: 56,
@@ -289,184 +288,160 @@ for ($i=0;$i<count($posters);$i++){
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
-         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a> 
-          <a class="brand" href="#">Gymkhana, IIT Bombay</a>
-          <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              Add a Notice as <a href="#" class="navbar-link">Admin</a>
-            </p>
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li class="dropdown" id="accountmenu">  
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Links<b class="caret"></b></a>  
-                        <ul class="dropdown-menu">  
-                            <li><a href="#">UG Academics</a></li>  
-                            <li><a href="#">PG Academics</a></li>  
-                            <li class="divider"></li>  
-                            <li><a href="#">Hostel Affairs</a></li>  
-                            <li><a href="#">Cultural Affairs</a></li>  
-                            <li><a href="#">Sports Affairs</a></li> 
-                             <li><a href="#">STAB</a></li> 
-                             <li class="divider"></li>  
-                             <li><a href="#">Mood Indigo</a></li>  
-                            <li><a href="#">Techfest</a></li>  
-                            <li><a href="#">E Cell</a></li> 
-                                 <li><a href="#">SARC</a></li> 
-                                  <li class="divider"></li>  
-                             <li><a href="#">Insight</a></li>  
-                            <li><a href="#">Aawaaz</a></li>  
-                        </ul>  
-                    </li>  
-              <li><a href="#contact">Complaint Management System</a></li>
-              <li><a href="#contact">Points Tally</a></li>
-            </ul>
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a> 
+			<a class="brand" href="#">Gymkhana, IIT Bombay</a>
+			<div class="nav-collapse collapse">
+				<p class="navbar-text pull-right">
+					Add a Notice as <a href="#" class="navbar-link">Admin</a>
+				</p>
+				<ul class="nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li class="dropdown" id="accountmenu">  
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Links<b class="caret"></b></a>  
+						<ul class="dropdown-menu">  
+							<li><a href="#">UG Academics</a></li>  
+							<li><a href="#">PG Academics</a></li>  
+							<li class="divider"></li>  
+							<li><a href="#">Hostel Affairs</a></li>  
+							<li><a href="#">Cultural Affairs</a></li>  
+							<li><a href="#">Sports Affairs</a></li> 
+							<li><a href="#">STAB</a></li> 
+							<li class="divider"></li>  
+							<li><a href="#">Mood Indigo</a></li>  
+							<li><a href="#">Techfest</a></li>  
+							<li><a href="#">E Cell</a></li> 
+							<li><a href="#">SARC</a></li> 
+							<li class="divider"></li>  
+							<li><a href="#">Insight</a></li>  
+							<li><a href="#">Aawaaz</a></li>  
+						</ul>  
+					</li>  
+					<li><a href="#contact">Complaint Management System</a></li>
+					<li><a href="#contact">Points Tally</a></li>
+				</ul>
           </div>
         </div>
       </div>
     </div>
 
-     <div class="container-fluid">
-      <div class="row-fluid">
+	<div class="container-fluid">
+		<div class="row-fluid">
         
-        <div class="span9" id="flipcont">
-          <div  id="flipbox" class="hero-unit">
-           <div class="clearfix" id="box12">
+			<div class="span9" id="flipcont">
+				<div  id="flipbox" class="hero-unit">
+					<div class="clearfix" id="box12">
 			
 					
-
-					
-					<div id="flipboxerr">
-						<div id="notices-carousel" style="width:870px; height:384px; background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-						<?
-	for($i=0;$i<count($event_names);$i++){
-		{
+						<div id="flipboxerr">
+							<div id="notices-carousel" style="width:870px; height:384px; background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+								<?
+									for($i=0;$i<count($event_names);$i++){
+									
 			
-			echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
-		}
-	}
-	?>
-	</div>
+										echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
+									
+									}
+								?>
+							</div>
 				
 				
 			
-				<div id ="ug-notices" style="display:none;">
-		<div id="ug-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-		<?
-			for($i=0;$i<count($event_names);$i++){
-				if ($event_category[$i] == "acads"){
-					echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
+						<div id ="ug-notices" style="display:none;">
+							<div id="ug-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+								<?
+									for($i=0;$i<count($event_names);$i++){
+									if ($event_category[$i] == "acads"){
+										echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
 					
-				}
-			}
-		?>
-		</div>
-	</div>
+									}
+									}
+								?>
+							</div>
+						</div>	
 	
-<div id ="sports-notices" style="display:none;">
+						<div id ="sports-notices" style="display:none;">
 		
 
-</div>
-<div id ="cult-notices" style="display:none;">
-	<div id="cult-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-	<?
-	for($i=0;$i<count($event_names);$i++){
-		if ($event_category[$i] == "cult"){
-			
-			echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
-		}
-	}
-	?>
-	</div>
+						</div>
+						<div id ="cult-notices" style="display:none;">
+							<div id="cult-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+								<?
+								for($i=0;$i<count($event_names);$i++){
+									if ($event_category[$i] == "cult"){
+										
+										echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
+									}
+								}
+								?>
+							</div>
 
-</div> 
-
-
-<div id ="hostel-notices" style="display:none;">
-	<div id="hostel-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-	<?
-	for($i=0;$i<count($event_names);$i++){
-		if ($event_category[$i] == "hostel"){
-			
-			echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
-		}
-	}
-	?>
-	</div>
-
-</div> 
-<div id ="tech-notices" style="display:none;">
-	<div id="tech-carousel" style="width:870px; height:584px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-	<?
-	for($i=0;$i<count($event_names);$i++){
-		if ($event_category[$i] == "tech"){
-			
-			echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
-		}
-	}
-	?>
-	</div>
-
-</div> 
-
-<!---->
+						</div> 
 
 
+						<div id ="hostel-notices" style="display:none;">
+							<div id="hostel-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+								<?
+									for($i=0;$i<count($event_names);$i++){
+										if ($event_category[$i] == "hostel"){
+											
+											echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
+										}
+									}
+								?>
+							</div>
 
-
-	
+						</div> 
+						<div id ="tech-notices" style="display:none;">
+							<div id="tech-carousel" style="width:870px; height:584px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+								<?
+								for($i=0;$i<count($event_names);$i++){
+									if ($event_category[$i] == "tech"){
+										
+										echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
+									}
+								}
+								?>
+							</div>
+						</div> 
 					</div>
-					
-				
-					
-					
-		</div>				
-           
-           
-          </div>
-          <div id="subscribe">
+				</div>				
+			</div>
+			<div id="subscribe">
                <form class="form-inline">
     				<input type="text" class="input-small" placeholder="Email">
-  				  <input type="password" class="input-small" placeholder="Password">
-  				 
-   		          <button type="submit" class="btn">Subscribe</button>
+					<input type="password" class="input-small" placeholder="Password">
+  				    <button type="submit" class="btn">Subscribe</button>
   			   </form>
-           
-           
-           </div>	
-          
-        </div><!--/span-->
+			</div>
+		</div><!--/span-->
        
         <div class="span3">
           <div class="well sidebar-nav" id="rsidebar">
             <ul class="nav nav-list">
 
-         <a href="#" id="ug"><div id="sidetileo" >   <div id="sidetile" style="background-color:#00AEDB;"> <h2>UG Academics</h2></div></div></a>
-            <div id="sidetilespace"></div>
-   <a href="#cult" id="cult" ><div id="sidetileo">   <div id="sidetile" style="background-color:#00B159;"><h2>Cultural</h2></div></div></a>
+				<a href="#" id="ug"><div id="sidetileo">   <div id="sidetile" style="background-color:#00AEDB;"> <h2>UG Academics</h2></div></div></a>
+				<div id="sidetilespace"></div>
+				<a href="#cult" id="cult" ><div id="sidetileo">   <div id="sidetile" style="background-color:#00B159;"><h2>Cultural</h2></div></div></a>
 
-<div id="sidetilespace"></div>
-          <a href="#sports" id="sports"><div id="sidetileo">   <div id="sidetile" style="background-color:#F37735;"><h2>Sports</h2></div></div></a>
-<div id="sidetilespace"></div>
-           <a href="#tech" id="tech"><div id="sidetileo">   <div id="sidetile" style="background-color:#EC098C;"><h2>Technical</h2></div></div></a>
-<div id="sidetilespace"></div>
-            <a href="hostel" id="hostel"><div id="sidetileo">   <div id="sidetile" style="background-color:#7C4199;"><h2>Hostel</h2></div></div></a>
-<div id="sidetilespace"></div>
-           <a href="#pg" id="pg" ><div id="sidetileo">   <div id="sidetile" style="background-color:#FFC425;"><h2>PG Academics</h2></div></div></a>
+				<div id="sidetilespace"></div>
+				<a href="#sports" id="sports"><div id="sidetileo">   <div id="sidetile" style="background-color:#F37735;"><h2>Sports</h2></div></div></a>
+				<div id="sidetilespace"></div>
+				<a href="#tech" id="tech"><div id="sidetileo">   <div id="sidetile" style="background-color:#EC098C;"><h2>Technical</h2></div></div></a>
+				<div id="sidetilespace"></div>
+				<a href="hostel" id="hostel"><div id="sidetileo">   <div id="sidetile" style="background-color:#7C4199;"><h2>Hostel</h2></div></div></a>
+				<div id="sidetilespace"></div>
+				<a href="#pg" id="pg" ><div id="sidetileo">   <div id="sidetile" style="background-color:#FFC425;"><h2>PG Academics</h2></div></div></a>
             
            
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
-        
-        
-        
-        
-      </div><!--/row-->
-    </div><!--/.fluid-container-->
+	</div><!--/row-->
+</div><!--/.fluid-container-->
 
  <div id="footer">
       
