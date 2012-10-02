@@ -2,19 +2,21 @@
 require_once("functions.php");
 ?>
 <?php
-$posters= fetch_all_posters("");
+$posters= fetch_all_posters();
+
 $event_names = array();
 $poster_locations = array();
 $event_category = array();
 $poster_id = array();
 for ($i=0;$i<count($posters);$i++){
-	$start_time = $posters[$i]["event_start_date"]." ".$posters[$i]["event_start_time"];
+	$start_time = $posters[$i]["event_start_date"];//." ".$posters[$i]["event_start_time"];
 	$end_time = "now";//$posters[$i]["event_end_date"]." ".$posters[$i]["event_end_time"];
-	$diff = abs(strtotime($start_time) - strtotime($end_time));	 
-	$years = floor($diff / (365*60*60*24));
-	$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-	$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
-	if ($days<=7)
+	$datetime1 = date_create($start_time);
+	$datetime2 = date_create($end_time);
+	$interval = date_diff($datetime2, $datetime1);
+	$days = $interval->format('%R%a');
+	
+	if ($days<=7 && $days>=0)
 	{
 		array_push($poster_id, $posters[$i][0]);
 		array_push($event_names , $posters[$i]["event_name"]);
@@ -38,7 +40,65 @@ for ($i=0;$i<count($posters);$i++){
 		}
 	}
 	$sports =$sports."</div>";
-	?>
+?>
+
+<?
+	$tech ="<div id=\"tech-carousel\" style=\"width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;\">";
+	
+	for($i=0;$i<count($event_names);$i++){
+		
+		if ($event_category[$i] == "tech"){
+					
+			$tech =$tech."<a class=\"notice\" href=\"$poster_locations[$i]\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"$poster_locations[$i]\" width=\"128\" height=\"164\" title=\"$event_names[$i]\"/></a>";
+			//echo $sports;
+		}
+	}
+	$tech =$tech."</div>";
+?>
+
+<?
+	$cult ="<div id=\"cult-carousel\" style=\"width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;\">";
+	
+	for($i=0;$i<count($event_names);$i++){
+		
+		if ($event_category[$i] == "cult"){
+					
+			$cult =$cult."<a class=\"notice\" href=\"$poster_locations[$i]\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"$poster_locations[$i]\" width=\"128\" height=\"164\" title=\"$event_names[$i]\"/></a>";
+			//echo $sports;
+		}
+	}
+	$cult =$cult."</div>";
+?>
+
+<?
+	$hostel ="<div id=\"hostel-carousel\" style=\"width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;\">";
+	
+	for($i=0;$i<count($event_names);$i++){
+		
+		if ($event_category[$i] == "hostel"){
+					
+			$hostel = $hostel."<a class=\"notice\" href=\"$poster_locations[$i]\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"$poster_locations[$i]\" width=\"128\" height=\"164\" title=\"$event_names[$i]\"/></a>";
+			//echo $sports;
+		}
+	}
+	$hostel = $hostel."</div>";
+?>
+
+<?
+	$acads ="<div id=\"acads-carousel\" style=\"width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;\">";
+	
+	for($i=0;$i<count($event_names);$i++){
+		
+		if ($event_category[$i] == "acads"){
+					
+			$acads = $acads."<a class=\"notice\" href=\"$poster_locations[$i]\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"$poster_locations[$i]\" width=\"128\" height=\"164\" title=\"$event_names[$i]\"/></a>";
+			//echo $sports;
+		}
+	}
+	$acads = $acads."</div>";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -52,7 +112,7 @@ for ($i=0;$i<count($posters);$i++){
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/flip.css" rel="stylesheet">
     <link href="css/html5.css" rel="stylesheet">
-<style type="text/css">
+	<style type="text/css">
       body {
         padding-top: 60px;
         padding-bottom: 40px;
@@ -71,7 +131,7 @@ for ($i=0;$i<count($posters);$i++){
 	 <script type="text/javaScript" src="static/js/jquery.mousewheel.js"></script>
 	 <script type="text/javaScript" src="static/js/slimbox2.js"></script>
 	 <script type="text/javaScript" src="static/js/cloud-carousel.1.0.5.js"></script>
-	 <script type="text/javaScript"src="js/jquery.flip.js"></script>
+	 <script type="text/javaScript" src="js/jquery.flip.js"></script>
 	 
 	<script type="text/javaScript" src="js/bootstrap-dropdown.js"></script>
 	<link href="css/bootstrap-responsive.css" rel="stylesheet"/>
@@ -89,87 +149,19 @@ for ($i=0;$i<count($posters);$i++){
 		$("#notices-carousel").CloudCarousel( { 
 			reflHeight: 56,
 			reflGap:2,
-			
-			titleBox: $('#da-vinci-title'),
-			altBox: $('#da-vinci-alt'),
-			
+			titleBox: $('#notice-title'),
+			altBox: $('#alt-box'),
+			buttonLeft: $('#but1'),
+			buttonRight: $('#but2'),
 			yRadius:40,
 			xPos: 400,
 			yPos: 80,
-			speed:0.05,
-			mouseWheel:false,
+			speed:0.15,			
 			autoRotate: 'left',
 			autoRotateDelay: 1200,
-		});alert("DSA");
-		
-		$("#ug-carousel").CloudCarousel( { 
-			reflHeight: 56,
-			reflGap:2,		
-			yRadius:40,
-			
-			titleBox: $('#da-vinci-title'),
-			altBox: $('#da-vinci-alt'),
-			xPos: 400,
-			yPos: 80,
-			speed:0.15,
-			mouseWheel:true,
-			autoRotate: 'left',
-			autoRotateDelay: 1200,
+			mouseWheel : true,
 		});
 		
-		
-		$("#sports-carousel").CloudCarousel( { 
-			reflHeight: 56,
-			reflGap:2,		
-			yRadius:40,
-			xPos: 400,
-			yPos: 80,
-			titleBox: $('#da-vinci-title'),
-			altBox: $('#da-vinci-alt'),
-			speed:0.15,
-			mouseWheel:true,
-			autoRotate: 'left',
-			autoRotateDelay: 1200,
-		});
-		
-		
-		$("#tech-carousel").CloudCarousel( { 
-			reflHeight: 56,
-			reflGap:2,		
-			yRadius:40,
-			xPos: 400,
-			yPos: 80,
-			speed:0.15,
-			mouseWheel:true,
-			autoRotate: 'left',
-		autoRotateDelay: 1200,
-		});
-		
-		
-		$("#cult-carousel").CloudCarousel( { 
-			reflHeight: 56,
-			reflGap:2,		
-			yRadius:40,
-			xPos: 400,
-			yPos: 80,
-			speed:0.15,
-			mouseWheel:true,
-			autoRotate: 'left',
-		autoRotateDelay: 1200,
-		});
-		
-		
-		$("#hostel-carousel").CloudCarousel( { 
-			reflHeight: 56,
-			reflGap:2,		
-			yRadius:40,
-		xPos: 400,
-			yPos: 80,
-			speed:0.15,
-			mouseWheel:true,
-			autoRotate: 'left',
-		autoRotateDelay: 1200,
-		});
 			
 			
 	});
@@ -179,23 +171,9 @@ for ($i=0;$i<count($posters);$i++){
     
     <script type="text/javascript">
 		$(function(){
-			
-			
-			$("#flipPad a:not(.revert)").bind("click",function(){
-				var $this = $(this);
-				$("#flipbox").flip({
-					direction: $this.attr("rel"),
-					color: $this.attr("rev"),
-					content: $this.attr("title"),//(new Date()).getTime(),
-					onBefore: function(){$(".revert").show()}
-				})
-				return false;
-			});
-			
 			$("#ug").bind("click",function(){
 				
-     				content = $("#ug-notices").clone(true,true).contents();     				
-     			     				
+     				var content = $("#ug-notices").clone(true,true).contents(); 
      				console.log(content);
      				$(".hero-unit").css("background-color","#00AEDB");
      				
@@ -212,15 +190,15 @@ for ($i=0;$i<count($posters);$i++){
 			
 				$("#hostel").bind("click",function(){
 				
-     				hcontent = $("#hostel-notices").contents();
+     				hcontent = $("#hostel-notices").clone(true,true).contents();
      				console.log(hcontent);
-     				$("flipbox").html("");
+     				
      				$(".hero-unit").css("background-color","#7C4199");
 					$("#flipbox").flip({
 					direction: "lr",
 					color: "#7C4199",
 					content: hcontent,//(new hostel-noticesDate()).getTime(),
-					onBefore: function(){$("#flipbox").html("")}
+					
 				})
 				return false;
 				
@@ -228,14 +206,33 @@ for ($i=0;$i<count($posters);$i++){
 			
 				$("#sports").bind("click",function(){
 					
-     	var content2 = '<?php echo $sports;?>';
 					
-     				console.log(content2);
+					var content2 = '<?php echo $sports;?>';
+					//content2 = string content2;
+					alert(content2);
+     				//console.log(content2);
      				$(".hero-unit").css("background-color","#F37735");
 					$("#flipbox").flip({
 					direction: "lr",
 					color: "#F37735",
 					content: content2,//(new Date()).getTime(),
+					onEnd: function(){
+						$("a.notice").fancybox();
+						$("#sports-carousel").CloudCarousel( { 
+			reflHeight: 56,
+			reflGap:2,		
+			yRadius:40,
+			xPos: 400,
+			yPos: 80,
+			titleBox: $('#da-vinci-title'),
+			altBox: $('#da-vinci-alt'),
+			speed:0.15,
+			
+			autoRotate: 'left',
+			autoRotateDelay: 1200,
+		});
+						console.log('when the animation has already ended');
+	}
 					
 					
 					
@@ -334,9 +331,13 @@ for ($i=0;$i<count($posters);$i++){
 			<div class="span9" id="flipcont">
 				<div  id="flipbox" class="hero-unit">
 					<div class="clearfix" id="box12">
-			
+			<div id = "notices-title"></div>
 					
 						<div id="flipboxerr">
+							<div id="but1" class="carouselLeft" >Click me</div>
+ 			<div id="but2" class="carouselRight" >Clickem </div>      
+ 	
+         
 							<div id="notices-carousel" style="width:870px; height:384px; background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 								<?
 									for($i=0;$i<count($event_names);$i++){
@@ -364,7 +365,16 @@ for ($i=0;$i<count($posters);$i++){
 						</div>	
 	
 						<div id ="sports-notices" style="display:none;">
-		
+							<div id="sports-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+								<?
+								for($i=0;$i<count($event_names);$i++){
+									if ($event_category[$i] == "sports"){
+										
+										echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
+									}
+								}
+								?>
+							</div>
 
 						</div>
 						<div id ="cult-notices" style="display:none;">
@@ -443,30 +453,30 @@ for ($i=0;$i<count($posters);$i++){
 	</div><!--/row-->
 </div><!--/.fluid-container-->
 
- <div id="footer">
+	<div id="footer">
       
         
         <div id="footer1" class="span2">
-   <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
+			<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
         </div>
         <div id ="footer2" class="span2">
-        <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
+			<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
         </div>
      
-<div id ="footer3" class="span2">
+		<div id ="footer3" class="span2">
 
-<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
-</div>
-<div id ="footer4" class="span2">
-<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
-</div>
-<div id ="footer5" class="span2">
-<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
-</div>
-      </div>
-<div id="infifooter">
+			<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
+		</div>
+		<div id ="footer4" class="span2">
+			<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
+		</div>
+		<div id ="footer5" class="span2">
+			<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</div>
+	<div id="infifooter">
 		<span id="footertext">Copyright UG Academics Team | IIT Bombay</span> 
-</div>
+	</div>
 
 
     <script type="text/javaScript" src="js/bootstrap.js"></script>

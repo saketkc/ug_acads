@@ -110,16 +110,12 @@ function add_my_subscription($ldap_id,$category){
 	
 }
 
-function fetch_all_posters($category){
+function fetch_all_posters(){
 	
 	$db = new PDO("mysql:dbname=ugacademics;host=localhost", "root", "fedora13" );
-	if ($category==""){
-	$query = $db->prepare("SELECT * FROM ug_acads_gymkhana_posters");
-}
-else{
-	$query = $db->prepare("SELECT * FROM ug_acads_gymkhana_posters WHERE event_category=? ");
-}
-	$result = $query->execute(array($category));
+	
+	$query = $db->prepare("SELECT * FROM ug_acads_gymkhana_posters WHERE 1");
+	$query -> execute();
 	$results = $query->fetchAll();
 	return $results;
 	

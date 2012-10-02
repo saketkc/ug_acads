@@ -51,6 +51,27 @@ body{
 			padding-top:50px;
 			margin-top: 30px;
 		}
+.carouselLeft {	
+	display:none;
+	background:url(../static/images/rotate-left.png);	
+	width:40px; height:40px;
+	background-position: 0px 0px;
+}
+.carouselLeft:hover {		
+	width:40px; height:40px;
+	background-position: 0px 40px;
+	cursor:auto;
+}
+.carouselRight {
+	display:none;
+	background:url(../static/images/rotate-right.png);	
+	width:40px; height:40px;
+	background-position: 0px 0px;
+}
+.carouselRight:hover {	
+	width:40px; height:40px;
+	background-position: 0px 40px;
+}
 #footer1{
 	background-color: #fff;
 	height:280px;
