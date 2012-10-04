@@ -9,16 +9,17 @@
 		padding-left: 15px;
 		}
 #sidetileo{
-	width:100%;
+	width:16%;
 	
 	color:#fff;
 	background-color:#333; 
 	border-style: solid;
 	border-width: 3px;
 	border-color: #fff;
+	float: left;
 	}
 #sidetileo:hover{
-	width:100%;
+	width:16%;
 	
 	color:#fff;
 
@@ -27,7 +28,7 @@
 	border-width: 3px;
 	border-color: #333;
 	}
-#rsidebar a:hover{
+#tbar a:hover{
 		text-decoration: none;}
 #sidetilespace{
 		width: 100%;
@@ -35,92 +36,56 @@
 		
 		
 		}
-#rsidebar{
+#tbar{
 			background-color:#fff;
-			border-style: none; }
+			float: right;
+			border-style: none; 
+			width:75%;}
+			#rsidebar{
+				float: left;
+				height:100%;
+				margin:5px;
+				
+				}
 body{
 				background-color: #fff;
 				}
 				
 				
 	#footer{
-			background-color:#DCF0F7	;
-			height:350px;
+			background-color: #000;
+			height:20px;
 			width:100%;
-			margin-bottom: -40px;
-			padding-top:50px;
-			margin-top: 30px;
-		}
-.carouselLeft {	
-	display:none;
-	background:url(../static/images/rotate-left.png);	
-	width:40px; height:40px;
-	background-position: 0px 0px;
-}
-.carouselLeft:hover {		
-	width:40px; height:40px;
-	background-position: 0px 40px;
-	cursor:auto;
-}
-.carouselRight {
-	display:none;
-	background:url(../static/images/rotate-right.png);	
-	width:40px; height:40px;
-	background-position: 0px 0px;
-}
-.carouselRight:hover {	
-	width:40px; height:40px;
-	background-position: 0px 40px;
-}
-#footer1{
-	background-color: #fff;
-	height:280px;
-	margin-left: 3%;
-	margin-right: 4.5%;}
-	#footer2{
-	background-color: #fff;
-	height:280px;
-	margin-right: 4.5%;}
-	#footer3{
-	background-color: #fff;
-	height:280px;
-	margin-right: 4.5%;
-	}
-	#footer4{
-	background-color: #fff;
-	height:280px;
-	margin-right: 4.5%;
-	}
-	#footer5{
-	background-color: #fff;
-	height:280px;
-	}
-	#infifooter{
-		background-color: #000;
-	height:30px;
-	width:100%;
-	margin-bottom: -40px;
-			margin-top:30px;
-			padding-top:5px;
-		}
-		#footertext{
 			
-			padding-left:3.7%;
-			}
-	
+		}
+
 	
 	#notices-carousel{
 		margin-left:-100px;		
 		}
-		#subscribe{
-			margin-top: 30px;
-			margin-left: 2%;
+#flipcont{
+	float: right;	
+	margin-top: -400px;
+	margin-right: 22px;	
+	}
+	#but1{
+		height:200px;
+		overflow: hidden;		
+		}
+	#lbar{
+		width:20%;
+		height:500px;
+		float:left;
+		padding: 10px;		
+		}
+		#cal1{
+			width:100%;
 			}
-			#flipcont{
-				margin-top: 10px;
-								
-				}
-				.boxing{
-					height:900px;
-					width:100%;
+			
+			#cal2{
+				width:100%}
+				#subscribe{
+					padding:15px;
+					margin-left: 120px;
+					clear:both;					
 					}
