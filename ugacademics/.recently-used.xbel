@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/ugacademics/public_html/index.php" added="2011-07-16T10:31:38Z" modified="2012-04-18T20:25:28Z" visited="2011-07-16T10:31:38Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;gedit&apos;" timestamp="1310812298" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334780728" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/wordpress/index.php" added="2011-07-16T10:31:52Z" modified="2011-07-16T10:31:53Z" visited="2011-07-16T10:31:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;gedit&apos;" timestamp="1310812312" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1310812313" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/wordpress/wp-includes/functions.php" added="2011-07-16T21:20:19Z" modified="2011-07-16T21:20:20Z" visited="2011-07-16T21:20:19Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;gedit&apos;" timestamp="1310851219" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1310851220" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/wordpress/wp-includes/registration.php" added="2011-07-16T21:20:39Z" modified="2011-07-16T21:20:39Z" visited="2011-07-16T21:20:39Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;gedit&apos;" timestamp="1310851239" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1310851239" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/wordpress/wp-config.php" added="2011-07-16T21:21:10Z" modified="2011-07-16T21:23:37Z" visited="2011-07-16T21:21:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;gedit&apos;" timestamp="1310851417" count="2"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1310851417" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/web.config" added="2011-11-05T21:02:27Z" modified="2011-11-05T21:02:27Z" visited="2011-11-05T21:06:29Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/xml"/>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;kfmclient&apos;" timestamp="1320526947" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/career/index.html" added="2011-12-22T17:24:47Z" modified="2011-12-24T13:35:41Z" visited="2011-12-22T17:27:21Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1324733741" count="9"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/career/know_your_genre.html" added="2011-12-22T17:33:23Z" modified="2011-12-22T17:42:34Z" visited="2011-12-22T17:34:23Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1324575754" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/career/jobs_faqs.html" added="2011-12-22T17:43:23Z" modified="2011-12-22T17:43:23Z" visited="2011-12-22T17:46:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1324575803" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/career/jobs.html" added="2011-12-22T17:43:23Z" modified="2011-12-22T17:50:10Z" visited="2011-12-22T17:46:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1324576210" count="14"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/career/jobs.html.bak" added="2011-12-22T17:43:23Z" modified="2011-12-22T17:43:23Z" visited="2011-12-22T17:46:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1324575803" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/career/css/style.css" added="2011-12-22T17:46:48Z" modified="2011-12-22T17:49:13Z" visited="2011-12-22T17:47:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/css"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1324576153" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/career/links.html" added="2011-12-22T17:54:35Z" modified="2011-12-22T17:54:53Z" visited="2011-12-22T17:54:53Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1324576493" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/career/apping.html" added="2011-12-22T17:57:26Z" modified="2011-12-22T18:10:46Z" visited="2011-12-22T18:28:04Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1324577446" count="30"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/backup/config.php" added="2012-01-05T07:45:46Z" modified="2012-01-05T07:45:48Z" visited="2012-01-05T07:45:56Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1325749548" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/bookbay/functions.php" added="2012-04-11T15:44:10Z" modified="2012-04-11T15:47:12Z" visited="2012-04-11T15:47:15Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334159232" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/bookbay/deletebooks.php" added="2012-04-11T15:48:33Z" modified="2012-04-11T15:49:00Z" visited="2012-04-11T15:49:04Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334159340" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/bookbay/deleteset.php" added="2012-04-11T15:58:01Z" modified="2012-04-11T15:59:00Z" visited="2012-04-11T15:59:00Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334159940" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/bookbay/add.php" added="2012-04-11T17:05:30Z" modified="2012-04-12T15:45:30Z" visited="2012-04-11T17:06:00Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334245530" count="9"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/bookbay/view.php" added="2012-04-11T17:20:52Z" modified="2012-04-12T15:27:59Z" visited="2012-04-11T17:21:06Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334244479" count="8"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/bookbay/delete.php" added="2012-04-11T17:21:20Z" modified="2012-04-11T17:21:35Z" visited="2012-04-11T17:21:36Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334164895" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/ispa/index.php" added="2012-04-12T08:15:45Z" modified="2012-04-19T01:39:31Z" visited="2012-04-12T08:45:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334799571" count="32"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/ispa/bootstrap/css/bootstrap.css" added="2012-04-12T08:17:57Z" modified="2012-04-12T14:26:48Z" visited="2012-04-12T08:45:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/css"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334240808" count="24"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/bookbay/index.php" added="2012-04-12T08:34:13Z" modified="2012-04-18T21:03:23Z" visited="2012-04-12T08:45:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334783003" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/bookbay/hall.php" added="2012-04-12T08:34:46Z" modified="2012-04-12T08:43:22Z" visited="2012-04-12T08:45:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334220202" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/ispa/contacts.php" added="2012-04-12T14:14:56Z" modified="2012-04-19T01:40:52Z" visited="2012-04-12T14:27:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334799652" count="14"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/ispa/login.php" added="2012-04-12T14:19:54Z" modified="2012-04-12T14:26:19Z" visited="2012-04-12T14:27:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334240779" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/bookbay/localset.php" added="2012-04-12T15:05:51Z" modified="2012-04-12T15:05:51Z" visited="2012-04-12T15:05:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334243151" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/bookbay/allbooks.php" added="2012-04-12T15:06:36Z" modified="2012-04-12T15:06:59Z" visited="2012-04-12T16:07:48Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334243219" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/ispa/showmemytables.php" added="2012-04-18T03:06:35Z" modified="2012-04-22T12:04:49Z" visited="2012-04-18T03:48:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1335096289" count="49"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/ispa/apply.php" added="2012-04-18T03:06:46Z" modified="2012-04-23T14:24:28Z" visited="2012-04-18T03:48:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1335191068" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/ispa/projects.php" added="2012-04-18T03:18:46Z" modified="2012-04-18T19:36:54Z" visited="2012-04-18T03:48:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334777814" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/ispa/functions.php" added="2012-04-18T03:33:12Z" modified="2012-04-18T03:33:12Z" visited="2012-04-18T03:48:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334719992" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/exams/view.php" added="2012-04-18T13:29:18Z" modified="2012-04-23T14:39:09Z" visited="2012-04-18T14:27:32Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1335191949" count="34"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/exams/fill.php" added="2012-04-18T13:49:05Z" modified="2012-04-18T14:06:39Z" visited="2012-04-18T14:27:32Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334757999" count="26"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/exams/index.php" added="2012-04-18T13:49:16Z" modified="2012-04-18T20:29:46Z" visited="2012-04-18T14:27:32Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334780986" count="9"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/exams/include/header.php" added="2012-04-18T14:01:17Z" modified="2012-04-18T14:01:17Z" visited="2012-04-18T14:27:32Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334757677" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/exams/functions.php" added="2012-04-18T14:05:54Z" modified="2012-04-18T14:09:46Z" visited="2012-04-18T14:27:32Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334758186" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/ispa/dep_projects.php" added="2012-04-18T19:34:51Z" modified="2012-04-21T13:37:33Z" visited="2012-04-18T19:54:30Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1335015453" count="11"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/include/footer.php" added="2012-04-18T20:23:35Z" modified="2012-04-18T20:24:04Z" visited="2012-04-18T20:24:08Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334780644" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/exams/include/footer.php" added="2012-04-18T20:24:22Z" modified="2012-04-18T20:24:38Z" visited="2012-04-19T01:40:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334780678" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/exams/include/sidebar.php" added="2012-04-18T20:53:26Z" modified="2012-04-18T20:55:31Z" visited="2012-04-19T01:40:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1334782531" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/summerschool.php" added="2012-04-23T14:12:16Z" modified="2012-04-27T11:39:28Z" visited="2012-04-23T14:13:20Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1335526768" count="105"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/css_backup/24x7sites.php" added="2012-04-23T15:05:15Z" modified="2012-04-23T15:12:00Z" visited="2012-04-23T15:14:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1335193920" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/scholarships.php" added="2012-04-23T15:05:25Z" modified="2012-04-23T15:05:25Z" visited="2012-04-23T15:14:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1335193525" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/acads/index.php" added="2012-04-23T15:14:13Z" modified="2012-04-24T05:30:57Z" visited="2012-04-23T15:14:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1335245457" count="13"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/add24x7.php" added="2012-04-23T17:07:25Z" modified="2012-04-23T18:00:30Z" visited="2012-04-23T18:22:14Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1335204030" count="6"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/acads/functions.php" added="2012-04-23T17:59:40Z" modified="2012-04-23T17:59:40Z" visited="2012-04-23T18:22:14Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1335203980" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/acads/add24x7.php" added="2012-04-23T18:22:07Z" modified="2012-04-24T05:42:42Z" visited="2012-04-23T18:22:14Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1335246162" count="15"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/bookbay/register.php" added="2012-04-24T04:54:33Z" modified="2012-04-24T04:54:33Z" visited="2012-04-24T05:42:42Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1335243273" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/exam_uploads/EXAM_PAPERis_endsem_2004_this.pdf" added="2012-04-26T21:43:24Z" modified="2012-04-26T21:43:24Z" visited="2012-04-26T21:43:24Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;evince&apos;" timestamp="1335476604" count="1"/>
+          <bookmark:application name="Evince Document Viewer" exec="&apos;evince %u&apos;" timestamp="1335476604" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/exam_uploads/EXAM_PAPERcl354_quiz_2006_test.pdf" added="2012-04-26T21:45:06Z" modified="2012-04-26T21:45:06Z" visited="2012-04-26T21:45:06Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;evince&apos;" timestamp="1335476706" count="1"/>
+          <bookmark:application name="Evince Document Viewer" exec="&apos;evince %u&apos;" timestamp="1335476706" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/exam_uploads/CONSENT_LETTERis_endsem_2004_this.pdf" added="2012-04-26T21:45:20Z" modified="2012-04-26T21:45:21Z" visited="2012-04-26T21:45:20Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;evince&apos;" timestamp="1335476720" count="1"/>
+          <bookmark:application name="Evince Document Viewer" exec="&apos;evince %u&apos;" timestamp="1335476721" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/circular/attachment.pdf" added="2012-04-26T21:56:14Z" modified="2012-04-26T21:56:14Z" visited="2012-04-26T21:56:14Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;evince&apos;" timestamp="1335477374" count="1"/>
+          <bookmark:application name="Evince Document Viewer" exec="&apos;evince %u&apos;" timestamp="1335477374" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/circular/reexam.pdf" added="2012-04-26T21:56:56Z" modified="2012-04-26T21:56:57Z" visited="2012-04-26T21:56:56Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;evince&apos;" timestamp="1335477416" count="1"/>
+          <bookmark:application name="Evince Document Viewer" exec="&apos;evince %u&apos;" timestamp="1335477417" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/moodi/1.jpg" added="2012-04-27T00:06:05Z" modified="2012-04-27T00:06:06Z" visited="2012-04-27T00:06:05Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Eye of Gnome</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;eog&apos;" timestamp="1335485165" count="1"/>
+          <bookmark:application name="Eye of GNOME Image Viewer" exec="&apos;eog %u&apos;" timestamp="1335485166" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/forum_for_repair/career/mckinsey.pdf" added="2012-04-27T00:12:39Z" modified="2012-04-27T00:12:40Z" visited="2012-04-27T00:12:39Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/pdf"/>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;evince&apos;" timestamp="1335485559" count="1"/>
+          <bookmark:application name="Evince Document Viewer" exec="&apos;evince %u&apos;" timestamp="1335485560" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/index.html" added="2012-05-13T17:19:07Z" modified="2012-05-13T17:19:07Z" visited="2012-05-13T17:19:07Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;gedit&apos;" timestamp="1336929547" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1336929547" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/style.css" added="2012-05-13T17:21:07Z" modified="2012-05-13T17:21:07Z" visited="2012-05-13T17:23:51Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/css"/>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;emacs&apos;" timestamp="1336929667" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/elfinder/php/connector.php" added="2012-05-13T17:34:00Z" modified="2012-05-13T17:36:29Z" visited="2012-05-13T17:34:00Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;gedit&apos;" timestamp="1336930470" count="2"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1336930589" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/wiki/LocalSettings.php" added="2012-05-18T21:43:10Z" modified="2012-05-18T22:04:29Z" visited="2012-05-18T22:04:29Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1337378669" count="7"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/apping/functions.php" added="2012-05-28T19:58:02Z" modified="2012-05-28T20:09:42Z" visited="2012-05-28T19:58:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="File Manager" exec="&apos;gedit&apos;" timestamp="1338235082" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1338235782" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/ugacademics/public_html/ug_acads/apping/add.php" added="2012-05-28T20:01:14Z" modified="2012-05-28T20:07:28Z" visited="2012-05-28T20:07:04Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-php"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" timestamp="1338235648" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

@@ -1,0 +1,37 @@
+[$Version]
+update_info=kfmclient_3_2.upd:kfmclient_3_2
+
+[HTML Settings]
+AutomaticDetectionLanguage=1
+
+[KonqMainWindow]
+State=AAAA/wAAAAD9AAAAAAAAArwAAAFvAAAABAAAAAQAAAAIAAAACPwAAAADAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAAAAACvAAAAAAAAAAAAAAAGABlAHgAdAByAGEAVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAeAGwAbwBjAGEAdABpAG8AbgBUAG8AbwBsAEIAYQByAQAAAAAAAAK8AAAAAAAAAAAAAAACAAAAAwAAAB4AYgBvAG8AawBtAGEAcgBrAFQAbwBvAGwAQgBhAHIAAAAAAAAAArwAAAAAAAAAAAAAABYAaAB0AG0AbABUAG8AbwBsAEIAYQByAAAAAAD/////AAAAAAAAAAAAAAAaAHMAcABlAGUAYwBoAFQAbwBvAGwAYgBhAHIAAAAAAP////8AAAAAAAAAAA==
+
+[KonqMainWindow Toolbar bookmarkToolBar]
+Hidden=true
+IconSize=16
+Index=3
+ToolButtonStyle=TextBesideIcon
+
+[KonqMainWindow Toolbar extraToolBar]
+Index=1
+ToolButtonStyle=TextUnderIcon
+
+[KonqMainWindow Toolbar htmlToolBar]
+Index=4
+ToolButtonStyle=IconOnly
+
+[KonqMainWindow Toolbar locationToolBar]
+Index=2
+ToolButtonStyle=IconOnly
+
+[KonqMainWindow Toolbar mainToolBar]
+Index=0
+
+[KonqMainWindow Toolbar speechToolbar]
+Index=5
+ToolButtonStyle=TextUnderIcon
+
+[KonqMainWindow_Size]
+Height 1080=480
+Width 1920=700

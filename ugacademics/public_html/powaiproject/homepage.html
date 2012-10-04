@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+ 
+$(document).ready(function(){
+ 
+	$('#contenthome').fadeIn(2000);
+ 
+});
+ 
+</script>
+<script type="text/javascript" src="jquery-1.2.6.min.js"></script>
+<script type="text/javascript">
+
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+    // use this to pull the images in the order they appear in the markup
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+
+    // uncomment the 3 lines below to pull the images in random order
+    
+    // var $sibs  = $active.siblings();
+    // var rndNum = Math.floor(Math.random() * $sibs.length );
+    // var $next  = $( $sibs[ rndNum ] );
+
+
+    $active.addClass('last-active');
+
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 2000 );
+});
+
+</script>
+<script type="text/javascript">
+if (document.images) {
+    img1 = new Image();
+    img1.src = "image1.jpg";
+	img2 = new Image();
+    img2.src = "image2.jpg";
+	img3 = new Image();
+    img3.src = "image3.jpg";
+	img4 = new Image();
+    img4.src = "image4.jpg";
+}
+</script>
+
+<title>Home</title>
+
+<script language="javascript" type="text/javascript">
+function myhide()
+{
+document.getElementById("seemore").style.visibility = "hidden";
+}
+
+function myshow()
+{
+document.getElementById("seemore").style.visibility = "visible";
+}
+</script>
+
+</head>
+
+
+<body>
+
+    <div class="container" width="940px">
+	      <div class="page-header">
+		  <img src="leaf.png" style="float:left; width:150px;"/>
+		  <h1>Powai Lake Project</h1>
+		  </br>
+		  <div style="float:center; margin-right:10px;">| <a href="index.html">Home</a> | <a href="register.html">Register</a> | <a href="contact.html">Contact Us</a> |</div>
+		  </div>
+		  
+		  <div id="contenthome" style="display:none;">
+		  <div class="subdiv">
+		  <p><b>Here is an opportunity for you to be an agent for change !</b></br></br>
+<b>E</b>very community has its own lake or river or sea shore that provides
+life support to all living forms in the given urban eco-system.
+</br><b>U</b>nfortunately, most of the lakes are contaminated to the extent that
+their dying process has begun.</br><b>O</b>ne such lake is the Powai Lake. We derive our suburb's name from it.
+</br></br>
+<b><a onclick="myshow()">See More...</a></b> 
+</p></div>
+		  </div>
+		  <div id="slideshow">
+    <img src="image1.jpg" alt="Slideshow Image 1" class="active" />
+    <img src="image2.jpg" alt="Slideshow Image 2" />
+    <img src="image3.jpg" alt="Slideshow Image 3" />
+    <img src="image4.jpg" alt="Slideshow Image 4" />
+		  </div>
+		  
+		  </div>
+<div id="seemore">
+<a onclick="myhide()"><img src="cross.png"/></a>
+</br>
+<b>Here is an opportunity for you to be an agent for change !</b></br></br>
+<p>Every community has its own lake or river or sea shore that provides
+life support to all living forms in the given urban eco-system.
+</br>Unfortunately, most of the lakes are contaminated to the extent that
+their dying process has begun.</br></p><p>One such lake is the Powai Lake. We derive our suburb's name from it.
+</br></p><p>The Grand Challenge to rejuvenate Powai Lake is an opportunity to be a
+part of a completely student driven technical project with guidance
+from institute faculty.</p>
+</br></br>
+<ul>
+<li>Focus 1: Development and Implementation of Appropriate Technologies for removing Weed</li>
+<li>Focus 2: Development and Implementation of Technology for dissolving as much Oxygen in Lake Water from Atmospheric Aeration.</li>
+</ul>
+</div>
+</body>
+</html>

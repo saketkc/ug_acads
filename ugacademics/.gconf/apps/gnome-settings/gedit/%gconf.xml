@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="history-gedit2_replace_with_entry" mtime="1334159089" type="list" ltype="string">
+                <li type="string">
+                        <stringvalue>ug_acads</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>ugacademics</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>div class=&quot;readmorebox&quot;</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>class=&quot;readmorebox&quot;</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue> class=&quot;readmorebox&quot;</stringvalue>
+                </li>
+        </entry>
+        <entry name="history-gedit2_search_for_entry" mtime="1337377997" type="list" ltype="string">
+                <li type="string">
+                        <stringvalue>logo</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>jung</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>iit bombay summer</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>spanish</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>german</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>bdasljjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>choose-dep</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>contenthome1</stringvalue>
+                </li>
+                <li type="string">
+                        <stringvalue>fedora13</stringvalue>
+                </li>
+        </entry>
+</gconf>

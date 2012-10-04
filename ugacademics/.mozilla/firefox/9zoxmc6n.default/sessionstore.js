@@ -1,0 +1,1 @@
+({windows:[{tabs:[{entries:[{url:"about:blank", scroll:"0,0"}], index:1}], selected:1, _closedTabs:[], _hosts:{}, width:"994", height:"730", screenX:"50", screenY:"0", sizemode:"maximized"}], selectedWindow:1, session:{state:"running"}})
