@@ -1,3 +1,4 @@
+import gdata.calendar.service
 import gdata.calendar.data
 import gdata.calendar.client
 import gdata.acl.data
@@ -14,10 +15,41 @@ email = "ugacads.iitb@gmail.com"
 password = "fedora13"
 source = "ugacads-calendar"
 academic = "http://www.google.com/calendar/feeds/kq47jpfc8ell2b240i5evuqlio@group.calendar.google.com/private/full"
+acad_id = "kq47jpfc8ell2b240i5evuqlio@group.calendar.google.com"
+
 cult = "http://www.google.com/calendar/feeds/ml8manl0cc1lp2d6r867fu74tk@group.calendar.google.com/private/full"
+cult_id = "ml8manl0cc1lp2d6r867fu74tk@group.calendar.google.com"
 hostel = "http://www.google.com/calendar/feeds/3903h5a6o85l9l84lveg61dvbo@group.calendar.google.com/private/full"
+hostel_id = "3903h5a6o85l9l84lveg61dvbo@group.calendar.google.com"
 sports = "http://www.google.com/calendar/feeds/4d0c12953h02ur7rkuumhuktu8@group.calendar.google.com/private/full"
+sports_id = "4d0c12953h02ur7rkuumhuktu8@group.calendar.google.com"
 tech = "http://www.google.com/calendar/feeds/qcisaissdqkbgteubkr0ibgvoc@group.calendar.google.com/private/full"
+tech_id = "qcisaissdqkbgteubkr0ibgvoc@group.calendar.google.com"
+all_list= {"acad":acad_id,"cult":cult_id,"sports":sports_id,"hostel":hostel_id,"tech":tech_id}
+def FetchEvent(start_date,end_date):
+	cal_client = gdata.calendar.service.CalendarService()
+	cal_client.email = email
+	cal_client.password = password
+	cal_client.source = 'Google-Calendar_Python_Sample-1.0'
+	cal_client.ProgrammaticLogin()
+	calfeed = cal_client.GetOwnCalendarsFeed()
+	all_events = ""
+	calurl=[a_calendar.content.src for i, a_calendar in enumerate(calfeed.entry)]
+	for key in all_list.keys():
+		value = str(all_list[key])
+		query = gdata.calendar.service.CalendarEventQuery(str(value), 'private', 'full')	
+		query.start_min = start_date
+		query.start_max = end_date
+		feed = cal_client.CalendarQuery(query)
+		all_events  = all_events + "***"+ str(key) +"*****" #  str(calurl[1]) 
+	#return all_events
+		for i, an_event in zip(xrange(len(feed.entry)), feed.entry):
+			all_events = all_events +  str(an_event.title.text)
+			for a_when in an_event.when:
+		        	all_events += " => " + str(a_when.start_time)
+			        all_events += " => " + str(a_when.end_time) +"\n"
+	return all_events
+
 def InsertEvent(title='Tennis with Beth', content='Meet for a quick lesson', where='On the courts', start_time=None, end_time=None,category=None, recurrence_data=None):
     event = gdata.calendar.data.CalendarEventEntry()
     event.title = atom.data.Title(text=title)
@@ -125,9 +157,16 @@ class SendMail(webapp.RequestHandler):
         message.send()
         #send_mail("test","query")
 
+class FetchCalendar(webapp.RequestHandler):
+	def get(self):
+		start_date = self.request.get('start')
+		end_date = self.request.get('end')
+		events = FetchEvent(start_date,end_date)
+		self.response.headers['Content-Type'] = 'text/plain'
+		self.response.out.write(events)
 
 application = webapp.WSGIApplication(
-                                     [('/', MainPage),('/mail',SendMail),],
+                                     [('/', MainPage),('/mail',SendMail),('/fetch',FetchCalendar)],
                                      debug=True)
 
 def main():
