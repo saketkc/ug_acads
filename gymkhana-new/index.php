@@ -3,7 +3,17 @@ require_once("functions.php");
 ?>
 <?php
 $posters= fetch_all_posters();
+$all_calendar = '<iframe src="https://www.google.com/calendar/embed?title=All%20Events&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=kq47jpfc8ell2b240i5evuqlio%40group.calendar.google.com&amp;color=%23B1440E&amp;src=ml8manl0cc1lp2d6r867fu74tk%40group.calendar.google.com&amp;color=%23B1365F&amp;src=3903h5a6o85l9l84lveg61dvbo%40group.calendar.google.com&amp;color=%236B3304&amp;src=4d0c12953h02ur7rkuumhuktu8%40group.calendar.google.com&amp;color=%235229A3&amp;src=qcisaissdqkbgteubkr0ibgvoc%40group.calendar.google.com&amp;color=%23333333&amp;src=ugacads.iitb%40gmail.com&amp;color=%232F6309&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%23875509&amp;ctz=Asia%2FCalcutta" style=" border:solid 1px #777 " width="250" height="250" frameborder="0" scrolling="no"></iframe>';
 
+$acads_calendar = '<iframe src="https://www.google.com/calendar/embed?title=Academics&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=kq47jpfc8ell2b240i5evuqlio%40group.calendar.google.com&amp;color=%23B1440E&amp;ctz=Asia%2FCalcutta" style=" border:solid 1px #777 " width="250" height="250" frameborder="0" scrolling="no"></iframe>';
+
+$cult_calendar = '<iframe src="https://www.google.com/calendar/embed?title=Cultural&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=ml8manl0cc1lp2d6r867fu74tk%40group.calendar.google.com&amp;color=%23B1365F&amp;ctz=Asia%2FCalcutta" style=" border:solid 1px #777 " width="250" height="250" frameborder="0" scrolling="no"></iframe>';
+
+$hostel_calendar = '<iframe src="https://www.google.com/calendar/embed?title=Hostel&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=3903h5a6o85l9l84lveg61dvbo%40group.calendar.google.com&amp;color=%236B3304&amp;ctz=Asia%2FCalcutta" style=" border:solid 1px #777 " width="250" height="250" frameborder="0" scrolling="no"></iframe>';
+
+$tech_calendar = '<iframe src="https://www.google.com/calendar/embed?title=Tech&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=qcisaissdqkbgteubkr0ibgvoc%40group.calendar.google.com&amp;color=%23333333&amp;ctz=Asia%2FCalcutta" style=" border:solid 1px #777 " width="250" height="250" frameborder="0" scrolling="no"></iframe>';
+
+$sports_calendar = '<iframe src="https://www.google.com/calendar/embed?title=Sports&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=4d0c12953h02ur7rkuumhuktu8%40group.calendar.google.com&amp;color=%235229A3&amp;ctz=Asia%2FCalcutta" style=" border:solid 1px #777 " width="250" height="250" frameborder="0" scrolling="no"></iframe>';
 $event_names = array();
 $poster_locations = array();
 $event_category = array();
@@ -19,7 +29,7 @@ for ($i=0;$i<count($posters);$i++){
 	if ($days<=7 && $days>=0)
 	{
 		array_push($poster_id, $posters[$i][0]);
-		array_push($event_names , $posters[$i]["event_name"]);
+		array_push($event_names , $posters[$i]["event_name"]." at ".$start_time.",".$posters[$i]["event_start_time"]);
 		array_push($poster_locations, $posters[$i]["event_poster_location"]);
 		array_push($event_category, $posters[$i]["event_category"]);
 	 }
@@ -28,72 +38,110 @@ for ($i=0;$i<count($posters);$i++){
 
 
 ?>
+
+<?
+	$all ="<div id=\"sports-carousel\" style=\"width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;\">";
+	$all_count =0;
+	for($i=0;$i<count($event_names);$i++){
+		
+		
+					
+			$all = $all."<a class=\"notice\" href=\"$poster_locations[$i]\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"$poster_locations[$i]\" width=\"128\" height=\"164\" title=\"$event_names[$i]\"/></a>";
+			$all_count=$all_count+1;
+		
+	}
+	if ($all_count <= 0){
+		$all = "<div id=\"no-poster\"><a class=\"notice\" href=\"uploads/no-image.jpg\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"uploads/no-image.jpg\" width=\"128\" height=\"164\" title=\"No Event\"/></a> ";
+	}
+	$all =$all."</div>";
+?>
+
+
 <?
 	$sports ="<div id=\"sports-carousel\" style=\"width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;\">";
-	
+	$sports_count =0;
 	for($i=0;$i<count($event_names);$i++){
 		
 		if ($event_category[$i] == "sports"){
 					
 			$sports = $sports."<a class=\"notice\" href=\"$poster_locations[$i]\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"$poster_locations[$i]\" width=\"128\" height=\"164\" title=\"$event_names[$i]\"/></a>";
+			$sports_count=$sports_count+1;
 			//echo $sports;
 		}
+	}
+	if ($sports_count<=0){
+		$sports =  "<div id=\"no-poster\"><a class=\"notice\" href=\"uploads/no-image.jpg\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"uploads/no-image.jpg\" width=\"128\" height=\"164\" title=\"No Event\"/></a> ";
+		
 	}
 	$sports =$sports."</div>";
 ?>
 
 <?
 	$tech ="<div id=\"tech-carousel\" style=\"width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;\">";
-	
+	$tech_count = 0;
 	for($i=0;$i<count($event_names);$i++){
 		
 		if ($event_category[$i] == "tech"){
 					
 			$tech =$tech."<a class=\"notice\" href=\"$poster_locations[$i]\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"$poster_locations[$i]\" width=\"128\" height=\"164\" title=\"$event_names[$i]\"/></a>";
-			//echo $sports;
+			$tech_count = $tech_count+1;
 		}
+	}
+	if ($tech_count<=0){
+		$tech = "<div id=\"no-poster\"><a class=\"notice\" href=\"uploads/no-image.jpg\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"uploads/no-image.jpg\" width=\"128\" height=\"164\" title=\"No Event\"/></a> ";
 	}
 	$tech =$tech."</div>";
 ?>
 
 <?
 	$cult ="<div id=\"cult-carousel\" style=\"width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;\">";
-	
+	$cult_count = 0;
 	for($i=0;$i<count($event_names);$i++){
 		
 		if ($event_category[$i] == "cult"){
 					
 			$cult =$cult."<a class=\"notice\" href=\"$poster_locations[$i]\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"$poster_locations[$i]\" width=\"128\" height=\"164\" title=\"$event_names[$i]\"/></a>";
-			//echo $sports;
+			$cult_count = $cult_count+1;
 		}
+	}
+	if ($cult_count<=0){
+		$cult = "<div id=\"no-poster\"><a class=\"notice\" href=\"uploads/no-image.jpg\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"uploads/no-image.jpg\" width=\"128\" height=\"164\" title=\"No Event\"/></a> ";
 	}
 	$cult =$cult."</div>";
 ?>
 
 <?
 	$hostel ="<div id=\"hostel-carousel\" style=\"width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;\">";
-	
+	$hostel_count = 0;
 	for($i=0;$i<count($event_names);$i++){
 		
 		if ($event_category[$i] == "hostel"){
 					
 			$hostel = $hostel."<a class=\"notice\" href=\"$poster_locations[$i]\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"$poster_locations[$i]\" width=\"128\" height=\"164\" title=\"$event_names[$i]\"/></a>";
+			$hostel_count = $hostel_count+1;
 			//echo $sports;
 		}
+	}
+	if ($hostel_count<=0){
+		$hostel = "<div id=\"no-poster\"><a class=\"notice\" href=\"uploads/no-image.jpg\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"uploads/no-image.jpg\" width=\"128\" height=\"164\" title=\"No Event\"/></a> ";
 	}
 	$hostel = $hostel."</div>";
 ?>
 
 <?
 	$acads ="<div id=\"acads-carousel\" style=\"width:570px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;\">";
-	
+	$acads_count = 0;
 	for($i=0;$i<count($event_names);$i++){
 		
 		if ($event_category[$i] == "acads"){
 					
 			$acads = $acads."<a class=\"notice\" href=\"$poster_locations[$i]\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"$poster_locations[$i]\" width=\"128\" height=\"164\" title=\"$event_names[$i]\"/></a>";
+			$acads_count = $acads_count+1;
 			//echo $sports;
 		}
+	}
+	if ($acads_count<=0){
+		$acads = "<div id=\"no-poster\"><a class=\"notice\" href=\"uploads/no-image.jpg\" rel=\"lightbox\" id=\"notice\"><img class=\"cloudcarousel\" src=\"uploads/no-image.jpg\" width=\"128\" height=\"164\" title=\"No Event\"/></a> ";
 	}
 	$acads = $acads."</div>";
 ?>
@@ -124,7 +172,7 @@ for ($i=0;$i<count($posters);$i++){
   
 
 	 <script type="text/javascript" src="js/jquery.js"></script>
-	 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+	 
 	 
 	 <script type="text/javascript" src="static/js/jquery.fancybox-1.3.4.js"></script>
 	 <script type="text/javascript" src="static/js/jquery.fancybox-1.3.4.pack.js"></script>
@@ -144,6 +192,21 @@ for ($i=0;$i<count($posters);$i++){
 
 	$(document).ready(function(){
 		
+		$("#sub-submit").click(function(){
+			var email = $("#sub-email").val();
+			var password = $("#sub-password").val();
+			$.ajax({
+				type: "POST",
+				url: "authenticate.php",
+				data : {"email":email , "password":password},
+			}).done(function(msg){
+				$("#data").html();
+				$("a#single_image").trigger("click");
+				
+			
+		});
+	});
+		
 	    $('.dropdown-toggle').dropdown();	
 		$("a.notice").fancybox();
 		$("#notices-carousel").CloudCarousel( { 
@@ -157,9 +220,7 @@ for ($i=0;$i<count($posters);$i++){
 			xPos: 400,
 			yPos: 80,
 			speed:0.15,			
-			autoRotate: 'left',
-			autoRotateDelay: 1200,
-			mouseWheel : true,
+			
 		});
 		
 			
@@ -171,106 +232,83 @@ for ($i=0;$i<count($posters);$i++){
     
     <script type="text/javascript">
 		$(function(){
-			$("#ug").bind("click",function(){
-				
-     				var content = $("#ug-notices").clone(true,true).contents(); 
-     				console.log(content);
-     				$(".hero-unit").css("background-color","#00AEDB");
-     				
-					$("#flipbox").flip({
-					direction: "lr",
-					color: "#00AEDB",
-					
-					content: content,//(new Date()).getTime(),
-					
-				})
-				return false;
-				
-			});
 			
-				$("#hostel").bind("click",function(){
+			$(".clickers").bind("click",function(){
+				var id = (this).id;
+				var cal = "";
+				var colors = "";
+				var content = "";
 				
-     				hcontent = $("#hostel-notices").clone(true,true).contents();
-     				console.log(hcontent);
-     				
-     				$(".hero-unit").css("background-color","#7C4199");
-					$("#flipbox").flip({
-					direction: "lr",
-					color: "#7C4199",
-					content: hcontent,//(new hostel-noticesDate()).getTime(),
+				switch(id){
+					case "acads":
+						cal = '<?php echo $acads_calendar; ?>';
+						colors = "#FFC425";
+						
+						content = '<?php echo $acads;?>';
+						break;
+					case "hostel":
+						cal = '<?php echo $hostel_calendar; ?>';
+						colors = "#7C4199";
+						content = '<?php echo $hostel;?>';
+						break;
+					case "tech":
+						cal = '<?php echo $tech_calendar; ?>';
+						colors = "#EC098C";
+						content = '<?php echo $tech;?>';
+						break;
+					case "sports":
+						cal = '<?php echo $sports_calendar; ?>';
+						colors = "#F37735";
+						content = '<?php echo $sports;?>';
+						break;
+					case "cult":
+						cal = '<?php echo $cult_calendar; ?>';
+						colors = "#00B159";
+						content = '<?php echo $cult;?>';
+						break;
+					case "all":
+						cal = '<?php echo $all_calendar; ?>';
+						colors = " #00AEDB";
+						content = '<?php echo $all;?>';
+						break;
 					
-				})
-				return false;
-				
-			});
+					
+						
+					
+					
+					
+					
+				}
+				//console.log(content);
+						$("#flipbox").flip({
+							direction: "lr",
+							color: colors,
+							content: content,//(new Date()).getTime(),
+							onEnd: function(){
+								$("a.notice").fancybox();
+								console.log("ENDED")
+								$("#"+id+"-carousel").CloudCarousel( { 
+									reflHeight: 56,
+									reflGap:2,		
+									yRadius:40,
+									xPos: 400,
+									yPos: 80,
+									titleBox: $('#notice-title'),
+									altBox: $('#da-vinci-alt'),
+									speed:0.15,
 			
-				$("#sports").bind("click",function(){
-					
-					
-					var content2 = '<?php echo $sports;?>';
-					//content2 = string content2;
-					alert(content2);
-     				//console.log(content2);
-     				$(".hero-unit").css("background-color","#F37735");
-					$("#flipbox").flip({
-					direction: "lr",
-					color: "#F37735",
-					content: content2,//(new Date()).getTime(),
-					onEnd: function(){
-						$("a.notice").fancybox();
-						$("#sports-carousel").CloudCarousel( { 
-			reflHeight: 56,
-			reflGap:2,		
-			yRadius:40,
-			xPos: 400,
-			yPos: 80,
-			titleBox: $('#da-vinci-title'),
-			altBox: $('#da-vinci-alt'),
-			speed:0.15,
-			
-			autoRotate: 'left',
-			autoRotateDelay: 1200,
-		});
-						console.log('when the animation has already ended');
-	}
+							});
+						
+							}
 					
 					
 					
-				})
-				return false;
-				
+				});
+					$("#cal2").fadeOut("slow");
+     				$("#cal2").html(cal);
+     				$("#cal2").fadeIn("slow");
 			});
-			
-				$("#tech").bind("click",function(){
 				
-     				content = $("#tech-notices").contents();
-     				console.log(content);
-     				$(".hero-unit").css("background-color","#EC098C");
-					$("#flipbox").flip({
-					direction: "lr",
-					color: "#EC098C",
-					content: content,//(new Date()).getTime(),
-					
-				})
-				return false;
-				
-			});
-				$("#cult").bind("click",function(){
-				
-     				content = $("#cult-notices").contents();
-     				console.log(content);
-     				$(".hero-unit").css("background-color","#00B159");
-					$("#flipbox").flip({
-					direction: "lr",
-					color: "#00B159",
-					content: content,//(new Date()).getTime(),
-					
-					
-				})
-				return false;
-				
-			});
-
 			
 		});
 	</script>		
@@ -282,225 +320,130 @@ for ($i=0;$i<count($posters);$i++){
 
 <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a> 
-			<a class="brand" href="#">Gymkhana, IIT Bombay</a>
-			<div class="nav-collapse collapse">
-				<p class="navbar-text pull-right">
-					Add a Notice as <a href="#" class="navbar-link">Admin</a>
-				</p>
-				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li class="dropdown" id="accountmenu">  
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Links<b class="caret"></b></a>  
-						<ul class="dropdown-menu">  
-							<li><a href="#">UG Academics</a></li>  
-							<li><a href="#">PG Academics</a></li>  
-							<li class="divider"></li>  
-							<li><a href="#">Hostel Affairs</a></li>  
-							<li><a href="#">Cultural Affairs</a></li>  
-							<li><a href="#">Sports Affairs</a></li> 
-							<li><a href="#">STAB</a></li> 
-							<li class="divider"></li>  
-							<li><a href="#">Mood Indigo</a></li>  
-							<li><a href="#">Techfest</a></li>  
-							<li><a href="#">E Cell</a></li> 
-							<li><a href="#">SARC</a></li> 
-							<li class="divider"></li>  
-							<li><a href="#">Insight</a></li>  
-							<li><a href="#">Aawaaz</a></li>  
-						</ul>  
-					</li>  
-					<li><a href="#contact">Complaint Management System</a></li>
-					<li><a href="#contact">Points Tally</a></li>
-				</ul>
-          </div>
-        </div>
-      </div>
-    </div>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a> 
+				<a class="brand" href="#">Gymkhana, IIT Bombay</a>
+				<div class="nav-collapse collapse">
+					<p class="navbar-text pull-right">
+						Add a Notice as <a href="#" class="navbar-link">Admin</a>
+					</p>
+					<ul class="nav">
+						<li class="active"><a href="#">Home</a>
+						</li>
+						<li class="dropdown" id="accountmenu">  
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Links<b class="caret"></b></a>  
+							<ul class="dropdown-menu">  
+								<li><a href="#">UG Academics</a></li>  
+								<li><a href="#">PG Academics</a></li>  
+								<li class="divider"></li>  
+								<li><a href="#">Hostel Affairs</a></li>  
+								<li><a href="#">Cultural Affairs</a></li>  
+								<li><a href="#">Sports Affairs</a></li> 
+								<li><a href="#">STAB</a></li> 
+								<li class="divider"></li>  
+								<li><a href="#">Mood Indigo</a></li>  
+								<li><a href="#">Techfest</a></li>  
+								<li><a href="#">E Cell</a></li> 
+								<li><a href="#">SARC</a></li> 
+								<li class="divider"></li>  
+								<li><a href="#">Insight</a></li>  
+								<li><a href="#">Aawaaz</a></li>  
+							</ul>  
+						</li>  
+						<li><a href="#contact">Complaint Management System</a></li>
+						<li><a href="#contact">Points Tally</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="container-fluid">
 		<div class="row-fluid">
-
-		
-		
-		
-		
-		
-      <div class="span3" id="lbar">
-          
-
+			<div class="span3" id="lbar">
 				<div id="cal1">
-			<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
-        </div>
-        <div id="sidetilespace"></div>
-        <div id ="cal2">
-			<iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=saketkc%40gmail.com&amp;color=%2328754E&amp;ctz=Asia%2FCalcutta" style=" border-width:0 " width=100% height="300" frameborder="0" scrolling="no"></iframe>
-        </div>
-				
-			
-            
-        </div><!--/span-->  
+					<?php echo $all_calendar; ?>
+				</div>
+				<div id="sidetilespace">
+				</div>
+				<div id ="cal2">
+					<?php echo $all_calendar; ?>
+				</div>
+			</div><!--/span-->  
         
-        <div class="row-fluid">
-          <div class="well sidebar-nav" id="tbar">
-            <ul class="nav nav-list">
+			<div class="row-fluid">
+				<div id="hidden-href">
+					<div id="data"></div>
 
-				<a href="#" id="ug"><div id="sidetileo">   <div id="sidetile" style="background-color:#00AEDB;"> <h2>UG Academics</h2></div></div></a>
-			
-				<a href="#cult" id="cult" ><div id="sidetileo">   <div id="sidetile" style="background-color:#00B159;"><h2>Cultural</h2></div></div></a>
+				</div>
 
-				
-				<a href="#sports" id="sports"><div id="sidetileo">   <div id="sidetile" style="background-color:#F37735;"><h2>Sports</h2></div></div>	
-				<a href="#tech" id="tech"><div id="sidetileo">   <div id="sidetile" style="background-color:#EC098C;"><h2>Technical</h2></div></div></a>
-				
-				<a href="hostel" id="hostel"><div id="sidetileo">   <div id="sidetile" style="background-color:#7C4199;"><h2>Hostel</h2></div></div></a>
-			
-				<a href="#pg" id="pg" ><div id="sidetileo">   <div id="sidetile" style="background-color:#FFC425;"><h2>PG Academics</h2></div></div></a>
-            
-           
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->  		
+				<a id="single_image" href="#data"></a>
+				<div class="well sidebar-nav" id="tbar">
+					<ul class="nav nav-list">
+						<a href="#all" class="clickers"  id="all"><div id="sidetileo">   <div id="sidetile" style="background-color:#00AEDB;"> <h2>All</h2></div></div></a>
+						<a href="#acads" class="clickers" id="acads" ><div id="sidetileo">   <div id="sidetile" style="background-color:#FFC425;"><h2>Academics</h2></div></div></a>
+						<a href="#cult" class="clickers" id="cult" ><div id="sidetileo">   <div id="sidetile" style="background-color:#00B159;"><h2>Cultural</h2></div></div></a>
+						<a href="#sports" class="clickers" id="sports"><div id="sidetileo">   <div id="sidetile" style="background-color:#F37735;"><h2>Sports</h2></div></div>	
+						<a href="#tech" class="clickers"  id="tech"><div id="sidetileo">   <div id="sidetile" style="background-color:#EC098C;"><h2>Technical</h2></div></div></a>
+						<a href="hostel" class="clickers"  id="hostel"><div id="sidetileo">   <div id="sidetile" style="background-color:#7C4199;"><h2>Hostel</h2></div></div></a>
+					</ul>
+				</div><!--/.well -->
+			</div><!--/row-fluid-->  		
         
         
 			<div class="span10" id="flipcont">
+				<div id="notice-title">
+				</div>					
 				<div  id="flipbox" class="hero-unit">
-					
-			<div id = "notices-title"></div>
-					
-						<div id="flipboxerr">
-							<div id="but1" class="carouselLeft" >Click me
- 		<!--	<div id="but2" class="carouselRight" >Clickem </div> -->     
+					<div id="flipboxerr">
+						<div id="but1" class="carouselLeft">
+						</div>
+							<!--	<div id="but2" class="carouselRight" >Clickem </div> -->     
  	
          
-							<div id="notices-carousel" style="width:870px; height:384px; background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-								<?
+						<div id="notices-carousel" style="width:870px; height:384px; background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+							
+							<?
+								if (count($event_names) >0){
 									for($i=0;$i<count($event_names);$i++){
 									
 			
 										echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
 									
-									}
-								?>
-							</div>
-				
-				
-			
-						<div id ="ug-notices" style="display:none;">
-							<div id="ug-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-								<?
-									for($i=0;$i<count($event_names);$i++){
-									if ($event_category[$i] == "acads"){
-										echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
-					
-									}
-									}
-								?>
-							</div>
-						</div>	
-	
-						<div id ="sports-notices" style="display:none;">
-							<div id="sports-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-								<?
-								for($i=0;$i<count($event_names);$i++){
-									if ($event_category[$i] == "sports"){
-										
-										echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
 									}
 								}
+								else{
+										echo "<a class='notice' href='uploads/no-image.jpg' rel='lightbox' id='notice'><img class='cloudcarousel' src='uploads/no-image.jpg' width='128' height='164' title='No Event'/></a> ";
+										echo "<a class='notice' href='uploads/no-image.jpg' rel='lightbox' id='notice'><img class='cloudcarousel' src='uploads/no-image.jpg' width='128' height='164' title='No Event32'/></a> ";
+									}
 								?>
-							</div>
-
 						</div>
-						<div id ="cult-notices" style="display:none;">
-							<div id="cult-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-								<?
-								for($i=0;$i<count($event_names);$i++){
-									if ($event_category[$i] == "cult"){
-										
-										echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
-									}
-								}
-								?>
-							</div>
-
-						</div> 
-
-
-						<div id ="hostel-notices" style="display:none;">
-							<div id="hostel-carousel" style="width:870px; height:384px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-								<?
-									for($i=0;$i<count($event_names);$i++){
-										if ($event_category[$i] == "hostel"){
-											
-											echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
-										}
-									}
-								?>
-							</div>
-
-						</div> 
-						<div id ="tech-notices" style="display:none;">
-							<div id="tech-carousel" style="width:870px; height:584px;background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
-								<?
-								for($i=0;$i<count($event_names);$i++){
-									if ($event_category[$i] == "tech"){
-										
-										echo "<a class='notice' href='$poster_locations[$i]' rel='lightbox' id='notice'><img class='cloudcarousel' src='$poster_locations[$i]' width='128' height='164' title='$event_names[$i]'/></a> ";
-									}
-								}
-								?>
-							</div>
-						</div> 
-</div>						
-						
-						
-						
-						
-					</div>
-								
+					</div>						
+				</div>								
 			</div>
 			<div id="subscribe">
-               <form class="form-inline">
-    				<input type="text" class="input-small" placeholder="Email">
-					<input type="password" class="input-small" placeholder="Password">
-  				    <button type="submit" class="btn">Subscribe</button>
-  			   </form>
+               <div class="form-inline">
+    				<input type="text" id="sub-email" class="input-small" placeholder="Email">
+					<input type="password" id="sub-password" class="input-small" placeholder="Password">
+  				    <input type="submit" class="btn" id="sub-submit" value="Subscribe">
+  			   </div>
 			</div>
-		</div><!--/span-->
-       
-        
+		</div><!--/span-->     
 	</div><!--/row-->
-</div><!--/.fluid-container-->
+
 
 	<div id="footer">
 
-	<div id="infifooter">
-		<span id="footertext">Copyright UG Academics Team | IIT Bombay</span> 
+		<div id="infifooter">
+			<span id="footertext">Copyright UG Academics Team | IIT Bombay</span> 
+		</div>
 	</div>
-</div>
-
-    <script type="text/javaScript" src="js/bootstrap.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-transition.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-alert.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-modal.js"></script>
-   
-    <script type="text/javaScript" src="js/bootstrap-scrollspy.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-tab.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-tooltip.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-popover.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-button.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-collapse.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-carousel.js"></script>
-    <script type="text/javaScript" src="js/bootstrap-typeahead.js"></script>
-    
-  </body>
+</body>
 
 </html>
