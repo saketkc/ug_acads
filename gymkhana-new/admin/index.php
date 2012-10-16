@@ -44,19 +44,19 @@ if (isset($_POST['login'])){
     </style> 
   
 
-	 <script type="text/javascript" src="js/jquery.js"></script>
-	 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+	 <script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javaScript" src="../js/bootstrap-dropdown.js"></script>
 	 
 	
 	 
-	
+		<link href="../static/css/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" />
 	 
 	
 	<link href="css/bootstrap-responsive.css" rel="stylesheet"/>
 	<link href="static/css/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" />
 	
 	<link rel="apple-touch-icon-precomposed" href="">
-	<link href="css/main.css" rel="stylesheet">
+	<link href="../css/main.css" rel="stylesheet">
 
 
 	
@@ -65,50 +65,9 @@ if (isset($_POST['login'])){
 
 
 <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a> 
-          <a class="brand" href="#">Gymkhana, IIT Bombay</a>
-          <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              Add a Notice as <a href="#" class="navbar-link">Admin</a>
-            </p>
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li class="dropdown" id="accountmenu">  
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Links<b class="caret"></b></a>  
-                        <ul class="dropdown-menu">  
-                            <li><a href="#">UG Academics</a></li>  
-                            <li><a href="#">PG Academics</a></li>  
-                            <li class="divider"></li>  
-                            <li><a href="#">Hostel Affairs</a></li>  
-                            <li><a href="#">Cultural Affairs</a></li>  
-                            <li><a href="#">Sports Affairs</a></li> 
-                             <li><a href="#">STAB</a></li> 
-                             <li class="divider"></li>  
-                             <li><a href="#">Mood Indigo</a></li>  
-                            <li><a href="#">Techfest</a></li>  
-                            <li><a href="#">E Cell</a></li> 
-                                 <li><a href="#">SARC</a></li> 
-                                  <li class="divider"></li>  
-                             <li><a href="#">Insight</a></li>  
-                            <li><a href="#">Aawaaz</a></li>  
-                        </ul>  
-                    </li>  
-              <li><a href="#contact">Complaint Management System</a></li>
-              <li><a href="#contact">Points Tally</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
+     <?php 
+include('../menu.php');
+?>
      <div class="container-fluid">
       <div class="row-fluid">
         
@@ -141,7 +100,7 @@ if (isset($_POST['login'])){
         </div><!--/span-->
        	
         <div class="span3">
-          <div class="well sidebar-nav" id="rsidebar">
+         <!-- <div class="well sidebar-nav" id="rsidebar">
             <ul class="nav nav-list">
 
          <a href="#" id="ug"><div id="sidetileo" >   <div id="sidetile" style="background-color:#00AEDB;"> <h2>UG Academics</h2></div></div></a>
@@ -159,7 +118,7 @@ if (isset($_POST['login'])){
             
            
             </ul>
-          </div><!--/.well -->
+          </div>   --><!--/.well -->
         </div><!--/span-->
         
         
@@ -168,16 +127,6 @@ if (isset($_POST['login'])){
       </div><!--/row-->
     </div><!--/.fluid-container-->
 
- <div id="footer">
-      
-        
-        <div id="footer1" class="span3">
-   
-        </div>
-        <div id ="footer2" class="span3"></div>
-     
-<div id ="footer3" class="span3"></div>
-      </div>
 
 
 

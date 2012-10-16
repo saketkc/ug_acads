@@ -60,19 +60,33 @@ body{
 			margin-left:500px;
 		}
 
-	
-	#notices-carousel{
-		margin-left:-100px;		
+	#notice-title{
+		margin-left: 43%;		
 		}
+	#notices-carousel{
+		margin-left:-40px;		
+		}
+		#uploadbox{
+		margin-left: 10%;
+		margin-top: 1%;			
+			}
 #flipcont{
 	float: right;	
 	margin-top: -400px;
 	margin-right: 22px;	
 	}
 	#but1{
-		height:200px;
-		overflow: hidden;		
+		position: fixed;
+		margin-top: -40px;	
+	height: 50px;
+	margin-left: 60%;
 		}
+		#but2{
+			position: fixed;
+		margin-top: -40px;	
+	height: 50px;
+	margin-left: 50%;
+			}
 	#lbar{
 		width:20%;
 		height:500px;
@@ -90,6 +104,6 @@ body{
 					padding:15px;
 					float: right;
 					margin-top: 20px;
-					margin-left: -10px;
+					margin-left: -5px;
 					clear:both;				
 					}
