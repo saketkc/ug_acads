@@ -407,7 +407,7 @@ for ($i=0;$i<count($posters);$i++){
 							<!--	<div id="but2" class="carouselRight" >Clickem </div> -->     
  	
          
-						<div id="notices-carousel" style="width:870px; height:384px; background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
+						<div id="notices-carousel" style="width:870px; height:484px; background: url(/static/images/carousel/bg.jpg);overflow:scroll;">
 							
 							<?
 								if (count($event_names) >0){

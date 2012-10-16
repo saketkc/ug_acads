@@ -90,6 +90,6 @@ body{
 					padding:15px;
 					float: right;
 					margin-top: 20px;
-					margin-left: -5px;
+					margin-left: -10px;
 					clear:both;				
 					}
