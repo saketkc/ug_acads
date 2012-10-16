@@ -111,6 +111,8 @@ a { color: #1e90ff; }
 }
 .container li strong { display: block; }
 #flipbox {
+width:100%
+height:800px;
   line-height: 200px;
   background-color: #ff9000;
   
