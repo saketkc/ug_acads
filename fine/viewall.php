@@ -5,21 +5,23 @@ if (!(isset($_SESSION['id']))){
 }
 require_once 'connect.php';
     require_once 'functions.php';
-if(isset($_POST['searchrno']))
-{
+
+
         $rno=$_POST['searchrno'];
         $db = new PDO("mysql:dbname=fine;host=localhost","root","fedora13" );
 
-        $query = $db->prepare("SELECT * FROM fine WHERE rno= :rno ");
-        $query->execute(array(':rno' => $rno));
-}
+        $query = $db->prepare("SELECT * FROM fine ORDER BY sno DESC ");
+        $query->execute(array());
+
 
 
 if(isset($_POST['change']) && isset($_POST['chno']))
 {
     mark($_POST['chno']);
-    echo "Change To Paid";
+    
     header("Location: main.php");
+    echo "Change To Paid";
+    
 }
 
 
@@ -85,7 +87,7 @@ include('menu.php');
     </form>
 
 <hr>
-<span id="heading"><h2>Search Results</h2></span>
+<span id="heading"><h2>All Entries</h2></span>
 
     <table class="table table-striped">
         <thead>
@@ -131,7 +133,7 @@ echo "<td>". "Paid"."</td>";
 if ($row['flag']==0){
 
           ?>
-<td><form class="form-search" method="post" action="search.php">
+<td><form class="form-search" method="post" action="viewall.php">
         
           
                      <input type="hidden" name="chno" value="<?php echo $row['sno']; ?>">   

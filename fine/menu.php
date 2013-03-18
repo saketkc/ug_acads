@@ -6,10 +6,10 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a> 
-				<a class="brand" href="#">Student Fine Portal</a>
+				<a class="brand" href="index.php">Student Fine Portal</a>
 				<div class="nav-collapse collapse">
 					<p class="navbar-text pull-right">
-						<a href="admin/" class="navbar-link">Logout</a>
+						<a href="?logout=1" class="navbar-link">Logout</a>
 					</p>
 					<ul class="nav">
 						<li class="active"><a href="index.php">Home</a>
@@ -35,6 +35,7 @@
 							</ul>  
 						</li>  
 						<li><a href="http://asc.iitb.ac.in">ASC</a></li>
+                                                <li><a href="viewall.php">View all entries</a></li>
 					</ul>
 				</div>
 			</div>

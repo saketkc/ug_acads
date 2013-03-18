@@ -1,7 +1,28 @@
 <?php
+session_start();
+if (!(isset($_SESSION['id']))){
+	header("location: index.php");
+}
+require_once 'connect.php';
+    require_once 'functions.php';
 
+if(isset($_POST['rno']) && isset($_POST['name']) && isset($_POST['hostel']) 
+        && isset($_POST['room']) && isset($_POST['matter']) && isset($_POST['fine']) && isset($_POST['flag']))
+{
+add($_POST['rno'],$_POST['name'],$_POST['hostel'],$_POST['room'],$_POST['matter'],
+        $_POST['matter'],$_POST['fine'],$_POST['flag'] );    
 
+header("Location: viewall.php");
 
+}
+if(isset($_GET['logout'])){
+	
+	session_destroy();
+
+header("Location: index.php");
+
+        
+}
 
 
 ?>
@@ -49,20 +70,20 @@ include('menu.php');
 <hr>
 
 
-    <form class="form-search">
-    <input type="text" class="input-emedium search-query" placeholder="Roll Number">  
+    <form class="form-search" method="post" action="search.php">
+    <input type="text" class="input-emedium search-query" placeholder="Roll Number" name="searchrno">  
     <button type="submit" class="btn">Search</button>
     </form>
 <hr>
 <h2>Add for new fine entry</h2>
 <fieldset>
-		<form class="form-horizontal"  ethod="POST" action="" enctype="multipart/form-data">
+		<form class="form-horizontal"  method="post" action="main.php" >
  <div class="control-group">			<label class="control-label"> Student Name </label>
 <div class="controls">			<input type="text" id="name" name="name"></div></div>
 		 <div class="control-group">	<label class="control-label"> Roll No. </label>
 		<div class="controls">	<input type="text" id="rno" name="rno"></div></div>
 	 <div class="control-group">		<label class="control-label"> Hostel</label>
-	<div class="controls">		<select name="category">
+	<div class="controls">		<select name="hostel">
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
@@ -88,7 +109,7 @@ include('menu.php');
 	 <div class="control-group">		<label class="control-label"> Fine Amount </label>
 			<div class="controls"><input type="text" id="fine" name="fine"></div></div>
 	 <div class="control-group">		<label class="control-label"> Paid/Unpaid</label>
-	<div class="controls">		<select name="category">
+	<div class="controls">		<select name="flag">
 											<option value = "unpaid">
 												Unpaid
 											</option>
@@ -102,6 +123,8 @@ include('menu.php');
 			<input type="submit" class="btn-large" value="Submit" name="submit">
 		</form>
 	</fieldset>
+<?php echo $a; 
+?>
 
 </body>
 </html> 

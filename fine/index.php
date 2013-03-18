@@ -1,7 +1,52 @@
 <?php
+session_start();
+if (isset($_SESSION['id'])){
+    header("location: main.php");
+}
+
+//require_once 'functions.php';
+$id = $_POST['username'];
+$pass =$_POST['password'];
+
+
+if ($id!="" && $pass!="")
+{
+if ($id=="admin" && $pass=="12345"){
+	$_SESSION['id'] = $id;
+	
+		header("location: main.php");
+	
+	
+	
+}
+else {
+header("location: index.php?er=loginfailed");
+}
+}
 
 
 
+if (isset($_SESSION['id'])){
+
+	
+}
+else {
+	$username='';
+}
+
+if(isset($_GET['er']))
+{
+	if($_GET['er'] == "loginfailed" ) { $error= "Login Failed" ;}
+	if($_GET['er'] == "wrong" ) { $error= "Invalid Roll no. or password" ;}
+	if($_GET['er'] == "complete" ) { $error= "Voted! " ;}
+	$error=$_GET['er'];
+}
+if(isset($_GET['logout'])){
+	
+	session_destroy();
+        
+    
+}
 
 
 ?>
@@ -47,19 +92,21 @@ include('menu.php');
 		<div class="row-fluid">
 <span id="heading"><h2>Login</h2></span>
 <hr>
-    <form class="form-horizontal">
+    <form class="form-horizontal" method="post" action="index.php">
     <div class="control-group">
     <label class="control-label" for="inputEmail">ID</label>
     <div class="controls">
-    <input type="text" id="inputEmail" placeholder="ID">
+    <input type="text" id="inputEmail" placeholder="ID" name="username">
     </div>
     </div>
     <div class="control-group">
     <label class="control-label" for="inputPassword">Password</label>
     <div class="controls">
-    <input type="password" id="inputPassword" placeholder="Password">
+    <input type="password" id="inputPassword" placeholder="Password" name="password">
     </div>
     </div>
+<?php echo $error?>
+
     <div class="control-group">
     <div class="controls">
     <button type="submit" class="btn">Sign in</button>
